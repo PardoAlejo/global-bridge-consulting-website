@@ -1,0 +1,57 @@
+---
+interface Props {
+  title: string;
+  items: string[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<div class="capability-card">
+  <h3 class="capability-card__title">{title}</h3>
+  <ul class="capability-card__list">
+    {items.map((item) => (
+      <li>{item}</li>
+    ))}
+  </ul>
+</div>
+
+<style>
+  .capability-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-xl);
+  }
+
+  .capability-card__title {
+    font-size: var(--fs-lg);
+    color: var(--color-accent);
+    margin-bottom: var(--space-lg);
+  }
+
+  .capability-card__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .capability-card__list li {
+    position: relative;
+    padding-left: var(--space-lg);
+    font-size: var(--fs-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--lh-snug);
+  }
+
+  .capability-card__list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--color-border);
+  }
+</style>

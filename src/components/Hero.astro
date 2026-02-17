@@ -1,0 +1,135 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations, getLocalizedPath } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <h1 class="hero__headline">{t.hero.headline}</h1>
+      <p class="hero__subheadline">{t.hero.subheadline}</p>
+      <div class="hero__ctas">
+        <a href={getLocalizedPath(lang, 'projects')} class="hero__btn hero__btn--primary">
+          {t.hero.ctaPrimary}
+        </a>
+        <a href={getLocalizedPath(lang, 'contact')} class="hero__btn hero__btn--secondary">
+          {t.hero.ctaSecondary}
+        </a>
+      </div>
+    </div>
+    <div class="hero__illustration">
+      <img
+        src="/assets/hero-illustration.svg"
+        alt=""
+        width="500"
+        height="400"
+        loading="eager"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding-top: calc(64px + var(--space-3xl));
+    padding-bottom: var(--space-3xl);
+    background-color: var(--color-section-alt);
+  }
+
+  .hero__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2xl);
+  }
+
+  .hero__content {
+    max-width: 600px;
+  }
+
+  .hero__headline {
+    font-size: var(--fs-3xl);
+    line-height: var(--lh-tight);
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero__subheadline {
+    font-size: var(--fs-md);
+    color: var(--color-text-secondary);
+    line-height: var(--lh-normal);
+    margin-bottom: var(--space-xl);
+  }
+
+  .hero__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+  }
+
+  .hero__btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-semibold);
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+  }
+
+  .hero__btn--primary {
+    background-color: var(--color-accent);
+    color: #fff;
+  }
+
+  .hero__btn--primary:hover {
+    background-color: var(--color-accent-dark);
+  }
+
+  .hero__btn--secondary {
+    background-color: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+  }
+
+  .hero__btn--secondary:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .hero__illustration {
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero__illustration img {
+    max-width: 360px;
+    width: 100%;
+  }
+
+  @media (min-width: 768px) {
+    .hero {
+      padding-top: calc(64px + var(--space-4xl));
+      padding-bottom: var(--space-4xl);
+    }
+
+    .hero__inner {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .hero__headline {
+      font-size: var(--fs-4xl);
+    }
+
+    .hero__illustration img {
+      max-width: 440px;
+    }
+  }
+</style>

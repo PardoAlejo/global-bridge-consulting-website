@@ -1,0 +1,158 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+import SectionContainer from './SectionContainer.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<SectionContainer id="contact" alt>
+  <div class="section-header">
+    <h2 class="section-title">{t.contact.title}</h2>
+  </div>
+
+  <div class="contact">
+    <div class="contact__info">
+      <p class="contact__body">{t.contact.body}</p>
+      <a href={`mailto:${t.contact.email}`} class="contact__email">{t.contact.email}</a>
+    </div>
+
+    <form class="contact__form" action="" method="POST">
+      <div class="contact__field">
+        <label for="name">{t.contact.form.name}</label>
+        <input type="text" id="name" name="name" required />
+      </div>
+
+      <div class="contact__field">
+        <label for="organization">{t.contact.form.organization}</label>
+        <input type="text" id="organization" name="organization" />
+      </div>
+
+      <div class="contact__field">
+        <label for="email">{t.contact.form.email}</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="contact__field">
+        <label for="project-type">{t.contact.form.projectType}</label>
+        <select id="project-type" name="project-type" required>
+          <option value="" disabled selected>—</option>
+          {t.contact.form.options.map((option) => (
+            <option value={option}>{option}</option>
+          ))}
+        </select>
+      </div>
+
+      <div class="contact__field contact__field--full">
+        <label for="message">{t.contact.form.message}</label>
+        <textarea id="message" name="message" rows={5} required></textarea>
+      </div>
+
+      <div class="contact__field contact__field--full">
+        <button type="submit" class="contact__submit">{t.contact.form.submit}</button>
+      </div>
+    </form>
+  </div>
+</SectionContainer>
+
+<style>
+  .contact {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .contact__body {
+    font-size: var(--fs-md);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+    max-width: 480px;
+  }
+
+  .contact__email {
+    display: inline-block;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-medium);
+    color: var(--color-accent);
+    transition: color var(--transition-fast);
+  }
+
+  .contact__email:hover {
+    color: var(--color-accent-dark);
+  }
+
+  .contact__form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  .contact__field label {
+    display: block;
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+  }
+
+  .contact__field input,
+  .contact__field select,
+  .contact__field textarea {
+    width: 100%;
+    padding: 0.625rem 0.875rem;
+    font-size: var(--fs-base);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    background: var(--color-bg);
+    transition: border-color var(--transition-fast);
+  }
+
+  .contact__field input:focus,
+  .contact__field select:focus,
+  .contact__field textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(79, 183, 197, 0.15);
+  }
+
+  .contact__field textarea {
+    resize: vertical;
+  }
+
+  .contact__submit {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 2rem;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-semibold);
+    color: #fff;
+    background-color: var(--color-accent);
+    border: none;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-fast);
+  }
+
+  .contact__submit:hover {
+    background-color: var(--color-accent-dark);
+  }
+
+  @media (min-width: 768px) {
+    .contact {
+      grid-template-columns: 1fr 1.5fr;
+      align-items: start;
+    }
+
+    .contact__form {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .contact__field--full {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40" fill="none">
+  <rect x="0" y="8" width="24" height="24" rx="4" fill="#4FB7C5"/>
+  <text x="12" y="25" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="14" fill="#fff">G</text>
+  <text x="32" y="27" font-family="Inter, sans-serif" font-weight="600" font-size="16" fill="#111111">Global Bridge</text>
+</svg>

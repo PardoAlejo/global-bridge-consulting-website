@@ -1,0 +1,167 @@
+{
+  "meta": {
+    "title": "Global Bridge Consultancy — Evidence Structuring",
+    "description": "We design systems that transform fragmented information into organized, comparable, and traceable knowledge for responsible decision-making."
+  },
+  "nav": {
+    "whoWeAre": "Who we are",
+    "whatWeDo": "What we do",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "headline": "We structure evidence for better decisions.",
+    "subheadline": "We design systems that transform fragmented information — documents, data, interviews, and archives — into organized, comparable, and traceable knowledge that supports responsible decision-making.",
+    "ctaPrimary": "Explore projects",
+    "ctaSecondary": "Contact us"
+  },
+  "whoWeAre": {
+    "title": "Who we are",
+    "body": "We are a consultancy focused on structuring evidence in complex environments.",
+    "bodyExtended": "We combine expertise in information systems, data science, and institutional analysis to transform fragmented information into clear, verifiable tools. Our focus is not technology for its own sake, but the quality, traceability, and usefulness of evidence.",
+    "mission": "To design rigorous systems that organize and connect evidence, enabling better-informed decisions.",
+    "missionLabel": "Mission",
+    "bullets": [
+      "Organization of complex information",
+      "Comparative and analytical systems",
+      "Neutrality and methodological rigor"
+    ],
+    "principlesTitle": "Our principles",
+    "principles": [
+      "References and source links",
+      "Version control and update timestamps",
+      "Coverage and uncertainty signals",
+      "Methodological validation"
+    ],
+    "closing": "We operate under a clear principle: structure evidence without advocacy. Our systems prioritize traceability, context, and clarity. When information is incomplete or limited, it is explicitly indicated.",
+    "teamTitle": "Our team",
+    "team": [
+      {
+        "name": "[Founder Name]",
+        "role": "Co-founder",
+        "bio": "PhD in AI and data systems. Experience building information structuring, search, analysis, and decision-support systems. Focus on end-to-end design, quality, and traceability."
+      },
+      {
+        "name": "[Founder Name]",
+        "role": "Co-founder",
+        "bio": "Economist with experience in governance, indicators, and historical evidence. Four years at the World Justice Project. Previous work at Colombia's Truth Commission on evidence collection and organization. Focus on institutional problem interpretation, evidence criteria, and neutrality."
+      }
+    ]
+  },
+  "whatWeDo": {
+    "title": "What we do",
+    "subtitle": "Tailored solutions to structure evidence in complex environments.",
+    "capabilities": [
+      {
+        "title": "Evidence organization",
+        "items": [
+          "Ingestion of documents, web sources, reports, and datasets",
+          "Metadata normalization and taxonomy design",
+          "Linking across sources and versions",
+          "Building navigable evidence bases"
+        ]
+      },
+      {
+        "title": "Comparison and analysis",
+        "items": [
+          "Cross-actor, thematic, temporal, or regional comparisons",
+          "Side-by-side views and time-based analysis",
+          "Analytical dashboards and structured interfaces",
+          "Tools for research and decision support"
+        ]
+      },
+      {
+        "title": "Access tools",
+        "items": [
+          "Advanced search with filters",
+          "Structured retrieval systems",
+          "Source-referenced responses (when applicable)",
+          "Clear and user-focused interfaces"
+        ]
+      },
+      {
+        "title": "Integrity and consistency",
+        "items": [
+          "Analysis of statements over time",
+          "Identification of divergences and changes",
+          "Signaling of coverage and uncertainty",
+          "Transparency without editorial interpretation"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "Examples of systems designed to structure evidence and support decision-making.",
+    "items": [
+      {
+        "title": "Presidential Evidence Assistant (Colombia 2026)",
+        "description": "A question-and-comparison system over proposals and interviews, with traceable links to original sources.",
+        "features": [
+          "Organizes published proposals (web and PDF)",
+          "Structures video interviews with timestamp references",
+          "Enables structured comparison between candidates",
+          "Links responses to original sources"
+        ],
+        "outcome": "Structured and verifiable access to public statements.",
+        "status": "Pilot",
+        "statusKey": "pilot"
+      },
+      {
+        "title": "ROLI Dashboard (Rule of Law Index)",
+        "description": "An interactive analytical tool for exploring indicators, comparing countries, and analyzing trends.",
+        "features": [
+          "Top/bottom performers visualization",
+          "Time series by region and factor",
+          "Multi-country comparison",
+          "Exportable visualizations"
+        ],
+        "outcome": "Facilitates structured analysis and reporting.",
+        "status": "Completed",
+        "statusKey": "completed"
+      },
+      {
+        "title": "Statement Consistency Engine",
+        "description": "A system designed to analyze the temporal consistency of public statements.",
+        "features": [
+          "Groups statements by theme",
+          "Enables time-based comparison",
+          "Links quotes to original context",
+          "Highlights potential divergences without interpretation"
+        ],
+        "outcome": "Greater transparency in complex information environments.",
+        "status": "Prototype",
+        "statusKey": "prototype"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "body": "If you work with complex information and need to structure it for analysis or decision-making, we can help.",
+    "email": "contact@globalbridge.co",
+    "cta": "Schedule a call",
+    "form": {
+      "name": "Name",
+      "organization": "Organization",
+      "email": "Email",
+      "projectType": "Project type",
+      "message": "Message",
+      "submit": "Send message",
+      "options": [
+        "Evidence organization",
+        "Analytical dashboard",
+        "Search / access system",
+        "Integrity / consistency",
+        "Other"
+      ]
+    }
+  },
+  "footer": {
+    "copyright": "Global Bridge Consultancy. All rights reserved.",
+    "email": "contact@globalbridge.co"
+  },
+  "lang": {
+    "switchLabel": "ES",
+    "switchTitle": "Ver en español"
+  }
+}

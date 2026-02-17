@@ -1,0 +1,57 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <p class="footer__copyright">&copy; {year} {t.footer.copyright}</p>
+    <a href={`mailto:${t.footer.email}`} class="footer__email">{t.footer.email}</a>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-xl) 0;
+  }
+
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__copyright {
+    font-size: var(--fs-sm);
+    color: var(--color-text-secondary);
+  }
+
+  .footer__email {
+    font-size: var(--fs-sm);
+    color: var(--color-accent);
+    transition: color var(--transition-fast);
+  }
+
+  .footer__email:hover {
+    color: var(--color-accent-dark);
+  }
+
+  @media (min-width: 768px) {
+    .footer__inner {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+  }
+</style>

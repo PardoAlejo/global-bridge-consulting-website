@@ -1,0 +1,120 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  features: string[];
+  outcome: string;
+  status: string;
+  statusKey: string;
+}
+
+const { title, description, features, outcome, status, statusKey } = Astro.props;
+---
+
+<div class="project-card">
+  <div class="project-card__header">
+    <span class:list={['project-card__badge', `project-card__badge--${statusKey}`]}>
+      {status}
+    </span>
+  </div>
+  <h3 class="project-card__title">{title}</h3>
+  <p class="project-card__desc">{description}</p>
+  <ul class="project-card__features">
+    {features.map((feature) => (
+      <li>{feature}</li>
+    ))}
+  </ul>
+  <div class="project-card__outcome">
+    <p>{outcome}</p>
+  </div>
+</div>
+
+<style>
+  .project-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-xl);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-card__header {
+    margin-bottom: var(--space-md);
+  }
+
+  .project-card__badge {
+    display: inline-block;
+    padding: 0.2rem 0.75rem;
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .project-card__badge--pilot {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+
+  .project-card__badge--completed {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  .project-card__badge--prototype {
+    background-color: #e2e3f1;
+    color: #383d6e;
+  }
+
+  .project-card__title {
+    font-size: var(--fs-lg);
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+  }
+
+  .project-card__desc {
+    font-size: var(--fs-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+  }
+
+  .project-card__features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-lg);
+    flex: 1;
+  }
+
+  .project-card__features li {
+    position: relative;
+    padding-left: var(--space-lg);
+    font-size: var(--fs-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--lh-snug);
+  }
+
+  .project-card__features li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.55em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+  }
+
+  .project-card__outcome {
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .project-card__outcome p {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    color: var(--color-text);
+  }
+</style>

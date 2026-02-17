@@ -1,0 +1,53 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+import SectionContainer from './SectionContainer.astro';
+import ProjectCard from './ProjectCard.astro';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<SectionContainer id="projects">
+  <div class="section-header">
+    <h2 class="section-title">{t.projects.title}</h2>
+    <p class="section-subtitle">{t.projects.subtitle}</p>
+  </div>
+
+  <div class="projects-grid">
+    {t.projects.items.map((project) => (
+      <ProjectCard
+        title={project.title}
+        description={project.description}
+        features={project.features}
+        outcome={project.outcome}
+        status={project.status}
+        statusKey={project.statusKey}
+      />
+    ))}
+  </div>
+</SectionContainer>
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  @media (min-width: 768px) {
+    .projects-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .projects-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+</style>
