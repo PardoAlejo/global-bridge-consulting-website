@@ -93,9 +93,11 @@
   "projects": {
     "title": "Projects",
     "subtitle": "Examples of systems designed to structure evidence and support decision-making.",
+    "viewProject": "View project",
     "items": [
       {
         "title": "Presidential Evidence Assistant (Colombia 2026)",
+        "slug": "presidential-assistant",
         "description": "A question-and-comparison system over proposals and interviews, with traceable links to original sources.",
         "features": [
           "Organizes published proposals (web and PDF)",
@@ -109,6 +111,7 @@
       },
       {
         "title": "ROLI Dashboard (Rule of Law Index)",
+        "slug": "roli-dashboard",
         "description": "An interactive analytical tool for exploring indicators, comparing countries, and analyzing trends.",
         "features": [
           "Top/bottom performers visualization",
@@ -122,6 +125,7 @@
       },
       {
         "title": "Statement Consistency Engine",
+        "slug": "statement-engine",
         "description": "A system designed to analyze the temporal consistency of public statements.",
         "features": [
           "Groups statements by theme",
@@ -159,6 +163,170 @@
   "footer": {
     "copyright": "Global Bridge Consultancy. All rights reserved.",
     "email": "contact@globalbridge.co"
+  },
+  "projectDetail": {
+    "backToProjects": "Back to projects",
+    "overviewTitle": "Overview",
+    "highlightsTitle": "Key figures",
+    "howItWorksTitle": "How it works",
+    "sourcesTitle": "Data sources",
+    "screenshotsTitle": "Screenshots",
+    "limitationsTitle": "Limitations and transparency",
+    "screenshotPlaceholder": "Screenshot coming soon",
+    "ctaText": "Interested in a similar system?",
+    "ctaButton": "Get in touch"
+  },
+  "projectDetails": {
+    "presidential-assistant": {
+      "meta": {
+        "title": "Presidential Evidence Assistant — Global Bridge Consultancy",
+        "description": "A question-and-comparison system over proposals and interviews from Colombia's 2026 presidential candidates, with traceable links to original sources."
+      },
+      "header": {
+        "title": "Presidential Evidence Assistant",
+        "subtitle": "Colombia 2026 — A question-and-comparison system over proposals and interviews, with traceable links to original sources.",
+        "status": "Pilot",
+        "statusKey": "pilot"
+      },
+      "overview": [
+        "This system allows anyone to ask questions in natural language about the proposals and positions of Colombia's 2026 presidential candidates. For example: \"What does Sergio Fajardo propose about security?\" or \"What are the differences between Paloma Valencia and Claudia López on education?\"",
+        "The system searches across everything the candidates have said or published, and generates a response in natural language with references to the original sources — web pages, PDFs with page numbers, or YouTube videos with exact timestamps.",
+        "The goal is to provide structured, verifiable access to public statements without editorial interpretation. When information is incomplete or unavailable for a candidate, the system says so explicitly."
+      ],
+      "highlights": [
+        { "value": "24", "label": "Candidates covered" },
+        { "value": "2,400+", "label": "Text fragments indexed" },
+        { "value": "8", "label": "Source types" },
+        { "value": "67", "label": "Documents processed" }
+      ],
+      "howItWorks": [
+        {
+          "title": "Information collection and structuring",
+          "body": "The system ingests information from multiple source types: published campaign proposals (web and PDF), video interview transcriptions with timestamps from Caracol's \"Candidatos al Tablero\" program (23 candidates), and articles and interviews from six Colombian media outlets. Each source is parsed, cleaned, and broken into focused text fragments (~800 characters) with full metadata: candidate, topic, source, and location (page number or video timestamp)."
+        },
+        {
+          "title": "Thematic classification and search",
+          "body": "All fragments are automatically classified into 16 thematic categories (security, health, education, economy, etc.) using semantic similarity. When a user asks a question, the system detects the mentioned candidates, identifies the relevant topic, and performs a three-layer search: exact metadata filtering, keyword matching with synonym expansion, and semantic search by meaning. Results are combined with a mixed score. For comparisons between candidates, the system ensures balanced representation across all mentioned candidates."
+        },
+        {
+          "title": "Response generation with source attribution",
+          "body": "The retrieved fragments are passed to a language model that generates a natural-language response. Every claim is cited with a numbered reference linking back to the original source. The model is instructed to respond only with what the sources say, organize comparisons by candidate, and be transparent about information gaps. Below each response, users can click through to the original web page, PDF page, or exact video timestamp."
+        }
+      ],
+      "sources": {
+        "description": "Information comes from multiple source types across 24 candidates:",
+        "items": [
+          { "type": "Structured proposals + interview + media", "candidates": "2", "detail": "Sergio Fajardo, Paloma Valencia" },
+          { "type": "Video interview + media", "candidates": "14", "detail": "Enrique Peñalosa, Juan Daniel Oviedo, Roy Barreras, David Luna, and others" },
+          { "type": "Video interview only", "candidates": "5", "detail": "Daniel Palacios, Leonardo Huerta, Maurice Armitage, and others" },
+          { "type": "Media only", "candidates": "1", "detail": "Iván Cepeda" }
+        ]
+      },
+      "limitations": [
+        "Uneven coverage: only 2 of 24 candidates have structured published proposals. Others are covered through interviews and media articles.",
+        "Transcription quality: automatic video transcriptions may contain errors, especially with proper names or technical terms.",
+        "Information changes over time: candidate proposals may evolve. The system reflects what was published at the time of the last data update.",
+        "Variable media coverage: the number of articles per candidate varies depending on source availability."
+      ]
+    },
+    "roli-dashboard": {
+      "meta": {
+        "title": "ROLI Dashboard — Global Bridge Consultancy",
+        "description": "An interactive analytical tool for exploring Rule of Law Index indicators, comparing countries, and analyzing trends over time."
+      },
+      "header": {
+        "title": "ROLI Dashboard",
+        "subtitle": "Rule of Law Index — An interactive analytical tool for exploring indicators, comparing countries, and analyzing trends.",
+        "status": "Completed",
+        "statusKey": "completed"
+      },
+      "overview": [
+        "The ROLI Dashboard is an interactive analytical tool built to make the World Justice Project's Rule of Law Index data accessible and explorable. It enables researchers, analysts, and policymakers to examine governance indicators across countries and over time.",
+        "Rather than static tables or reports, the dashboard provides dynamic visualizations that allow users to compare countries, identify trends, and export findings for further analysis or reporting."
+      ],
+      "highlights": [
+        { "value": "140+", "label": "Countries indexed" },
+        { "value": "8", "label": "Primary factors" },
+        { "value": "44", "label": "Sub-factors tracked" },
+        { "value": "10+", "label": "Years of data" }
+      ],
+      "howItWorks": [
+        {
+          "title": "Data ingestion and normalization",
+          "body": "Index scores are ingested from the World Justice Project's published datasets, normalized across years and editions, and structured for efficient querying. Each data point is linked to its country, region, factor, and time period."
+        },
+        {
+          "title": "Interactive visualization",
+          "body": "The dashboard provides multiple views: top and bottom performers by factor, time series analysis by region, and multi-country comparison panels. Users can filter by region, income group, or specific factors to focus their analysis."
+        },
+        {
+          "title": "Export and reporting",
+          "body": "All visualizations can be exported for use in reports, presentations, or further analysis. The system is designed to support both quick exploratory queries and structured comparative research."
+        }
+      ],
+      "sources": {
+        "description": "Data sourced from the World Justice Project's published Rule of Law Index datasets:",
+        "items": [
+          { "type": "Rule of Law Index scores", "candidates": "140+ countries", "detail": "Annual scores across 8 factors and 44 sub-factors" },
+          { "type": "Regional classifications", "candidates": "Global", "detail": "Groupings by region, income level, and governance type" }
+        ]
+      },
+      "limitations": [
+        "Dependent on WJP publication schedule: data reflects the latest published edition of the index.",
+        "Index methodology changes between editions may affect comparability of some sub-factors over time.",
+        "Country coverage varies by year as new countries are added to the index."
+      ]
+    },
+    "statement-engine": {
+      "meta": {
+        "title": "Statement Consistency Engine — Global Bridge Consultancy",
+        "description": "A system designed to analyze the temporal consistency of public statements, grouping them by theme and highlighting potential divergences."
+      },
+      "header": {
+        "title": "Statement Consistency Engine",
+        "subtitle": "A system designed to analyze the temporal consistency of public statements, grouping them by theme and highlighting potential divergences.",
+        "status": "Prototype",
+        "statusKey": "prototype"
+      },
+      "overview": [
+        "The Statement Consistency Engine is designed to track and analyze public statements over time. It groups statements by theme, enables temporal comparison, and links quotes to their original context — allowing analysts to identify potential shifts or contradictions in an actor's public positions.",
+        "The system is designed to highlight divergences without editorial interpretation, preserving the original context and letting users draw their own conclusions."
+      ],
+      "highlights": [
+        { "value": "16", "label": "Thematic categories" },
+        { "value": "N/A", "label": "Actors tracked" },
+        { "value": "N/A", "label": "Statements indexed" },
+        { "value": "N/A", "label": "Time span covered" }
+      ],
+      "howItWorks": [
+        {
+          "title": "Statement collection and classification",
+          "body": "Public statements from multiple sources are ingested, cleaned, and automatically classified into thematic categories. Each statement is linked to its author, date, source, and original context."
+        },
+        {
+          "title": "Temporal comparison",
+          "body": "The system enables side-by-side comparison of statements from the same actor on the same topic across different time periods. This allows analysts to track how positions evolve and identify potential inconsistencies."
+        },
+        {
+          "title": "Divergence signaling",
+          "body": "When potential divergences are detected between statements on the same topic, the system highlights them for review — without assigning interpretation. Users can examine the original context of each statement to evaluate the significance of any changes."
+        }
+      ],
+      "sources": {
+        "description": "The system is designed to ingest statements from multiple public source types:",
+        "items": [
+          { "type": "Press conferences and speeches", "candidates": "Variable", "detail": "Transcribed and timestamped public appearances" },
+          { "type": "Published documents", "candidates": "Variable", "detail": "Policy papers, official statements, and reports" },
+          { "type": "Media interviews", "candidates": "Variable", "detail": "Print, broadcast, and online interviews" }
+        ]
+      },
+      "limitations": [
+        "Prototype stage: the system architecture is defined but has not yet been deployed with a full dataset.",
+        "Statement detection relies on accurate source attribution and dating, which may not always be available.",
+        "Divergence detection is pattern-based and does not assess intent or context beyond what is explicitly stated.",
+        "Coverage depends on the availability and accessibility of public records for the actors being tracked."
+      ]
+    }
   },
   "lang": {
     "switchLabel": "ES",

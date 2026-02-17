@@ -6,9 +6,11 @@ interface Props {
   outcome: string;
   status: string;
   statusKey: string;
+  href?: string;
+  linkLabel?: string;
 }
 
-const { title, description, features, outcome, status, statusKey } = Astro.props;
+const { title, description, features, outcome, status, statusKey, href, linkLabel } = Astro.props;
 ---
 
 <div class="project-card">
@@ -27,6 +29,11 @@ const { title, description, features, outcome, status, statusKey } = Astro.props
   <div class="project-card__outcome">
     <p>{outcome}</p>
   </div>
+  {href && (
+    <a href={href} class="project-card__link">
+      {linkLabel || 'View project'} &rarr;
+    </a>
+  )}
 </div>
 
 <style>
@@ -116,5 +123,20 @@ const { title, description, features, outcome, status, statusKey } = Astro.props
     font-size: var(--fs-sm);
     font-weight: var(--fw-medium);
     color: var(--color-text);
+  }
+
+  .project-card__link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    margin-top: var(--space-md);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    color: var(--color-accent);
+    transition: color var(--transition-fast);
+  }
+
+  .project-card__link:hover {
+    color: var(--color-accent-dark);
   }
 </style>

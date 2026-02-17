@@ -4,12 +4,18 @@ import { getAlternateLang, getLocalizedPath, useTranslations } from '../i18n/uti
 
 interface Props {
   lang: Lang;
+  currentPath?: string;
 }
 
-const { lang } = Astro.props;
+const { lang, currentPath } = Astro.props;
 const t = useTranslations(lang);
 const altLang = getAlternateLang(lang);
-const altPath = getLocalizedPath(altLang);
+
+// If currentPath is provided (e.g. on sub-pages), swap the lang prefix
+// Otherwise fall back to the homepage in the alternate language
+const altPath = currentPath
+  ? currentPath.replace(`/${lang}/`, `/${altLang}/`)
+  : getLocalizedPath(altLang);
 ---
 
 <a href={altPath} class="lang-switch" title={t.lang.switchTitle}>

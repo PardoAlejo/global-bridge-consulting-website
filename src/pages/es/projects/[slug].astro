@@ -1,0 +1,247 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+import ProjectHeader from '../../../components/ProjectHeader.astro';
+import ProjectHighlights from '../../../components/ProjectHighlights.astro';
+import ProjectSection from '../../../components/ProjectSection.astro';
+import ScreenshotPlaceholder from '../../../components/ScreenshotPlaceholder.astro';
+import { useTranslations, getLocalizedPath, getProjectPath } from '../../../i18n/utils';
+import type { Lang } from '../../../i18n/utils';
+
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'presidential-assistant' } },
+    { params: { slug: 'roli-dashboard' } },
+    { params: { slug: 'statement-engine' } },
+  ];
+}
+
+const lang: Lang = 'es';
+const { slug } = Astro.params;
+const t = useTranslations(lang);
+const project = t.projectDetails[slug as keyof typeof t.projectDetails];
+const labels = t.projectDetail;
+const currentPath = getProjectPath(lang, slug!);
+---
+
+<BaseLayout title={project.meta.title} description={project.meta.description} lang={lang}>
+  <Navbar lang={lang} currentPath={currentPath} />
+  <main class="project-page">
+    <div class="container">
+      <ProjectHeader
+        lang={lang}
+        title={project.header.title}
+        subtitle={project.header.subtitle}
+        status={project.header.status}
+        statusKey={project.header.statusKey}
+      />
+    </div>
+
+    <ProjectSection title={labels.overviewTitle}>
+      <div class="prose">
+        {project.overview.map((p: string) => <p>{p}</p>)}
+      </div>
+    </ProjectSection>
+
+    <ProjectSection title={labels.highlightsTitle} alt>
+      <ProjectHighlights items={project.highlights} />
+    </ProjectSection>
+
+    <ProjectSection title={labels.howItWorksTitle}>
+      <div class="how-it-works">
+        {project.howItWorks.map((section: { title: string; body: string }) => (
+          <div class="how-it-works__item">
+            <h3>{section.title}</h3>
+            <p>{section.body}</p>
+          </div>
+        ))}
+      </div>
+    </ProjectSection>
+
+    <ProjectSection title={labels.sourcesTitle} alt>
+      <p class="sources-desc">{project.sources.description}</p>
+      <div class="sources-table-wrapper">
+        <table class="sources-table">
+          <thead>
+            <tr>
+              <th>Tipo de fuente</th>
+              <th>Cobertura</th>
+              <th>Detalle</th>
+            </tr>
+          </thead>
+          <tbody>
+            {project.sources.items.map((item: { type: string; candidates: string; detail: string }) => (
+              <tr>
+                <td>{item.type}</td>
+                <td>{item.candidates}</td>
+                <td>{item.detail}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </ProjectSection>
+
+    <ProjectSection title={labels.screenshotsTitle}>
+      <div class="screenshots-grid">
+        <ScreenshotPlaceholder label={labels.screenshotPlaceholder} />
+        <ScreenshotPlaceholder label={labels.screenshotPlaceholder} />
+      </div>
+    </ProjectSection>
+
+    <ProjectSection title={labels.limitationsTitle} alt>
+      <ul class="limitations-list">
+        {project.limitations.map((item: string) => (
+          <li>{item}</li>
+        ))}
+      </ul>
+    </ProjectSection>
+
+    <section class="project-cta">
+      <div class="container project-cta__inner">
+        <p class="project-cta__text">{labels.ctaText}</p>
+        <a href={getLocalizedPath(lang, 'contact')} class="project-cta__button">{labels.ctaButton}</a>
+      </div>
+    </section>
+  </main>
+  <Footer lang={lang} />
+</BaseLayout>
+
+<style>
+  .project-page {
+    padding-top: 64px;
+  }
+
+  .prose {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    max-width: 720px;
+  }
+
+  .prose p {
+    line-height: var(--lh-normal);
+    color: var(--color-text-secondary);
+  }
+
+  .how-it-works {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  .how-it-works__item h3 {
+    margin-bottom: var(--space-sm);
+  }
+
+  .how-it-works__item p {
+    line-height: var(--lh-normal);
+    color: var(--color-text-secondary);
+    max-width: 720px;
+  }
+
+  .sources-desc {
+    margin-bottom: var(--space-lg);
+    color: var(--color-text-secondary);
+  }
+
+  .sources-table-wrapper {
+    overflow-x: auto;
+  }
+
+  .sources-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--fs-sm);
+  }
+
+  .sources-table th,
+  .sources-table td {
+    text-align: left;
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .sources-table th {
+    font-weight: var(--fw-semibold);
+    color: var(--color-text);
+    white-space: nowrap;
+  }
+
+  .sources-table td {
+    color: var(--color-text-secondary);
+  }
+
+  .screenshots-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  @media (min-width: 768px) {
+    .screenshots-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .limitations-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    max-width: 720px;
+  }
+
+  .limitations-list li {
+    position: relative;
+    padding-left: var(--space-lg);
+    font-size: var(--fs-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--lh-normal);
+  }
+
+  .limitations-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+  }
+
+  .project-cta {
+    padding: var(--space-3xl) 0;
+  }
+
+  .project-cta__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
+    text-align: center;
+  }
+
+  .project-cta__text {
+    font-size: var(--fs-lg);
+    font-weight: var(--fw-medium);
+    color: var(--color-text);
+  }
+
+  .project-cta__button {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.75rem 1.75rem;
+    font-size: var(--fs-base);
+    font-weight: var(--fw-semibold);
+    color: #fff;
+    background-color: var(--color-accent);
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-fast);
+  }
+
+  .project-cta__button:hover {
+    background-color: var(--color-accent-dark);
+  }
+</style>

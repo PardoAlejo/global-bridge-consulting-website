@@ -93,9 +93,11 @@
   "projects": {
     "title": "Proyectos",
     "subtitle": "Ejemplos de sistemas diseñados para estructurar evidencia y facilitar decisiones.",
+    "viewProject": "Ver proyecto",
     "items": [
       {
         "title": "Asistente Presidencial (Colombia 2026)",
+        "slug": "presidential-assistant",
         "description": "Sistema de preguntas y comparación sobre propuestas y entrevistas, con acceso trazable a fuentes originales.",
         "features": [
           "Organiza propuestas publicadas (web y PDF)",
@@ -109,6 +111,7 @@
       },
       {
         "title": "Dashboard ROLI (Rule of Law Index)",
+        "slug": "roli-dashboard",
         "description": "Herramienta interactiva para explorar indicadores, comparar países y analizar tendencias.",
         "features": [
           "Visualización de top/bottom performers",
@@ -122,6 +125,7 @@
       },
       {
         "title": "Motor de Consistencia de Declaraciones",
+        "slug": "statement-engine",
         "description": "Sistema para analizar la consistencia de declaraciones públicas a través del tiempo.",
         "features": [
           "Agrupa declaraciones por tema",
@@ -159,6 +163,170 @@
   "footer": {
     "copyright": "Global Bridge Consultancy. Todos los derechos reservados.",
     "email": "contacto@globalbridge.co"
+  },
+  "projectDetail": {
+    "backToProjects": "Volver a proyectos",
+    "overviewTitle": "Descripción general",
+    "highlightsTitle": "Cifras clave",
+    "howItWorksTitle": "Cómo funciona",
+    "sourcesTitle": "Fuentes de datos",
+    "screenshotsTitle": "Capturas de pantalla",
+    "limitationsTitle": "Limitaciones y transparencia",
+    "screenshotPlaceholder": "Captura próximamente",
+    "ctaText": "¿Interesado en un sistema similar?",
+    "ctaButton": "Contáctenos"
+  },
+  "projectDetails": {
+    "presidential-assistant": {
+      "meta": {
+        "title": "Asistente Presidencial — Global Bridge Consultancy",
+        "description": "Sistema de preguntas y comparación sobre propuestas y entrevistas de los candidatos presidenciales de Colombia 2026, con enlaces trazables a fuentes originales."
+      },
+      "header": {
+        "title": "Asistente Presidencial",
+        "subtitle": "Colombia 2026 — Sistema de preguntas y comparación sobre propuestas y entrevistas, con acceso trazable a fuentes originales.",
+        "status": "Piloto",
+        "statusKey": "pilot"
+      },
+      "overview": [
+        "Este sistema permite hacerle preguntas en lenguaje natural sobre las propuestas y posiciones de los candidatos a la presidencia de Colombia 2026. Por ejemplo: \"¿Qué propone Sergio Fajardo sobre seguridad?\" o \"¿Qué diferencias hay entre Paloma Valencia y Claudia López en educación?\"",
+        "El sistema busca la información más relevante entre todo lo que los candidatos han dicho o publicado, y genera una respuesta en lenguaje natural con referencias a las fuentes originales — páginas web, PDFs con número de página, o videos de YouTube con marcas de tiempo exactas.",
+        "El objetivo es proporcionar acceso estructurado y verificable a declaraciones públicas sin interpretación editorial. Cuando la información es incompleta o no está disponible para un candidato, el sistema lo indica explícitamente."
+      ],
+      "highlights": [
+        { "value": "24", "label": "Candidatos cubiertos" },
+        { "value": "2.400+", "label": "Fragmentos de texto indexados" },
+        { "value": "8", "label": "Tipos de fuente" },
+        { "value": "67", "label": "Documentos procesados" }
+      ],
+      "howItWorks": [
+        {
+          "title": "Recopilación y estructuración de información",
+          "body": "El sistema ingesta información de múltiples tipos de fuente: propuestas de campaña publicadas (web y PDF), transcripciones de entrevistas en video con marcas de tiempo del programa \"Candidatos al Tablero\" de Caracol (23 candidatos), y artículos y entrevistas de seis medios colombianos. Cada fuente se procesa, limpia y divide en fragmentos de texto enfocados (~800 caracteres) con metadatos completos: candidato, tema, fuente y ubicación (número de página o marca de tiempo del video)."
+        },
+        {
+          "title": "Clasificación temática y búsqueda",
+          "body": "Todos los fragmentos se clasifican automáticamente en 16 categorías temáticas (seguridad, salud, educación, economía, etc.) usando similaridad semántica. Cuando un usuario hace una pregunta, el sistema detecta los candidatos mencionados, identifica el tema relevante y realiza una búsqueda en tres capas: filtrado exacto por metadatos, coincidencia por palabras clave con expansión de sinónimos, y búsqueda semántica por significado. Los resultados se combinan con una puntuación mixta. Para comparaciones entre candidatos, el sistema asegura representación equilibrada."
+        },
+        {
+          "title": "Generación de respuesta con atribución de fuentes",
+          "body": "Los fragmentos encontrados se pasan a un modelo de lenguaje que genera una respuesta en lenguaje natural. Cada afirmación se cita con una referencia numerada que enlaza a la fuente original. El modelo tiene instrucciones de responder solo con lo que dicen las fuentes, organizar comparaciones por candidato y ser transparente sobre vacíos de información. Debajo de cada respuesta, los usuarios pueden hacer clic para ir a la página web original, la página del PDF o el minuto exacto del video."
+        }
+      ],
+      "sources": {
+        "description": "La información proviene de múltiples tipos de fuente, cubriendo 24 candidatos:",
+        "items": [
+          { "type": "Propuestas estructuradas + entrevista + medios", "candidates": "2", "detail": "Sergio Fajardo, Paloma Valencia" },
+          { "type": "Entrevista en video + medios", "candidates": "14", "detail": "Enrique Peñalosa, Juan Daniel Oviedo, Roy Barreras, David Luna y otros" },
+          { "type": "Solo entrevista en video", "candidates": "5", "detail": "Daniel Palacios, Leonardo Huerta, Maurice Armitage y otros" },
+          { "type": "Solo medios", "candidates": "1", "detail": "Iván Cepeda" }
+        ]
+      },
+      "limitations": [
+        "Cobertura desigual: solo 2 de los 24 candidatos tienen propuestas estructuradas publicadas. Los demás se cubren a través de entrevistas y artículos de medios.",
+        "Calidad de transcripciones: las transcripciones automáticas de video pueden tener errores, especialmente con nombres propios o términos técnicos.",
+        "Información en constante cambio: las propuestas de los candidatos pueden cambiar. El sistema refleja lo publicado al momento de la última actualización.",
+        "Cobertura de medios variable: la cantidad de artículos por candidato varía según la disponibilidad de fuentes."
+      ]
+    },
+    "roli-dashboard": {
+      "meta": {
+        "title": "Dashboard ROLI — Global Bridge Consultancy",
+        "description": "Herramienta analítica interactiva para explorar indicadores del Rule of Law Index, comparar países y analizar tendencias a lo largo del tiempo."
+      },
+      "header": {
+        "title": "Dashboard ROLI",
+        "subtitle": "Rule of Law Index — Herramienta analítica interactiva para explorar indicadores, comparar países y analizar tendencias.",
+        "status": "Desarrollado",
+        "statusKey": "completed"
+      },
+      "overview": [
+        "El Dashboard ROLI es una herramienta analítica interactiva construida para hacer accesibles y explorables los datos del Rule of Law Index del World Justice Project. Permite a investigadores, analistas y responsables de políticas examinar indicadores de gobernanza entre países y a lo largo del tiempo.",
+        "En lugar de tablas o informes estáticos, el dashboard provee visualizaciones dinámicas que permiten comparar países, identificar tendencias y exportar hallazgos para análisis o reportes adicionales."
+      ],
+      "highlights": [
+        { "value": "140+", "label": "Países indexados" },
+        { "value": "8", "label": "Factores primarios" },
+        { "value": "44", "label": "Sub-factores rastreados" },
+        { "value": "10+", "label": "Años de datos" }
+      ],
+      "howItWorks": [
+        {
+          "title": "Ingesta y normalización de datos",
+          "body": "Los puntajes del índice se ingestan de los datasets publicados del World Justice Project, se normalizan entre años y ediciones, y se estructuran para consultas eficientes. Cada dato se vincula a su país, región, factor y período de tiempo."
+        },
+        {
+          "title": "Visualización interactiva",
+          "body": "El dashboard provee múltiples vistas: mejores y peores desempeños por factor, análisis de series de tiempo por región, y paneles de comparación multi-país. Los usuarios pueden filtrar por región, nivel de ingreso o factores específicos."
+        },
+        {
+          "title": "Exportación y reportes",
+          "body": "Todas las visualizaciones pueden exportarse para uso en informes, presentaciones o análisis posteriores. El sistema está diseñado para soportar tanto consultas exploratorias rápidas como investigación comparativa estructurada."
+        }
+      ],
+      "sources": {
+        "description": "Datos provenientes de los datasets publicados del Rule of Law Index del World Justice Project:",
+        "items": [
+          { "type": "Puntajes del Rule of Law Index", "candidates": "140+ países", "detail": "Puntajes anuales en 8 factores y 44 sub-factores" },
+          { "type": "Clasificaciones regionales", "candidates": "Global", "detail": "Agrupaciones por región, nivel de ingreso y tipo de gobernanza" }
+        ]
+      },
+      "limitations": [
+        "Dependiente del calendario de publicación del WJP: los datos reflejan la última edición publicada del índice.",
+        "Cambios en la metodología del índice entre ediciones pueden afectar la comparabilidad de algunos sub-factores a lo largo del tiempo.",
+        "La cobertura de países varía por año a medida que se agregan nuevos países al índice."
+      ]
+    },
+    "statement-engine": {
+      "meta": {
+        "title": "Motor de Consistencia — Global Bridge Consultancy",
+        "description": "Sistema diseñado para analizar la consistencia temporal de declaraciones públicas, agrupándolas por tema y señalando posibles divergencias."
+      },
+      "header": {
+        "title": "Motor de Consistencia de Declaraciones",
+        "subtitle": "Sistema diseñado para analizar la consistencia temporal de declaraciones públicas, agrupándolas por tema y señalando posibles divergencias.",
+        "status": "Prototipo",
+        "statusKey": "prototype"
+      },
+      "overview": [
+        "El Motor de Consistencia de Declaraciones está diseñado para rastrear y analizar declaraciones públicas a lo largo del tiempo. Agrupa declaraciones por tema, permite comparación temporal y enlaza citas con su contexto original — permitiendo a los analistas identificar posibles cambios o contradicciones en las posiciones públicas de un actor.",
+        "El sistema está diseñado para señalar divergencias sin interpretación editorial, preservando el contexto original y permitiendo a los usuarios sacar sus propias conclusiones."
+      ],
+      "highlights": [
+        { "value": "16", "label": "Categorías temáticas" },
+        { "value": "N/A", "label": "Actores rastreados" },
+        { "value": "N/A", "label": "Declaraciones indexadas" },
+        { "value": "N/A", "label": "Período cubierto" }
+      ],
+      "howItWorks": [
+        {
+          "title": "Recopilación y clasificación de declaraciones",
+          "body": "Las declaraciones públicas de múltiples fuentes se ingestan, limpian y clasifican automáticamente en categorías temáticas. Cada declaración se vincula a su autor, fecha, fuente y contexto original."
+        },
+        {
+          "title": "Comparación temporal",
+          "body": "El sistema permite la comparación lado a lado de declaraciones del mismo actor sobre el mismo tema en diferentes períodos de tiempo. Esto permite a los analistas rastrear cómo evolucionan las posiciones e identificar posibles inconsistencias."
+        },
+        {
+          "title": "Señalización de divergencias",
+          "body": "Cuando se detectan posibles divergencias entre declaraciones sobre el mismo tema, el sistema las señala para revisión — sin asignar interpretación. Los usuarios pueden examinar el contexto original de cada declaración para evaluar la relevancia de cualquier cambio."
+        }
+      ],
+      "sources": {
+        "description": "El sistema está diseñado para ingestar declaraciones de múltiples tipos de fuentes públicas:",
+        "items": [
+          { "type": "Conferencias de prensa y discursos", "candidates": "Variable", "detail": "Apariciones públicas transcritas y con marca de tiempo" },
+          { "type": "Documentos publicados", "candidates": "Variable", "detail": "Documentos de política, declaraciones oficiales e informes" },
+          { "type": "Entrevistas en medios", "candidates": "Variable", "detail": "Entrevistas impresas, en radio/TV y digitales" }
+        ]
+      },
+      "limitations": [
+        "Etapa de prototipo: la arquitectura del sistema está definida pero aún no se ha desplegado con un dataset completo.",
+        "La detección de declaraciones depende de una atribución y fechado precisos de las fuentes, lo cual no siempre está disponible.",
+        "La detección de divergencias es basada en patrones y no evalúa intención o contexto más allá de lo explícitamente declarado.",
+        "La cobertura depende de la disponibilidad y accesibilidad de registros públicos de los actores rastreados."
+      ]
+    }
   },
   "lang": {
     "switchLabel": "EN",

@@ -1,0 +1,53 @@
+---
+interface Props {
+  items: { value: string; label: string }[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="highlights">
+  {items.map((item) => (
+    <div class="highlights__item">
+      <span class="highlights__value">{item.value}</span>
+      <span class="highlights__label">{item.label}</span>
+    </div>
+  ))}
+</div>
+
+<style>
+  .highlights {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .highlights__item {
+    background: var(--color-section-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-lg);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .highlights__value {
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+    color: var(--color-accent);
+    line-height: var(--lh-tight);
+  }
+
+  .highlights__label {
+    font-size: var(--fs-sm);
+    color: var(--color-text-secondary);
+  }
+
+  @media (min-width: 768px) {
+    .highlights {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+</style>

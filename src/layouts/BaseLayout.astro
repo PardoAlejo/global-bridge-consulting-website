@@ -1,7 +1,7 @@
 ---
 import '../styles/global.css';
 import '../styles/layout.css';
-import { getAlternateLang, getLocalizedPath } from '../i18n/utils';
+import { getAlternateLang } from '../i18n/utils';
 import type { Lang } from '../i18n/utils';
 
 interface Props {
@@ -12,8 +12,11 @@ interface Props {
 
 const { title, description, lang } = Astro.props;
 const altLang = getAlternateLang(lang);
-const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
-const altUrl = new URL(getLocalizedPath(altLang), Astro.site);
+const pathname = Astro.url.pathname;
+const altPathname = pathname.replace(`/${lang}/`, `/${altLang}/`);
+const enPathname = lang === 'en' ? pathname : altPathname;
+const esPathname = lang === 'es' ? pathname : altPathname;
+const canonicalUrl = new URL(pathname, Astro.site);
 ---
 
 <!doctype html>
@@ -29,9 +32,9 @@ const altUrl = new URL(getLocalizedPath(altLang), Astro.site);
 
     <!-- Canonical & hreflang -->
     <link rel="canonical" href={canonicalUrl.href} />
-    <link rel="alternate" hreflang="en" href={new URL('/en/', Astro.site).href} />
-    <link rel="alternate" hreflang="es" href={new URL('/es/', Astro.site).href} />
-    <link rel="alternate" hreflang="x-default" href={new URL('/en/', Astro.site).href} />
+    <link rel="alternate" hreflang="en" href={new URL(enPathname, Astro.site).href} />
+    <link rel="alternate" hreflang="es" href={new URL(esPathname, Astro.site).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL(enPathname, Astro.site).href} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />

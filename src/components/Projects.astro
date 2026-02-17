@@ -1,6 +1,6 @@
 ---
 import type { Lang } from '../i18n/utils';
-import { useTranslations } from '../i18n/utils';
+import { useTranslations, getProjectPath } from '../i18n/utils';
 import SectionContainer from './SectionContainer.astro';
 import ProjectCard from './ProjectCard.astro';
 
@@ -27,6 +27,8 @@ const t = useTranslations(lang);
         outcome={project.outcome}
         status={project.status}
         statusKey={project.statusKey}
+        href={getProjectPath(lang, project.slug)}
+        linkLabel={t.projects.viewProject}
       />
     ))}
   </div>

@@ -1,0 +1,89 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations, getLocalizedPath } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+  title: string;
+  subtitle: string;
+  status: string;
+  statusKey: string;
+}
+
+const { lang, title, subtitle, status, statusKey } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<div class="project-header">
+  <a href={getLocalizedPath(lang, 'projects')} class="project-header__back">
+    &larr; {t.projectDetail.backToProjects}
+  </a>
+  <div class="project-header__meta">
+    <span class:list={['project-header__badge', `project-header__badge--${statusKey}`]}>
+      {status}
+    </span>
+  </div>
+  <h1 class="project-header__title">{title}</h1>
+  <p class="project-header__subtitle">{subtitle}</p>
+</div>
+
+<style>
+  .project-header {
+    padding-top: var(--space-2xl);
+  }
+
+  .project-header__back {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-medium);
+    color: var(--color-accent);
+    margin-bottom: var(--space-xl);
+    transition: color var(--transition-fast);
+  }
+
+  .project-header__back:hover {
+    color: var(--color-accent-dark);
+  }
+
+  .project-header__meta {
+    margin-bottom: var(--space-md);
+  }
+
+  .project-header__badge {
+    display: inline-block;
+    padding: 0.2rem 0.75rem;
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .project-header__badge--pilot {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+
+  .project-header__badge--completed {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  .project-header__badge--prototype {
+    background-color: #e2e3f1;
+    color: #383d6e;
+  }
+
+  .project-header__title {
+    margin-bottom: var(--space-sm);
+  }
+
+  .project-header__subtitle {
+    font-size: var(--fs-md);
+    color: var(--color-text-secondary);
+    max-width: 720px;
+    line-height: var(--lh-normal);
+  }
+</style>

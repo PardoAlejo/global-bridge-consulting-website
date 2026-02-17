@@ -1,0 +1,29 @@
+---
+interface Props {
+  title: string;
+  alt?: boolean;
+}
+
+const { title, alt = false } = Astro.props;
+---
+
+<section class:list={['project-section', { 'project-section--alt': alt }]}>
+  <div class="container">
+    <h2 class="project-section__title">{title}</h2>
+    <slot />
+  </div>
+</section>
+
+<style>
+  .project-section {
+    padding: var(--space-2xl) 0;
+  }
+
+  .project-section--alt {
+    background-color: var(--color-section-alt);
+  }
+
+  .project-section__title {
+    margin-bottom: var(--space-xl);
+  }
+</style>

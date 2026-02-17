@@ -5,9 +5,10 @@ import LanguageSwitcher from './LanguageSwitcher.astro';
 
 interface Props {
   lang: Lang;
+  currentPath?: string;
 }
 
-const { lang } = Astro.props;
+const { lang, currentPath } = Astro.props;
 const t = useTranslations(lang);
 ---
 
@@ -24,7 +25,7 @@ const t = useTranslations(lang);
         <a href={getLocalizedPath(lang, 'projects')} class="navbar__link">{t.nav.projects}</a>
       </nav>
       <div class="navbar__actions">
-        <LanguageSwitcher lang={lang} />
+        <LanguageSwitcher lang={lang} currentPath={currentPath} />
         <a href={getLocalizedPath(lang, 'contact')} class="navbar__cta">{t.nav.contact}</a>
       </div>
     </div>
