@@ -10,41 +10,30 @@
     "contact": "Contact"
   },
   "hero": {
-    "headline": "We structure evidence for better decisions.",
-    "subheadline": "We design systems that transform fragmented information — documents, data, interviews, and archives — into organized, comparable, and traceable knowledge that supports responsible decision-making.",
+    "headline": "We bridge the gap between information and informed decisions.",
+    "subheadline": "We build intelligent systems that transform fragmented documents, data, interviews, and archives into structured, traceable knowledge — enabling institutions and organizations to make transparent, evidence-based decisions.",
     "ctaPrimary": "Explore projects",
     "ctaSecondary": "Contact us"
   },
   "whoWeAre": {
     "title": "Who we are",
-    "body": "We are a consultancy focused on structuring evidence in complex environments.",
-    "bodyExtended": "We combine expertise in information systems, data science, and institutional analysis to transform fragmented information into clear, verifiable tools. Our focus is not technology for its own sake, but the quality, traceability, and usefulness of evidence.",
-    "mission": "To design rigorous systems that organize and connect evidence, enabling better-informed decisions.",
-    "missionLabel": "Mission",
-    "bullets": [
-      "Organization of complex information",
-      "Comparative and analytical systems",
-      "Neutrality and methodological rigor"
-    ],
-    "principlesTitle": "Our principles",
-    "principles": [
-      "References and source links",
-      "Version control and update timestamps",
-      "Coverage and uncertainty signals",
-      "Methodological validation"
-    ],
-    "closing": "We operate under a clear principle: structure evidence without advocacy. Our systems prioritize traceability, context, and clarity. When information is incomplete or limited, it is explicitly indicated.",
+    "body": "We are a consultancy dedicated to structuring evidence in environments where information is abundant but understanding is scarce. We combine expertise in data systems and information architecture with experience in governance, economic analysis, and historical documentation. Our work transforms fragmented sources into coherent, traceable systems — prioritizing neutrality, rigor, and clarity over noise and narrative.",
     "teamTitle": "Our team",
     "team": [
       {
-        "name": "[Founder Name]",
+        "name": "Santiago Pardo González",
         "role": "Co-founder",
-        "bio": "PhD in AI and data systems. Experience building information structuring, search, analysis, and decision-support systems. Focus on end-to-end design, quality, and traceability."
+        "image": "/assets/santiago.jpeg",
+        "imagePosition": "55% 55%",
+        "imageScale": 2.5,
+        "bio": "Economist with a Master's from Universidad de los Andes. Spent four years at the World Justice Project, contributing to 26 country reports on rule of law across Latin America and co-leading data validation for 110 regions in the European Union. Previously coordinated analysis for the human rights chapter of Colombia's Truth Commission Final Report. At Global Bridge, he defines evidence criteria, institutional framing, and analytical methodology."
       },
       {
-        "name": "[Founder Name]",
+        "name": "Alejandro Pardo González",
         "role": "Co-founder",
-        "bio": "Economist with experience in governance, indicators, and historical evidence. Four years at the World Justice Project. Previous work at Colombia's Truth Commission on evidence collection and organization. Focus on institutional problem interpretation, evidence criteria, and neutrality."
+        "image": "/assets/Alejandro-Pardo.png",
+        "imagePosition": "top center 60%",
+        "bio": "Ph.D. and M.S. in Computer Science from KAUST (Saudi Arabia), with previous experience at Intel and Adobe building AI systems for data processing and analysis. His research on artificial intelligence has been published at the leading international conferences of AI and machine learning. At Global Bridge, he designs the technical architecture behind our evidence tools — from data ingestion to search and delivery."
       }
     ]
   },

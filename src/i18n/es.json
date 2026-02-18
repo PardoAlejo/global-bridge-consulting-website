@@ -10,41 +10,30 @@
     "contact": "Contacto"
   },
   "hero": {
-    "headline": "Estructuramos evidencia para mejores decisiones.",
-    "subheadline": "Diseñamos sistemas que convierten información dispersa — documentos, datos, entrevistas y archivos — en conocimiento organizado, comparable y trazable para apoyar decisiones responsables.",
+    "headline": "Conectamos la información con decisiones informadas.",
+    "subheadline": "Construimos sistemas inteligentes que transforman documentos, datos, entrevistas y archivos fragmentados en conocimiento estructurado y trazable — permitiendo a instituciones y organizaciones tomar decisiones transparentes y basadas en evidencia.",
     "ctaPrimary": "Explorar proyectos",
     "ctaSecondary": "Contactar"
   },
   "whoWeAre": {
     "title": "Quiénes somos",
-    "body": "Somos una consultoría enfocada en estructurar evidencia en entornos complejos.",
-    "bodyExtended": "Combinamos experiencia en sistemas de información, ciencia de datos y análisis institucional para transformar información fragmentada en herramientas claras y verificables. Nuestro enfoque no es la tecnología por sí misma, sino la calidad, trazabilidad y utilidad de la evidencia.",
-    "mission": "Diseñar sistemas rigurosos que organicen y conecten evidencia, facilitando decisiones mejor informadas.",
-    "missionLabel": "Misión",
-    "bullets": [
-      "Organización de información compleja",
-      "Sistemas de comparación y análisis",
-      "Neutralidad y rigor metodológico"
-    ],
-    "principlesTitle": "Nuestros principios",
-    "principles": [
-      "Referencias y enlaces a fuentes",
-      "Control de versiones y fechas",
-      "Señales de cobertura e incertidumbre",
-      "Validación y revisión metodológica"
-    ],
-    "closing": "Trabajamos bajo un principio claro: estructurar evidencia sin agenda. Nuestras herramientas priorizan la trazabilidad, el contexto y la claridad. Cuando la información es limitada o incompleta, lo indicamos explícitamente.",
+    "body": "Somos una consultoría dedicada a estructurar evidencia en entornos donde la información abunda pero la comprensión escasea. Combinamos experiencia en sistemas de datos y arquitectura de información con trayectoria en gobernanza, análisis económico y documentación histórica. Nuestro trabajo transforma fuentes fragmentadas en sistemas coherentes y trazables — priorizando neutralidad, rigor y claridad por encima del ruido y la narrativa.",
     "teamTitle": "Nuestro equipo",
     "team": [
       {
-        "name": "[Nombre del fundador]",
+        "name": "Santiago Pardo González",
         "role": "Cofundador",
-        "bio": "PhD en IA y sistemas de datos. Experiencia construyendo sistemas de estructuración de información, búsqueda, análisis y herramientas de decisión. Enfoque en diseño end-to-end, calidad y trazabilidad."
+        "image": "/assets/santiago.jpeg",
+        "imagePosition": "55% 55%",
+        "imageScale": 2.5,
+        "bio": "Economista con Maestría de la Universidad de los Andes. Trabajó cuatro años en el World Justice Project, contribuyendo a 26 reportes de país sobre estado de derecho en América Latina y co-liderando la validación de datos para 110 regiones de la Unión Europea. Previamente coordinó el análisis para el capítulo de violaciones a los derechos humanos del Informe Final de la Comisión de la Verdad de Colombia. En Global Bridge, define los criterios de evidencia, el marco institucional y la metodología analítica."
       },
       {
-        "name": "[Nombre del fundador]",
+        "name": "Alejandro Pardo González",
         "role": "Cofundador",
-        "bio": "Economista con experiencia en gobernanza, indicadores y evidencia histórica. Cuatro años en el World Justice Project. Trabajo previo en la Comisión de la Verdad de Colombia en recolección y organización de evidencia. Enfoque en interpretación institucional del problema, criterios de evidencia y neutralidad."
+        "image": "/assets/Alejandro-Pardo.png",
+        "imagePosition": "top center 20%",
+        "bio": "Ph.D. y M.S. en Ciencias de la Computación de KAUST (Arabia Saudita), con experiencia previa en Intel y Adobe construyendo sistemas de inteligencia artificial para procesamiento y análisis de datos. Su investigación en inteligencia artificial ha sido publicada en las principales conferencias internacionales de IA y aprendizaje automático. En Global Bridge, diseña la arquitectura técnica detrás de nuestras herramientas de evidencia — desde la ingesta de datos hasta la búsqueda y entrega."
       }
     ]
   },

@@ -17,162 +17,67 @@ const t = useTranslations(lang);
   </div>
 
   <div class="who-we-are">
-    <div class="who-we-are__body">
-      <p>{t.whoWeAre.body}</p>
-      <p>{t.whoWeAre.bodyExtended}</p>
-    </div>
+    <p class="who-we-are__body">{t.whoWeAre.body}</p>
 
-    <blockquote class="who-we-are__mission">
-      <span class="who-we-are__mission-label">{t.whoWeAre.missionLabel}</span>
-      {t.whoWeAre.mission}
-    </blockquote>
-
-    <ul class="who-we-are__bullets">
-      {t.whoWeAre.bullets.map((bullet) => (
-        <li>{bullet}</li>
+    <div class="who-we-are__team">
+      {t.whoWeAre.team.map((member) => (
+        <div class="who-we-are__member">
+          {member.image && (
+            <div class="who-we-are__member-photo">
+              <img
+                src={member.image}
+                alt={member.name}
+                loading="lazy"
+                style={`object-position: ${member.imagePosition || 'center center'}; transform: scale(${member.imageScale || 1}); transform-origin: ${member.imagePosition || 'center center'}`}
+              />
+            </div>
+          )}
+          <span class="who-we-are__member-name">{member.name}</span>
+          <span class="who-we-are__member-role">{member.role}</span>
+          <p class="who-we-are__member-bio">{member.bio}</p>
+        </div>
       ))}
-    </ul>
-
-    <div class="who-we-are__principles">
-      <h3 class="who-we-are__principles-title">{t.whoWeAre.principlesTitle}</h3>
-      <div class="who-we-are__principles-grid">
-        {t.whoWeAre.principles.map((principle) => (
-          <div class="who-we-are__principle">{principle}</div>
-        ))}
-      </div>
     </div>
 
     <p class="who-we-are__closing">{t.whoWeAre.closing}</p>
-
-    <div class="who-we-are__team">
-      <h3 class="who-we-are__team-title">{t.whoWeAre.teamTitle}</h3>
-      <div class="who-we-are__team-grid">
-        {t.whoWeAre.team.map((member) => (
-          <div class="who-we-are__member">
-            <div class="who-we-are__member-header">
-              <span class="who-we-are__member-name">{member.name}</span>
-              <span class="who-we-are__member-role">{member.role}</span>
-            </div>
-            <p class="who-we-are__member-bio">{member.bio}</p>
-          </div>
-        ))}
-      </div>
-    </div>
   </div>
 </SectionContainer>
 
 <style>
   .who-we-are__body {
     max-width: 720px;
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-md);
-    margin-bottom: var(--space-xl);
-  }
-
-  .who-we-are__mission {
-    position: relative;
-    padding: var(--space-lg) var(--space-xl);
-    margin-bottom: var(--space-xl);
-    background-color: var(--color-section-alt);
-    border-left: 3px solid var(--color-accent);
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-    font-size: var(--fs-md);
-    color: var(--color-text);
-    line-height: var(--lh-snug);
-    max-width: 720px;
-  }
-
-  .who-we-are__mission-label {
-    display: block;
-    font-size: var(--fs-xs);
-    font-weight: var(--fw-semibold);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-accent);
-    margin-bottom: var(--space-xs);
-  }
-
-  .who-we-are__bullets {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-sm);
+    color: var(--color-text-secondary);
     margin-bottom: var(--space-2xl);
-    max-width: 720px;
-  }
-
-  .who-we-are__bullets li {
-    position: relative;
-    padding-left: var(--space-lg);
-    color: var(--color-text-secondary);
-  }
-
-  .who-we-are__bullets li::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.6em;
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: var(--color-accent);
-  }
-
-  .who-we-are__principles {
-    margin-bottom: var(--space-2xl);
-  }
-
-  .who-we-are__principles-title {
-    font-size: var(--fs-lg);
-    margin-bottom: var(--space-lg);
-  }
-
-  .who-we-are__principles-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-md);
-  }
-
-  .who-we-are__principle {
-    padding: var(--space-md) var(--space-lg);
-    border-left: 3px solid var(--color-accent);
-    background-color: var(--color-section-alt);
-    border-radius: 0 var(--border-radius) var(--border-radius) 0;
-    font-size: var(--fs-sm);
-    color: var(--color-text-secondary);
-  }
-
-  .who-we-are__closing {
-    max-width: 720px;
-    color: var(--color-text-secondary);
   }
 
   .who-we-are__team {
-    margin-top: var(--space-2xl);
-  }
-
-  .who-we-are__team-title {
-    font-size: var(--fs-lg);
-    margin-bottom: var(--space-lg);
-  }
-
-  .who-we-are__team-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
   }
 
   .who-we-are__member {
     padding: var(--space-xl);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-lg);
-  }
-
-  .who-we-are__member-header {
     display: flex;
     flex-direction: column;
     gap: 0.125rem;
-    margin-bottom: var(--space-md);
+  }
+
+  .who-we-are__member-photo {
+    width: 140px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: var(--space-sm);
+  }
+
+  .who-we-are__member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .who-we-are__member-name {
@@ -185,6 +90,7 @@ const t = useTranslations(lang);
     font-size: var(--fs-sm);
     font-weight: var(--fw-medium);
     color: var(--color-accent);
+    margin-bottom: var(--space-sm);
   }
 
   .who-we-are__member-bio {
@@ -193,12 +99,16 @@ const t = useTranslations(lang);
     line-height: var(--lh-normal);
   }
 
-  @media (min-width: 768px) {
-    .who-we-are__principles-grid {
-      grid-template-columns: 1fr 1fr;
-    }
+  .who-we-are__closing {
+    max-width: 720px;
+    font-size: var(--fs-md);
+    font-weight: var(--fw-medium);
+    color: var(--color-text);
+    line-height: var(--lh-snug);
+  }
 
-    .who-we-are__team-grid {
+  @media (min-width: 768px) {
+    .who-we-are__team {
       grid-template-columns: 1fr 1fr;
     }
   }

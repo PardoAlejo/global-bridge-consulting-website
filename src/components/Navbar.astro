@@ -15,7 +15,7 @@ const t = useTranslations(lang);
 <header class="navbar" id="navbar">
   <div class="container navbar__inner">
     <a href={getLocalizedPath(lang)} class="navbar__logo" aria-label="Global Bridge — Home">
-      <img src="/assets/logo.svg" alt="Global Bridge" width="160" height="32" />
+      <img src="/assets/global_bridge_logo.png" alt="Global Bridge" class="navbar__logo-img" />
     </a>
 
     <div class="navbar__menu" id="nav-menu">
@@ -77,11 +77,15 @@ const t = useTranslations(lang);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 64px;
+    height: 72px;
   }
 
   .navbar__logo img {
     display: block;
+  }
+
+  .navbar__logo-img {
+    height: 52px;
   }
 
   .navbar__menu {

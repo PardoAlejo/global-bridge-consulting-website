@@ -13,6 +13,7 @@ const year = new Date().getFullYear();
 
 <footer class="footer">
   <div class="container footer__inner">
+    <img src="/assets/global_bridge_logo.png" alt="Global Bridge" class="footer__logo" />
     <p class="footer__copyright">&copy; {year} {t.footer.copyright}</p>
     <a href={`mailto:${t.footer.email}`} class="footer__email">{t.footer.email}</a>
   </div>
@@ -30,6 +31,11 @@ const year = new Date().getFullYear();
     gap: var(--space-sm);
     align-items: center;
     text-align: center;
+  }
+
+  .footer__logo {
+    height: 80px;
+    margin-bottom: var(--space-sm);
   }
 
   .footer__copyright {
