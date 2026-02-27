@@ -64,30 +64,6 @@ const currentPath = getProjectPath(lang, slug!);
       </div>
     </ProjectSection>
 
-    <ProjectSection title={labels.sourcesTitle} alt>
-      <p class="sources-desc">{project.sources.description}</p>
-      <div class="sources-table-wrapper">
-        <table class="sources-table">
-          <thead>
-            <tr>
-              <th>Tipo de fuente</th>
-              <th>Cobertura</th>
-              <th>Detalle</th>
-            </tr>
-          </thead>
-          <tbody>
-            {project.sources.items.map((item: { type: string; candidates: string; detail: string }) => (
-              <tr>
-                <td>{item.type}</td>
-                <td>{item.candidates}</td>
-                <td>{item.detail}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-    </ProjectSection>
-
     <ProjectSection title={labels.screenshotsTitle}>
       <div class="screenshots-grid">
         {project.screenshots && project.screenshots.length > 0 ? (
@@ -152,38 +128,6 @@ const currentPath = getProjectPath(lang, slug!);
     line-height: var(--lh-normal);
     color: var(--color-text-secondary);
     max-width: 720px;
-  }
-
-  .sources-desc {
-    margin-bottom: var(--space-lg);
-    color: var(--color-text-secondary);
-  }
-
-  .sources-table-wrapper {
-    overflow-x: auto;
-  }
-
-  .sources-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: var(--fs-sm);
-  }
-
-  .sources-table th,
-  .sources-table td {
-    text-align: left;
-    padding: var(--space-sm) var(--space-md);
-    border-bottom: 1px solid var(--color-border);
-  }
-
-  .sources-table th {
-    font-weight: var(--fw-semibold);
-    color: var(--color-text);
-    white-space: nowrap;
-  }
-
-  .sources-table td {
-    color: var(--color-text-secondary);
   }
 
   .live-link {

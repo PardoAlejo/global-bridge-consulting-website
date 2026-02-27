@@ -244,8 +244,8 @@
         "Rather than static tables or reports, the dashboard provides dynamic visualizations that allow users to compare countries, identify trends, and export findings for further analysis or reporting."
       ],
       "screenshots": [
-        "/assets/screenshots/roli-dashboard-1.png",
-        "/assets/screenshots/roli-dashboard-2.png"
+        "/assets/screenshots/roli-dashboard-1.jpeg",
+        "/assets/screenshots/roli-dashboard-2.jpeg"
       ],
       "highlights": [
         { "value": "140+", "label": "Countries indexed" },
