@@ -79,4 +79,4 @@ When writing or editing any user-facing copy:
 
 ## Contact
 
-- Email: contacto@globalbridge.co
+- Email: contact@globalbridge.consulting

@@ -26,14 +26,16 @@
         "image": "/assets/santiago.jpeg",
         "imagePosition": "55% 55%",
         "imageScale": 2.5,
-        "bio": "Economista con Maestría de la Universidad de los Andes. Trabajó cuatro años en el World Justice Project, contribuyendo a 26 reportes de país sobre estado de derecho en América Latina y co-liderando la validación de datos para 110 regiones de la Unión Europea. Previamente coordinó el análisis para el capítulo de violaciones a los derechos humanos del Informe Final de la Comisión de la Verdad de Colombia. En Global Bridge, define los criterios de evidencia, el marco institucional y la metodología analítica."
+        "bio": "Economista con Maestría de la Universidad de los Andes. Trabajó cuatro años en el World Justice Project, contribuyendo a 26 reportes de país sobre estado de derecho en América Latina y co-liderando la validación de datos para 110 regiones de la Unión Europea. Previamente coordinó el análisis para el capítulo de violaciones a los derechos humanos del Informe Final de la Comisión de la Verdad de Colombia. En Global Bridge, define los criterios de evidencia, el marco institucional y la metodología analítica.",
+        "email": "santiago.pardo@globalbridge.consulting"
       },
       {
         "name": "Alejandro Pardo González",
         "role": "Cofundador",
         "image": "/assets/Alejandro-Pardo.png",
         "imagePosition": "top center 20%",
-        "bio": "Ph.D. y M.S. en Ciencias de la Computación de KAUST (Arabia Saudita), con experiencia previa en Intel y Adobe construyendo sistemas de inteligencia artificial para procesamiento y análisis de datos. Su investigación en inteligencia artificial ha sido publicada en las principales conferencias internacionales de IA y aprendizaje automático. En Global Bridge, diseña la arquitectura técnica detrás de nuestras herramientas de evidencia — desde la ingesta de datos hasta la búsqueda y entrega."
+        "bio": "Ph.D. y M.S. en Ciencias de la Computación de KAUST (Arabia Saudita), con experiencia previa en Intel y Adobe construyendo sistemas de inteligencia artificial para procesamiento y análisis de datos. Su investigación en inteligencia artificial ha sido publicada en las principales conferencias internacionales de IA y aprendizaje automático. En Global Bridge, diseña la arquitectura técnica detrás de nuestras herramientas de evidencia — desde la ingesta de datos hasta la búsqueda y entrega.",
+        "email": "alejandro.pardo@globalbridge.consulting"
       }
     ]
   },
@@ -131,7 +133,7 @@
   "contact": {
     "title": "Contacto",
     "body": "Si trabajas con información compleja y necesitas estructurarla para facilitar análisis o toma de decisiones, podemos ayudarte.",
-    "email": "contacto@globalbridge.co",
+    "email": "contact@globalbridge.consulting",
     "cta": "Agendar llamada",
     "form": {
       "name": "Nombre",
@@ -151,7 +153,7 @@
   },
   "footer": {
     "copyright": "Global Bridge Consultancy. Todos los derechos reservados.",
-    "email": "contacto@globalbridge.co"
+    "email": "contact@globalbridge.consulting"
   },
   "projectDetail": {
     "backToProjects": "Volver a proyectos",

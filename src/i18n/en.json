@@ -26,14 +26,16 @@
         "image": "/assets/santiago.jpeg",
         "imagePosition": "55% 55%",
         "imageScale": 2.5,
-        "bio": "Economist with a Master's from Universidad de los Andes. Spent four years at the World Justice Project, contributing to 26 country reports on rule of law across Latin America and co-leading data validation for 110 regions in the European Union. Previously coordinated analysis for the human rights chapter of Colombia's Truth Commission Final Report. At Global Bridge, he defines evidence criteria, institutional framing, and analytical methodology."
+        "bio": "Economist with a Master's from Universidad de los Andes. Spent four years at the World Justice Project, contributing to 26 country reports on rule of law across Latin America and co-leading data validation for 110 regions in the European Union. Previously coordinated analysis for the human rights chapter of Colombia's Truth Commission Final Report. At Global Bridge, he defines evidence criteria, institutional framing, and analytical methodology.",
+        "email": "santiago.pardo@globalbridge.consulting"
       },
       {
         "name": "Alejandro Pardo González",
         "role": "Co-founder",
         "image": "/assets/Alejandro-Pardo.png",
         "imagePosition": "top center 60%",
-        "bio": "Ph.D. and M.S. in Computer Science from KAUST (Saudi Arabia), with previous experience at Intel and Adobe building AI systems for data processing and analysis. His research on artificial intelligence has been published at the leading international conferences of AI and machine learning. At Global Bridge, he designs the technical architecture behind our evidence tools — from data ingestion to search and delivery."
+        "bio": "Ph.D. and M.S. in Computer Science from KAUST (Saudi Arabia), with previous experience at Intel and Adobe building AI systems for data processing and analysis. His research on artificial intelligence has been published at the leading international conferences of AI and machine learning. At Global Bridge, he designs the technical architecture behind our evidence tools — from data ingestion to search and delivery.",
+        "email": "alejandro.pardo@globalbridge.consulting"
       }
     ]
   },
@@ -131,7 +133,7 @@
   "contact": {
     "title": "Contact",
     "body": "If you work with complex information and need to structure it for analysis or decision-making, we can help.",
-    "email": "contact@globalbridge.co",
+    "email": "contact@globalbridge.consulting",
     "cta": "Schedule a call",
     "form": {
       "name": "Name",
@@ -151,7 +153,7 @@
   },
   "footer": {
     "copyright": "Global Bridge Consultancy. All rights reserved.",
-    "email": "contact@globalbridge.co"
+    "email": "contact@globalbridge.consulting"
   },
   "projectDetail": {
     "backToProjects": "Back to projects",

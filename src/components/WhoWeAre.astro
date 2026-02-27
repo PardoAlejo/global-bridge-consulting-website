@@ -35,6 +35,9 @@ const t = useTranslations(lang);
           <span class="who-we-are__member-name">{member.name}</span>
           <span class="who-we-are__member-role">{member.role}</span>
           <p class="who-we-are__member-bio">{member.bio}</p>
+          {member.email && (
+            <a href={`mailto:${member.email}`} class="who-we-are__member-email">{member.email}</a>
+          )}
         </div>
       ))}
     </div>
@@ -97,6 +100,17 @@ const t = useTranslations(lang);
     font-size: var(--fs-sm);
     color: var(--color-text-secondary);
     line-height: var(--lh-normal);
+  }
+
+  .who-we-are__member-email {
+    font-size: var(--fs-sm);
+    color: var(--color-accent);
+    margin-top: var(--space-sm);
+    transition: color var(--transition-fast);
+  }
+
+  .who-we-are__member-email:hover {
+    color: var(--color-accent-dark);
   }
 
   .who-we-are__closing {

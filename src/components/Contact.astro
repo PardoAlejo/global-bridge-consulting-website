@@ -22,7 +22,8 @@ const t = useTranslations(lang);
       <a href={`mailto:${t.contact.email}`} class="contact__email">{t.contact.email}</a>
     </div>
 
-    <form class="contact__form" action="" method="POST">
+    <form class="contact__form" name="contact" method="POST" data-netlify="true">
+      <input type="hidden" name="form-name" value="contact" />
       <div class="contact__field">
         <label for="name">{t.contact.form.name}</label>
         <input type="text" id="name" name="name" required />

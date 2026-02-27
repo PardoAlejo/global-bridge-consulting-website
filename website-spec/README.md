@@ -136,3 +136,8 @@ Use placeholders for:
 Primary language: Spanish.
 
 Structure code so English version could be added later.
+
+
+# Contact
+
+contact@globalbridge.consulting
