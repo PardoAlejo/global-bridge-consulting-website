@@ -186,14 +186,14 @@
       ],
       "highlights": [
         { "value": "24", "label": "Candidatos cubiertos" },
-        { "value": "2.400+", "label": "Fragmentos de texto indexados" },
-        { "value": "8", "label": "Tipos de fuente" },
-        { "value": "67", "label": "Documentos procesados" }
+        { "value": "92", "label": "Documentos procesados" },
+        { "value": "10", "label": "Tipos de fuente" },
+        { "value": "16", "label": "Categorías temáticas" }
       ],
       "howItWorks": [
         {
           "title": "Recopilación y estructuración de información",
-          "body": "El sistema ingesta información de múltiples tipos de fuente: propuestas de campaña publicadas (web y PDF), transcripciones de entrevistas en video con marcas de tiempo del programa \"Candidatos al Tablero\" de Caracol (23 candidatos), y artículos y entrevistas de seis medios colombianos. Cada fuente se procesa, limpia y divide en fragmentos de texto enfocados (~800 caracteres) con metadatos completos: candidato, tema, fuente y ubicación (número de página o marca de tiempo del video)."
+          "body": "El sistema ingesta información de múltiples tipos de fuente: propuestas de campaña publicadas (web y PDF) de 2 candidatos, transcripciones de entrevistas en video con marcas de tiempo del programa \"Candidatos al Tablero\" de Caracol (23 candidatos), artículos y entrevistas de ocho medios colombianos, y biografías de los 24 candidatos. Cada fuente se procesa, limpia y divide en fragmentos de texto enfocados (~800 caracteres) con metadatos completos: candidato, tema, fuente y ubicación (número de página o marca de tiempo del video)."
         },
         {
           "title": "Clasificación temática y búsqueda",
@@ -208,16 +208,17 @@
         "description": "La información proviene de múltiples tipos de fuente, cubriendo 24 candidatos:",
         "items": [
           { "type": "Propuestas estructuradas + entrevista + medios", "candidates": "2", "detail": "Sergio Fajardo, Paloma Valencia" },
-          { "type": "Entrevista en video + medios", "candidates": "14", "detail": "Enrique Peñalosa, Juan Daniel Oviedo, Roy Barreras, David Luna y otros" },
-          { "type": "Solo entrevista en video", "candidates": "5", "detail": "Daniel Palacios, Leonardo Huerta, Maurice Armitage y otros" },
+          { "type": "Entrevista en video + múltiples medios", "candidates": "8", "detail": "Enrique Peñalosa, Juan Daniel Oviedo, Roy Barreras, David Luna y otros" },
+          { "type": "Entrevista en video + un medio", "candidates": "9", "detail": "Claudia López, Juan Fernando Cristo, Juan Manuel Galán y otros" },
+          { "type": "Solo entrevista en video", "candidates": "4", "detail": "Daniel Palacios, Leonardo Huerta, Maurice Armitage, Santiago Botero" },
           { "type": "Solo medios", "candidates": "1", "detail": "Iván Cepeda" }
         ]
       },
       "limitations": [
-        "Cobertura desigual: solo 2 de los 24 candidatos tienen propuestas estructuradas publicadas. Los demás se cubren a través de entrevistas y artículos de medios.",
+        "Cobertura desigual: solo 2 de los 24 candidatos tienen propuestas estructuradas publicadas. Los demás se cubren a través de entrevistas y artículos de medios, que ofrecen menos detalle programático.",
         "Calidad de transcripciones: las transcripciones automáticas de video pueden tener errores, especialmente con nombres propios o términos técnicos.",
         "Información en constante cambio: las propuestas de los candidatos pueden cambiar. El sistema refleja lo publicado al momento de la última actualización.",
-        "Cobertura de medios variable: la cantidad de artículos por candidato varía según la disponibilidad de fuentes."
+        "Cobertura de medios variable: la cantidad de artículos por candidato varía según la disponibilidad de fuentes. Algunos candidatos tienen cobertura de 3–4 medios, otros de solo uno."
       ]
     },
     "roli-dashboard": {

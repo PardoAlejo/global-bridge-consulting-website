@@ -186,14 +186,14 @@
       ],
       "highlights": [
         { "value": "24", "label": "Candidates covered" },
-        { "value": "2,400+", "label": "Text fragments indexed" },
-        { "value": "8", "label": "Source types" },
-        { "value": "67", "label": "Documents processed" }
+        { "value": "92", "label": "Documents processed" },
+        { "value": "10", "label": "Source types" },
+        { "value": "16", "label": "Topic categories" }
       ],
       "howItWorks": [
         {
           "title": "Information collection and structuring",
-          "body": "The system ingests information from multiple source types: published campaign proposals (web and PDF), video interview transcriptions with timestamps from Caracol's \"Candidatos al Tablero\" program (23 candidates), and articles and interviews from six Colombian media outlets. Each source is parsed, cleaned, and broken into focused text fragments (~800 characters) with full metadata: candidate, topic, source, and location (page number or video timestamp)."
+          "body": "The system ingests information from multiple source types: published campaign proposals (web and PDF) from 2 candidates, video interview transcriptions with timestamps from Caracol's \"Candidatos al Tablero\" program (23 candidates), articles and interviews from eight Colombian media outlets, and factual biographies for all 24 candidates. Each source is parsed, cleaned, and broken into focused text fragments (~800 characters) with full metadata: candidate, topic, source, and location (page number or video timestamp)."
         },
         {
           "title": "Thematic classification and search",
@@ -208,16 +208,17 @@
         "description": "Information comes from multiple source types across 24 candidates:",
         "items": [
           { "type": "Structured proposals + interview + media", "candidates": "2", "detail": "Sergio Fajardo, Paloma Valencia" },
-          { "type": "Video interview + media", "candidates": "14", "detail": "Enrique Peñalosa, Juan Daniel Oviedo, Roy Barreras, David Luna, and others" },
-          { "type": "Video interview only", "candidates": "5", "detail": "Daniel Palacios, Leonardo Huerta, Maurice Armitage, and others" },
+          { "type": "Video interview + multiple media outlets", "candidates": "8", "detail": "Enrique Peñalosa, Juan Daniel Oviedo, Roy Barreras, David Luna, and others" },
+          { "type": "Video interview + one media outlet", "candidates": "9", "detail": "Claudia López, Juan Fernando Cristo, Juan Manuel Galán, and others" },
+          { "type": "Video interview only", "candidates": "4", "detail": "Daniel Palacios, Leonardo Huerta, Maurice Armitage, Santiago Botero" },
           { "type": "Media only", "candidates": "1", "detail": "Iván Cepeda" }
         ]
       },
       "limitations": [
-        "Uneven coverage: only 2 of 24 candidates have structured published proposals. Others are covered through interviews and media articles.",
+        "Uneven coverage: only 2 of 24 candidates have structured published proposals. Others are covered through interviews and media articles, which offer less structured policy detail.",
         "Transcription quality: automatic video transcriptions may contain errors, especially with proper names or technical terms.",
         "Information changes over time: candidate proposals may evolve. The system reflects what was published at the time of the last data update.",
-        "Variable media coverage: the number of articles per candidate varies depending on source availability."
+        "Variable media coverage: the number of articles per candidate varies depending on source availability. Some candidates have coverage from 3–4 media outlets, others from only one."
       ]
     },
     "roli-dashboard": {
