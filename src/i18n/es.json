@@ -165,7 +165,8 @@
     "limitationsTitle": "Limitaciones y transparencia",
     "screenshotPlaceholder": "Captura próximamente",
     "ctaText": "¿Interesado en un sistema similar?",
-    "ctaButton": "Contáctenos"
+    "ctaButton": "Contáctenos",
+    "liveLabel": "Probar en vivo"
   },
   "projectDetails": {
     "presidential-assistant": {
@@ -177,31 +178,36 @@
         "title": "Asistente Presidencial",
         "subtitle": "Colombia 2026 — Sistema de preguntas y comparación sobre propuestas y entrevistas, con acceso trazable a fuentes originales.",
         "status": "Piloto",
-        "statusKey": "pilot"
+        "statusKey": "pilot",
+        "liveUrl": "https://huggingface.co/spaces/pardoalejo/presidencial-chatbot"
       },
       "overview": [
-        "Este sistema permite hacerle preguntas en lenguaje natural sobre las propuestas y posiciones de los candidatos a la presidencia de Colombia 2026. Por ejemplo: \"¿Qué propone Sergio Fajardo sobre seguridad?\" o \"¿Qué diferencias hay entre Paloma Valencia y Claudia López en educación?\"",
-        "El sistema busca la información más relevante entre todo lo que los candidatos han dicho o publicado, y genera una respuesta en lenguaje natural con referencias a las fuentes originales — páginas web, PDFs con número de página, o videos de YouTube con marcas de tiempo exactas.",
-        "El objetivo es proporcionar acceso estructurado y verificable a declaraciones públicas sin interpretación editorial. Cuando la información es incompleta o no está disponible para un candidato, el sistema lo indica explícitamente."
+        "Con 24 candidatos en la carrera presidencial de Colombia 2026, los votantes enfrentan un volumen abrumador de propuestas, entrevistas y cobertura mediática. Este sistema permite hacer preguntas en lenguaje natural y obtener respuestas fundamentadas exclusivamente en lo que los candidatos han dicho — con cada afirmación vinculada a su fuente original.",
+        "El sistema busca entre 92 documentos procesados — propuestas de campaña publicadas, transcripciones de entrevistas en video y artículos de medios — y genera una respuesta con referencias numeradas. Cada referencia enlaza a la fuente exacta: una página web, un PDF con número de página, o un video de YouTube en el segundo preciso donde el candidato hizo esa declaración.",
+        "El objetivo no es decirle a los votantes qué pensar. Es darles acceso estructurado y verificable a lo que los candidatos han dicho, y dejar que ellos decidan."
+      ],
+      "screenshots": [
+        "/assets/screenshots/presidential-assistant-1.png",
+        "/assets/screenshots/presidential-assistant-2.png"
       ],
       "highlights": [
         { "value": "24", "label": "Candidatos cubiertos" },
         { "value": "92", "label": "Documentos procesados" },
-        { "value": "10", "label": "Tipos de fuente" },
+        { "value": "8", "label": "Medios de comunicación" },
         { "value": "16", "label": "Categorías temáticas" }
       ],
       "howItWorks": [
         {
           "title": "Recopilación y estructuración de información",
-          "body": "El sistema ingesta información de múltiples tipos de fuente: propuestas de campaña publicadas (web y PDF) de 2 candidatos, transcripciones de entrevistas en video con marcas de tiempo del programa \"Candidatos al Tablero\" de Caracol (23 candidatos), artículos y entrevistas de ocho medios colombianos, y biografías de los 24 candidatos. Cada fuente se procesa, limpia y divide en fragmentos de texto enfocados (~800 caracteres) con metadatos completos: candidato, tema, fuente y ubicación (número de página o marca de tiempo del video)."
+          "body": "El sistema ingesta información de múltiples tipos de fuente: propuestas de campaña publicadas (web y PDF) de 2 candidatos, transcripciones de entrevistas en video con marcas de tiempo del programa \"Candidatos al Tablero\" de Caracol (23 candidatos), artículos y entrevistas de ocho medios colombianos (44 videos cubriendo 14 candidatos), y biografías de los 24 candidatos. Cada fuente se procesa, limpia y divide en fragmentos de texto enfocados (~800 caracteres) con metadatos completos: candidato, tema, URL de la fuente y ubicación (número de página o marca de tiempo del video). Estos metadatos son los que hacen posible los enlaces de citación — cada fragmento lleva su procedencia."
         },
         {
-          "title": "Clasificación temática y búsqueda",
-          "body": "Todos los fragmentos se clasifican automáticamente en 16 categorías temáticas (seguridad, salud, educación, economía, etc.) usando similaridad semántica. Cuando un usuario hace una pregunta, el sistema detecta los candidatos mencionados, identifica el tema relevante y realiza una búsqueda en tres capas: filtrado exacto por metadatos, coincidencia por palabras clave con expansión de sinónimos, y búsqueda semántica por significado. Los resultados se combinan con una puntuación mixta. Para comparaciones entre candidatos, el sistema asegura representación equilibrada."
+          "title": "Clasificación de consultas y búsqueda",
+          "body": "Cada pregunta entrante se clasifica en uno de cinco modos — consultas sobre candidatos específicos, comparaciones temáticas amplias, solicitudes de biografía, preguntas sobre metadatos del sistema, o preguntas vagas — cada uno activando una estrategia de recuperación diferente con salvaguardas de confianza específicas. Las preguntas vagas o subjetivas se interceptan antes de llegar al modelo de lenguaje, evitando respuestas especulativas. Para consultas contestables, todos los fragmentos se clasifican en 16 categorías temáticas y el sistema ejecuta una búsqueda en tres capas: filtrado exacto por metadatos, coincidencia por palabras clave con expansión de sinónimos, y búsqueda semántica por significado. Al comparar candidatos, la recuperación se equilibra para que los candidatos con más material publicado no dominen los resultados."
         },
         {
-          "title": "Generación de respuesta con atribución de fuentes",
-          "body": "Los fragmentos encontrados se pasan a un modelo de lenguaje que genera una respuesta en lenguaje natural. Cada afirmación se cita con una referencia numerada que enlaza a la fuente original. El modelo tiene instrucciones de responder solo con lo que dicen las fuentes, organizar comparaciones por candidato y ser transparente sobre vacíos de información. Debajo de cada respuesta, los usuarios pueden hacer clic para ir a la página web original, la página del PDF o el minuto exacto del video."
+          "title": "Generación de respuestas fundamentadas",
+          "body": "Los fragmentos recuperados se pasan a un modelo de lenguaje que opera bajo instrucciones estrictas: cada afirmación factual debe llevar una citación numerada vinculada a un fragmento fuente, el modelo debe basar su respuesta exclusivamente en los fragmentos proporcionados, y tiene explícitamente prohibido expresar preferencias o clasificaciones sobre candidatos. Cuando falta información sobre un candidato, el sistema lo indica en lugar de llenar vacíos. Debajo de cada respuesta, las citaciones se resuelven en enlaces clicables — páginas web, páginas de PDF con número de página, o videos de YouTube en la marca de tiempo exacta donde el candidato hizo esa declaración."
         }
       ],
       "sources": {
@@ -230,11 +236,16 @@
         "title": "Dashboard ROLI",
         "subtitle": "Rule of Law Index — Herramienta analítica interactiva para explorar indicadores, comparar países y analizar tendencias.",
         "status": "Desarrollado",
-        "statusKey": "completed"
+        "statusKey": "completed",
+        "liveUrl": "https://roli-dashboard.vercel.app/"
       },
       "overview": [
         "El Dashboard ROLI es una herramienta analítica interactiva construida para hacer accesibles y explorables los datos del Rule of Law Index del World Justice Project. Permite a investigadores, analistas y responsables de políticas examinar indicadores de gobernanza entre países y a lo largo del tiempo.",
         "En lugar de tablas o informes estáticos, el dashboard provee visualizaciones dinámicas que permiten comparar países, identificar tendencias y exportar hallazgos para análisis o reportes adicionales."
+      ],
+      "screenshots": [
+        "/assets/screenshots/roli-dashboard-1.png",
+        "/assets/screenshots/roli-dashboard-2.png"
       ],
       "highlights": [
         { "value": "140+", "label": "Países indexados" },

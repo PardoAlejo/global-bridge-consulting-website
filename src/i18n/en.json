@@ -165,7 +165,8 @@
     "limitationsTitle": "Limitations and transparency",
     "screenshotPlaceholder": "Screenshot coming soon",
     "ctaText": "Interested in a similar system?",
-    "ctaButton": "Get in touch"
+    "ctaButton": "Get in touch",
+    "liveLabel": "Try it live"
   },
   "projectDetails": {
     "presidential-assistant": {
@@ -177,31 +178,36 @@
         "title": "Presidential Evidence Assistant",
         "subtitle": "Colombia 2026 — A question-and-comparison system over proposals and interviews, with traceable links to original sources.",
         "status": "Pilot",
-        "statusKey": "pilot"
+        "statusKey": "pilot",
+        "liveUrl": "https://huggingface.co/spaces/pardoalejo/presidencial-chatbot"
       },
       "overview": [
-        "This system allows anyone to ask questions in natural language about the proposals and positions of Colombia's 2026 presidential candidates. For example: \"What does Sergio Fajardo propose about security?\" or \"What are the differences between Paloma Valencia and Claudia López on education?\"",
-        "The system searches across everything the candidates have said or published, and generates a response in natural language with references to the original sources — web pages, PDFs with page numbers, or YouTube videos with exact timestamps.",
-        "The goal is to provide structured, verifiable access to public statements without editorial interpretation. When information is incomplete or unavailable for a candidate, the system says so explicitly."
+        "With 24 candidates in Colombia's 2026 presidential race, voters face an overwhelming volume of proposals, interviews, and media coverage. This system lets anyone ask questions in natural language and get answers grounded entirely in what the candidates have actually said — with every claim linked back to its original source.",
+        "The system searches across 92 processed documents — published campaign proposals, video interview transcripts, and media articles — and generates a response with numbered references. Each reference links to the exact source: a web page, a PDF with page number, or a YouTube video at the precise second where the candidate made that statement.",
+        "The goal is not to tell voters what to think. It is to give them structured, verifiable access to what the candidates have said, and let them decide for themselves."
+      ],
+      "screenshots": [
+        "/assets/screenshots/presidential-assistant-1.png",
+        "/assets/screenshots/presidential-assistant-2.png"
       ],
       "highlights": [
         { "value": "24", "label": "Candidates covered" },
         { "value": "92", "label": "Documents processed" },
-        { "value": "10", "label": "Source types" },
+        { "value": "8", "label": "Media outlets" },
         { "value": "16", "label": "Topic categories" }
       ],
       "howItWorks": [
         {
           "title": "Information collection and structuring",
-          "body": "The system ingests information from multiple source types: published campaign proposals (web and PDF) from 2 candidates, video interview transcriptions with timestamps from Caracol's \"Candidatos al Tablero\" program (23 candidates), articles and interviews from eight Colombian media outlets, and factual biographies for all 24 candidates. Each source is parsed, cleaned, and broken into focused text fragments (~800 characters) with full metadata: candidate, topic, source, and location (page number or video timestamp)."
+          "body": "The system ingests information from multiple source types: published campaign proposals (web and PDF) from 2 candidates, video interview transcriptions with timestamps from Caracol's \"Candidatos al Tablero\" program (23 candidates), articles and interviews from eight Colombian media outlets (44 videos across 14 candidates), and factual biographies for all 24 candidates. Each source is parsed, cleaned, and broken into focused text fragments (~800 characters) with full metadata: candidate, topic, source URL, and location (page number or video timestamp). This metadata is what makes the citation links possible — every fragment carries its provenance."
         },
         {
-          "title": "Thematic classification and search",
-          "body": "All fragments are automatically classified into 16 thematic categories (security, health, education, economy, etc.) using semantic similarity. When a user asks a question, the system detects the mentioned candidates, identifies the relevant topic, and performs a three-layer search: exact metadata filtering, keyword matching with synonym expansion, and semantic search by meaning. Results are combined with a mixed score. For comparisons between candidates, the system ensures balanced representation across all mentioned candidates."
+          "title": "Query classification and search",
+          "body": "Every incoming question is classified into one of five modes — specific candidate queries, broad topic comparisons, biography requests, system metadata questions, or vague questions — each triggering a different retrieval strategy with specific trust safeguards. Vague or subjective questions are intercepted before reaching the language model, preventing speculative responses. For answerable queries, all fragments are classified into 16 thematic categories and the system runs a three-layer search: exact metadata filtering, keyword matching with synonym expansion, and semantic search by meaning. When comparing candidates, retrieval is balanced so that candidates with more published material do not dominate results."
         },
         {
-          "title": "Response generation with source attribution",
-          "body": "The retrieved fragments are passed to a language model that generates a natural-language response. Every claim is cited with a numbered reference linking back to the original source. The model is instructed to respond only with what the sources say, organize comparisons by candidate, and be transparent about information gaps. Below each response, users can click through to the original web page, PDF page, or exact video timestamp."
+          "title": "Grounded response generation",
+          "body": "Retrieved fragments are passed to a language model operating under strict instructions: every factual statement must carry a numbered citation linking to a source fragment, the model must base its answer exclusively on the provided fragments, and it is explicitly prohibited from expressing preferences or rankings about candidates. When information is missing for a candidate, the system says so rather than filling gaps. Below each response, citations resolve to clickable links — web pages, PDF pages with page numbers, or YouTube videos at the exact timestamp where the candidate made that statement."
         }
       ],
       "sources": {
@@ -230,11 +236,16 @@
         "title": "ROLI Dashboard",
         "subtitle": "Rule of Law Index — An interactive analytical tool for exploring indicators, comparing countries, and analyzing trends.",
         "status": "Completed",
-        "statusKey": "completed"
+        "statusKey": "completed",
+        "liveUrl": "https://roli-dashboard.vercel.app/"
       },
       "overview": [
         "The ROLI Dashboard is an interactive analytical tool built to make the World Justice Project's Rule of Law Index data accessible and explorable. It enables researchers, analysts, and policymakers to examine governance indicators across countries and over time.",
         "Rather than static tables or reports, the dashboard provides dynamic visualizations that allow users to compare countries, identify trends, and export findings for further analysis or reporting."
+      ],
+      "screenshots": [
+        "/assets/screenshots/roli-dashboard-1.png",
+        "/assets/screenshots/roli-dashboard-2.png"
       ],
       "highlights": [
         { "value": "140+", "label": "Countries indexed" },
