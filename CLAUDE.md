@@ -80,3 +80,8 @@ When writing or editing any user-facing copy:
 ## Contact
 
 - Email: contact@globalbridge.consulting
+
+
+## Purchased domain
+
+globalbridge.consulting

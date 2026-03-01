@@ -162,6 +162,7 @@
     "howItWorksTitle": "Cómo funciona",
     "sourcesTitle": "Fuentes de datos",
     "screenshotsTitle": "Capturas de pantalla",
+    "inActionTitle": "En acción",
     "limitationsTitle": "Limitaciones y transparencia",
     "screenshotPlaceholder": "Captura próximamente",
     "ctaText": "¿Interesado en un sistema similar?",
@@ -182,49 +183,113 @@
         "liveUrl": "https://huggingface.co/spaces/pardoalejo/presidencial-chatbot"
       },
       "overview": [
-        "Con 24 candidatos en la carrera presidencial de Colombia 2026, los votantes enfrentan un volumen abrumador de propuestas, entrevistas y cobertura mediática. Este sistema permite hacer preguntas en lenguaje natural y obtener respuestas fundamentadas exclusivamente en lo que los candidatos han dicho — con cada afirmación vinculada a su fuente original.",
-        "El sistema busca entre 92 documentos procesados — propuestas de campaña publicadas, transcripciones de entrevistas en video y artículos de medios — y genera una respuesta con referencias numeradas. Cada referencia enlaza a la fuente exacta: una página web, un PDF con número de página, o un video de YouTube en el segundo preciso donde el candidato hizo esa declaración.",
-        "El objetivo no es decirle a los votantes qué pensar. Es darles acceso estructurado y verificable a lo que los candidatos han dicho, y dejar que ellos decidan."
+        "Con 24 candidatos en la carrera presidencial de Colombia 2026, los votantes enfrentan un volumen abrumador de propuestas, entrevistas y cobertura mediática. Este sistema permite hacer preguntas en lenguaje natural y obtener respuestas fundamentadas exclusivamente en lo que los candidatos han dicho — con cada afirmación vinculada a su fuente original."
       ],
       "screenshots": [
         "/assets/screenshots/presidential-assistant-1.png",
         "/assets/screenshots/presidential-assistant-2.png"
       ],
+      "screenshotCaptions": [
+        "Página de inicio — consultas de ejemplo y límites del sistema claramente mostrados",
+        "Conversación con citaciones numeradas y enlaces trazables a fuentes originales"
+      ],
       "highlights": [
         { "value": "24", "label": "Candidatos cubiertos" },
         { "value": "92", "label": "Documentos procesados" },
-        { "value": "8", "label": "Medios de comunicación" },
-        { "value": "16", "label": "Categorías temáticas" }
+        { "value": "67", "label": "Fuentes originales" },
+        { "value": "16", "label": "Categorías temáticas" },
+        { "value": "8", "label": "Medios de comunicación" }
       ],
+      "trustPrinciples": {
+        "title": "Diseñado para la confianza",
+        "items": [
+          {
+            "title": "Citaciones trazables",
+            "body": "Cada afirmación lleva una referencia [N] que enlaza a un video de YouTube en el segundo exacto, un PDF en la página específica, o la página web original."
+          },
+          {
+            "title": "Sin opiniones ni rankings",
+            "body": "El sistema nunca clasifica candidatos ni dice que una propuesta es mejor. Presenta lo que cada candidato dijo y deja que el usuario decida."
+          },
+          {
+            "title": "Recuperación equilibrada",
+            "body": "Las comparaciones garantizan representación justa — candidatos con más material publicado no dominan los resultados."
+          },
+          {
+            "title": "Vacíos transparentes",
+            "body": "Cuando falta información, el sistema lo indica explícitamente en lugar de fabricar o llenar vacíos."
+          }
+        ]
+      },
       "howItWorks": [
         {
-          "title": "Recopilación y estructuración de información",
-          "body": "El sistema ingesta información de múltiples tipos de fuente: propuestas de campaña publicadas (web y PDF) de 2 candidatos, transcripciones de entrevistas en video con marcas de tiempo del programa \"Candidatos al Tablero\" de Caracol (23 candidatos), artículos y entrevistas de ocho medios colombianos (44 videos cubriendo 14 candidatos), y biografías de los 24 candidatos. Cada fuente se procesa, limpia y divide en fragmentos de texto enfocados (~800 caracteres) con metadatos completos: candidato, tema, URL de la fuente y ubicación (número de página o marca de tiempo del video). Estos metadatos son los que hacen posible los enlaces de citación — cada fragmento lleva su procedencia."
+          "title": "1. Recopilar y estructurar",
+          "body": "Propuestas de campaña, transcripciones de video (con marcas de tiempo) y artículos de medios se procesan en fragmentos de ~800 caracteres, cada uno etiquetado con candidato, tema, URL y ubicación precisa."
         },
         {
-          "title": "Clasificación de consultas y búsqueda",
-          "body": "Cada pregunta entrante se clasifica en uno de cinco modos — consultas sobre candidatos específicos, comparaciones temáticas amplias, solicitudes de biografía, preguntas sobre metadatos del sistema, o preguntas vagas — cada uno activando una estrategia de recuperación diferente con salvaguardas de confianza específicas. Las preguntas vagas o subjetivas se interceptan antes de llegar al modelo de lenguaje, evitando respuestas especulativas. Para consultas contestables, todos los fragmentos se clasifican en 16 categorías temáticas y el sistema ejecuta una búsqueda en tres capas: filtrado exacto por metadatos, coincidencia por palabras clave con expansión de sinónimos, y búsqueda semántica por significado. Al comparar candidatos, la recuperación se equilibra para que los candidatos con más material publicado no dominen los resultados."
+          "title": "2. Clasificar y buscar",
+          "body": "Cada consulta se clasifica en uno de cinco modos (ver abajo), luego pasa por filtrado de metadatos, coincidencia por palabras clave con expansión de sinónimos, y búsqueda semántica."
         },
         {
-          "title": "Generación de respuestas fundamentadas",
-          "body": "Los fragmentos recuperados se pasan a un modelo de lenguaje que opera bajo instrucciones estrictas: cada afirmación factual debe llevar una citación numerada vinculada a un fragmento fuente, el modelo debe basar su respuesta exclusivamente en los fragmentos proporcionados, y tiene explícitamente prohibido expresar preferencias o clasificaciones sobre candidatos. Cuando falta información sobre un candidato, el sistema lo indica en lugar de llenar vacíos. Debajo de cada respuesta, las citaciones se resuelven en enlaces clicables — páginas web, páginas de PDF con número de página, o videos de YouTube en la marca de tiempo exacta donde el candidato hizo esa declaración."
+          "title": "3. Generar con citaciones",
+          "body": "Un modelo de lenguaje genera una respuesta donde cada afirmación debe llevar una citación numerada. Sin opiniones, sin rankings, y divulgación explícita cuando falta información."
         }
       ],
-      "sources": {
-        "description": "La información proviene de múltiples tipos de fuente, cubriendo 24 candidatos:",
-        "items": [
-          { "type": "Propuestas estructuradas + entrevista + medios", "candidates": "2", "detail": "Sergio Fajardo, Paloma Valencia" },
-          { "type": "Entrevista en video + múltiples medios", "candidates": "8", "detail": "Enrique Peñalosa, Juan Daniel Oviedo, Roy Barreras, David Luna y otros" },
-          { "type": "Entrevista en video + un medio", "candidates": "9", "detail": "Claudia López, Juan Fernando Cristo, Juan Manuel Galán y otros" },
-          { "type": "Solo entrevista en video", "candidates": "4", "detail": "Daniel Palacios, Leonardo Huerta, Maurice Armitage, Santiago Botero" },
-          { "type": "Solo medios", "candidates": "1", "detail": "Iván Cepeda" }
+      "operationModes": {
+        "title": "Cinco modos de consulta",
+        "description": "Cada pregunta se clasifica antes de cualquier recuperación. Cada modo activa una estrategia diferente con salvaguardas de confianza específicas.",
+        "columns": ["Modo", "Se activa cuando", "Ejemplo", "Salvaguarda"],
+        "modes": [
+          {
+            "mode": "Específico",
+            "trigger": "El usuario nombra un candidato",
+            "example": "\"¿Qué propone Fajardo sobre salud?\"",
+            "safeguard": "Cada afirmación debe citar su fuente"
+          },
+          {
+            "mode": "Amplio",
+            "trigger": "Tema sin nombrar candidato",
+            "example": "\"¿Qué proponen los candidatos sobre educación?\"",
+            "safeguard": "Resultados equilibrados para que ningún candidato domine"
+          },
+          {
+            "mode": "Biografía",
+            "trigger": "El usuario pregunta quién es alguien",
+            "example": "\"¿Quién es Claudia López?\"",
+            "safeguard": "Solo hechos — nombre, trayectoria, partido"
+          },
+          {
+            "mode": "Meta",
+            "trigger": "El usuario pregunta qué hay disponible",
+            "example": "\"¿Qué candidatos tienen?\"",
+            "safeguard": "Lista factual pura, sin recuperación"
+          },
+          {
+            "mode": "Vago",
+            "trigger": "Pregunta demasiado general o subjetiva",
+            "example": "\"Cuéntame sobre las elecciones\"",
+            "safeguard": "Se niega a responder, redirige a consulta específica"
+          }
+        ]
+      },
+      "sourceBreakdown": {
+        "title": "Fuentes y cobertura",
+        "description": "Información de 67 fuentes originales a través de 24 candidatos, procesada en 92 documentos:",
+        "columns": ["Tipo de fuente", "Fuentes", "Candidatos"],
+        "rows": [
+          { "type": "Propuestas publicadas (PDF/web)", "sources": "11", "candidates": "2" },
+          { "type": "Candidatos al Tablero (video)", "sources": "23", "candidates": "23" },
+          { "type": "El Colombiano (medios)", "sources": "24", "candidates": "14" },
+          { "type": "Semana (medios)", "sources": "15", "candidates": "15" },
+          { "type": "Otros medios (5 fuentes)", "sources": "5", "candidates": "1" },
+          { "type": "Biografías de candidatos", "sources": "24", "candidates": "24" }
         ]
       },
       "limitations": [
-        "Cobertura desigual: solo 2 de los 24 candidatos tienen propuestas estructuradas publicadas. Los demás se cubren a través de entrevistas y artículos de medios, que ofrecen menos detalle programático.",
-        "Calidad de transcripciones: las transcripciones automáticas de video pueden tener errores, especialmente con nombres propios o términos técnicos.",
-        "Información en constante cambio: las propuestas de los candidatos pueden cambiar. El sistema refleja lo publicado al momento de la última actualización.",
-        "Cobertura de medios variable: la cantidad de artículos por candidato varía según la disponibilidad de fuentes. Algunos candidatos tienen cobertura de 3–4 medios, otros de solo uno."
+        "Cobertura desigual: solo 2 de los 24 candidatos tienen propuestas estructuradas publicadas.",
+        "Calidad de transcripciones: las transcripciones automáticas de video pueden tener errores.",
+        "Información cambiante: el sistema refleja lo publicado al momento de la última actualización.",
+        "Cobertura de medios variable: algunos candidatos tienen 3–4 medios, otros solo uno."
       ]
     },
     "roli-dashboard": {

@@ -23,6 +23,8 @@ const t = useTranslations(lang);
 const project = t.projectDetails[slug as keyof typeof t.projectDetails];
 const labels = t.projectDetail;
 const currentPath = getProjectPath(lang, slug!);
+
+const hasScreenshotCaptions = project.screenshotCaptions && project.screenshots && project.screenshots.length > 0;
 ---
 
 <BaseLayout title={project.meta.title} description={project.meta.description} lang={lang}>
@@ -38,22 +40,45 @@ const currentPath = getProjectPath(lang, slug!);
       />
     </div>
 
+    <!-- Overview + inline first screenshot -->
     <ProjectSection title={labels.overviewTitle}>
       <div class="prose">
         {project.overview.map((p: string) => <p>{p}</p>)}
-        {project.header.liveUrl && (
-          <a href={project.header.liveUrl} target="_blank" rel="noopener noreferrer" class="live-link">
-            {labels.liveLabel} &rarr;
-          </a>
-        )}
       </div>
+      {hasScreenshotCaptions && (
+        <figure class="inline-screenshot">
+          <img src={project.screenshots[0]} alt={project.screenshotCaptions[0]} class="screenshot-img" loading="lazy" />
+          <figcaption>{project.screenshotCaptions[0]}</figcaption>
+        </figure>
+      )}
+      {project.header.liveUrl && (
+        <a href={project.header.liveUrl} target="_blank" rel="noopener noreferrer" class="live-link">
+          {labels.liveLabel} &rarr;
+        </a>
+      )}
     </ProjectSection>
 
+    <!-- Key figures -->
     <ProjectSection title={labels.highlightsTitle} alt>
       <ProjectHighlights items={project.highlights} />
     </ProjectSection>
 
-    <ProjectSection title={labels.howItWorksTitle}>
+    <!-- Trust principles (conditional) -->
+    {project.trustPrinciples && (
+      <ProjectSection title={project.trustPrinciples.title}>
+        <div class="trust-grid">
+          {project.trustPrinciples.items.map((item: { title: string; body: string }) => (
+            <div class="trust-card">
+              <h3 class="trust-card__title">{item.title}</h3>
+              <p class="trust-card__body">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </ProjectSection>
+    )}
+
+    <!-- How it works -->
+    <ProjectSection title={labels.howItWorksTitle} alt={!!project.trustPrinciples}>
       <div class="how-it-works">
         {project.howItWorks.map((section: { title: string; body: string }) => (
           <div class="how-it-works__item">
@@ -64,21 +89,86 @@ const currentPath = getProjectPath(lang, slug!);
       </div>
     </ProjectSection>
 
-    <ProjectSection title={labels.screenshotsTitle}>
-      <div class="screenshots-grid">
-        {project.screenshots && project.screenshots.length > 0 ? (
-          project.screenshots.map((src: string, i: number) => (
-            <img src={src} alt={`${project.header.title} screenshot ${i + 1}`} class="screenshot-img" loading="lazy" />
-          ))
-        ) : (
-          <>
-            <ScreenshotPlaceholder label={labels.screenshotPlaceholder} />
-            <ScreenshotPlaceholder label={labels.screenshotPlaceholder} />
-          </>
-        )}
-      </div>
-    </ProjectSection>
+    <!-- Operation modes table (conditional) -->
+    {project.operationModes && (
+      <ProjectSection title={project.operationModes.title}>
+        <p class="section-desc">{project.operationModes.description}</p>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                {project.operationModes.columns.map((col: string) => <th>{col}</th>)}
+              </tr>
+            </thead>
+            <tbody>
+              {project.operationModes.modes.map((m: { mode: string; trigger: string; example: string; safeguard: string }) => (
+                <tr>
+                  <td><strong>{m.mode}</strong></td>
+                  <td>{m.trigger}</td>
+                  <td class="example-cell">{m.example}</td>
+                  <td>{m.safeguard}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </ProjectSection>
+    )}
 
+    <!-- In action: second screenshot with caption (conditional) -->
+    {hasScreenshotCaptions && project.screenshots[1] && (
+      <ProjectSection title={labels.inActionTitle} alt>
+        <figure class="inline-screenshot inline-screenshot--full">
+          <img src={project.screenshots[1]} alt={project.screenshotCaptions[1]} class="screenshot-img" loading="lazy" />
+          <figcaption>{project.screenshotCaptions[1]}</figcaption>
+        </figure>
+      </ProjectSection>
+    )}
+
+    <!-- Source breakdown table (conditional) -->
+    {project.sourceBreakdown && (
+      <ProjectSection title={project.sourceBreakdown.title}>
+        <p class="section-desc">{project.sourceBreakdown.description}</p>
+        <div class="table-wrapper">
+          <table class="data-table">
+            <thead>
+              <tr>
+                {project.sourceBreakdown.columns.map((col: string) => <th>{col}</th>)}
+              </tr>
+            </thead>
+            <tbody>
+              {project.sourceBreakdown.rows.map((row: { type: string; sources: string; candidates: string }) => (
+                <tr>
+                  <td>{row.type}</td>
+                  <td class="num-cell">{row.sources}</td>
+                  <td class="num-cell">{row.candidates}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </ProjectSection>
+    )}
+
+    <!-- Fallback: screenshots section for projects WITHOUT captions -->
+    {!hasScreenshotCaptions && (
+      <ProjectSection title={labels.screenshotsTitle}>
+        <div class="screenshots-grid">
+          {project.screenshots && project.screenshots.length > 0 ? (
+            project.screenshots.map((src: string, i: number) => (
+              <img src={src} alt={`${project.header.title} screenshot ${i + 1}`} class="screenshot-img" loading="lazy" />
+            ))
+          ) : (
+            <>
+              <ScreenshotPlaceholder label={labels.screenshotPlaceholder} />
+              <ScreenshotPlaceholder label={labels.screenshotPlaceholder} />
+            </>
+          )}
+        </div>
+      </ProjectSection>
+    )}
+
+    <!-- Limitations -->
     <ProjectSection title={labels.limitationsTitle} alt>
       <ul class="limitations-list">
         {project.limitations.map((item: string) => (
@@ -114,6 +204,57 @@ const currentPath = getProjectPath(lang, slug!);
     color: var(--color-text-secondary);
   }
 
+  /* Inline screenshots with captions */
+  .inline-screenshot {
+    margin-top: var(--space-xl);
+    max-width: 900px;
+  }
+
+  .inline-screenshot--full {
+    max-width: 100%;
+  }
+
+  .inline-screenshot figcaption {
+    margin-top: var(--space-sm);
+    font-size: var(--fs-sm);
+    color: var(--color-text-secondary);
+    text-align: center;
+    font-style: italic;
+  }
+
+  /* Trust principles grid */
+  .trust-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  @media (min-width: 768px) {
+    .trust-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .trust-card {
+    background: var(--color-section-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-lg);
+  }
+
+  .trust-card__title {
+    font-size: var(--fs-md);
+    font-weight: var(--fw-semibold);
+    margin-bottom: var(--space-xs);
+  }
+
+  .trust-card__body {
+    font-size: var(--fs-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--lh-normal);
+  }
+
+  /* How it works */
   .how-it-works {
     display: flex;
     flex-direction: column;
@@ -130,6 +271,64 @@ const currentPath = getProjectPath(lang, slug!);
     max-width: 720px;
   }
 
+  /* Section description text */
+  .section-desc {
+    color: var(--color-text-secondary);
+    line-height: var(--lh-normal);
+    margin-bottom: var(--space-lg);
+    max-width: 720px;
+  }
+
+  /* Data tables */
+  .table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--fs-sm);
+    min-width: 600px;
+  }
+
+  .data-table th {
+    text-align: left;
+    font-weight: var(--fw-semibold);
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 2px solid var(--color-border);
+    white-space: nowrap;
+    color: var(--color-text);
+  }
+
+  .data-table td {
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    line-height: var(--lh-snug);
+    vertical-align: top;
+  }
+
+  .data-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .data-table tbody tr:hover {
+    background-color: var(--color-section-alt);
+  }
+
+  .example-cell {
+    font-style: italic;
+    font-size: var(--fs-xs);
+  }
+
+  .num-cell {
+    text-align: center;
+    font-weight: var(--fw-semibold);
+    color: var(--color-accent);
+  }
+
+  /* Live link button */
   .live-link {
     display: inline-flex;
     align-items: center;
@@ -142,6 +341,7 @@ const currentPath = getProjectPath(lang, slug!);
     border-radius: var(--border-radius);
     transition: background-color var(--transition-fast);
     width: fit-content;
+    margin-top: var(--space-lg);
   }
 
   .live-link:hover {
@@ -149,6 +349,7 @@ const currentPath = getProjectPath(lang, slug!);
     background-color: var(--color-accent-dark);
   }
 
+  /* Screenshots grid (fallback for projects without captions) */
   .screenshots-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -167,6 +368,7 @@ const currentPath = getProjectPath(lang, slug!);
     }
   }
 
+  /* Limitations list */
   .limitations-list {
     display: flex;
     flex-direction: column;
@@ -193,6 +395,7 @@ const currentPath = getProjectPath(lang, slug!);
     background-color: var(--color-accent);
   }
 
+  /* CTA section */
   .project-cta {
     padding: var(--space-3xl) 0;
   }

@@ -47,7 +47,7 @@ const { items } = Astro.props;
 
   @media (min-width: 768px) {
     .highlights {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     }
   }
 </style>

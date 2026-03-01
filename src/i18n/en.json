@@ -162,6 +162,7 @@
     "howItWorksTitle": "How it works",
     "sourcesTitle": "Data sources",
     "screenshotsTitle": "Screenshots",
+    "inActionTitle": "In action",
     "limitationsTitle": "Limitations and transparency",
     "screenshotPlaceholder": "Screenshot coming soon",
     "ctaText": "Interested in a similar system?",
@@ -182,49 +183,113 @@
         "liveUrl": "https://huggingface.co/spaces/pardoalejo/presidencial-chatbot"
       },
       "overview": [
-        "With 24 candidates in Colombia's 2026 presidential race, voters face an overwhelming volume of proposals, interviews, and media coverage. This system lets anyone ask questions in natural language and get answers grounded entirely in what the candidates have actually said — with every claim linked back to its original source.",
-        "The system searches across 92 processed documents — published campaign proposals, video interview transcripts, and media articles — and generates a response with numbered references. Each reference links to the exact source: a web page, a PDF with page number, or a YouTube video at the precise second where the candidate made that statement.",
-        "The goal is not to tell voters what to think. It is to give them structured, verifiable access to what the candidates have said, and let them decide for themselves."
+        "With 24 candidates in Colombia's 2026 presidential race, voters face an overwhelming volume of proposals, interviews, and media coverage. This system lets anyone ask questions in natural language and get answers grounded entirely in what the candidates have actually said — with every claim linked back to its original source."
       ],
       "screenshots": [
         "/assets/screenshots/presidential-assistant-1.png",
         "/assets/screenshots/presidential-assistant-2.png"
       ],
+      "screenshotCaptions": [
+        "Landing page — example queries and system boundaries clearly displayed",
+        "Multi-turn conversation with numbered citations and traceable source links"
+      ],
       "highlights": [
         { "value": "24", "label": "Candidates covered" },
         { "value": "92", "label": "Documents processed" },
-        { "value": "8", "label": "Media outlets" },
-        { "value": "16", "label": "Topic categories" }
+        { "value": "67", "label": "Original sources" },
+        { "value": "16", "label": "Topic categories" },
+        { "value": "8", "label": "Media outlets" }
       ],
+      "trustPrinciples": {
+        "title": "Designed for trust",
+        "items": [
+          {
+            "title": "Traceable citations",
+            "body": "Every claim carries a [N] reference linking to a YouTube video at the exact second, a PDF at the page number, or the original web page."
+          },
+          {
+            "title": "No opinions or rankings",
+            "body": "The system never ranks candidates or says one proposal is better. It presents what each candidate said and lets the user decide."
+          },
+          {
+            "title": "Balanced retrieval",
+            "body": "Comparisons guarantee fair representation — candidates with more published material don't dominate the results."
+          },
+          {
+            "title": "Transparent gaps",
+            "body": "When information is missing, the system says so explicitly rather than fabricating or filling in gaps."
+          }
+        ]
+      },
       "howItWorks": [
         {
-          "title": "Information collection and structuring",
-          "body": "The system ingests information from multiple source types: published campaign proposals (web and PDF) from 2 candidates, video interview transcriptions with timestamps from Caracol's \"Candidatos al Tablero\" program (23 candidates), articles and interviews from eight Colombian media outlets (44 videos across 14 candidates), and factual biographies for all 24 candidates. Each source is parsed, cleaned, and broken into focused text fragments (~800 characters) with full metadata: candidate, topic, source URL, and location (page number or video timestamp). This metadata is what makes the citation links possible — every fragment carries its provenance."
+          "title": "1. Collect & structure",
+          "body": "Campaign proposals, video transcripts (with timestamps), and media articles are parsed into ~800-character fragments, each tagged with candidate, topic, source URL, and precise location."
         },
         {
-          "title": "Query classification and search",
-          "body": "Every incoming question is classified into one of five modes — specific candidate queries, broad topic comparisons, biography requests, system metadata questions, or vague questions — each triggering a different retrieval strategy with specific trust safeguards. Vague or subjective questions are intercepted before reaching the language model, preventing speculative responses. For answerable queries, all fragments are classified into 16 thematic categories and the system runs a three-layer search: exact metadata filtering, keyword matching with synonym expansion, and semantic search by meaning. When comparing candidates, retrieval is balanced so that candidates with more published material do not dominate results."
+          "title": "2. Classify & search",
+          "body": "Each query is classified into one of five modes (see below), then routed through metadata filtering, keyword matching with synonym expansion, and semantic search."
         },
         {
-          "title": "Grounded response generation",
-          "body": "Retrieved fragments are passed to a language model operating under strict instructions: every factual statement must carry a numbered citation linking to a source fragment, the model must base its answer exclusively on the provided fragments, and it is explicitly prohibited from expressing preferences or rankings about candidates. When information is missing for a candidate, the system says so rather than filling gaps. Below each response, citations resolve to clickable links — web pages, PDF pages with page numbers, or YouTube videos at the exact timestamp where the candidate made that statement."
+          "title": "3. Generate with citations",
+          "body": "A language model generates a response where every claim must carry a numbered citation. No opinions, no rankings, and explicit disclosure when information is missing."
         }
       ],
-      "sources": {
-        "description": "Information comes from multiple source types across 24 candidates:",
-        "items": [
-          { "type": "Structured proposals + interview + media", "candidates": "2", "detail": "Sergio Fajardo, Paloma Valencia" },
-          { "type": "Video interview + multiple media outlets", "candidates": "8", "detail": "Enrique Peñalosa, Juan Daniel Oviedo, Roy Barreras, David Luna, and others" },
-          { "type": "Video interview + one media outlet", "candidates": "9", "detail": "Claudia López, Juan Fernando Cristo, Juan Manuel Galán, and others" },
-          { "type": "Video interview only", "candidates": "4", "detail": "Daniel Palacios, Leonardo Huerta, Maurice Armitage, Santiago Botero" },
-          { "type": "Media only", "candidates": "1", "detail": "Iván Cepeda" }
+      "operationModes": {
+        "title": "Five query modes",
+        "description": "Every question is classified before any retrieval. Each mode triggers a different strategy with specific trust safeguards.",
+        "columns": ["Mode", "Activates when", "Example", "Trust safeguard"],
+        "modes": [
+          {
+            "mode": "Specific",
+            "trigger": "User names a candidate",
+            "example": "\"What does Fajardo say about health?\"",
+            "safeguard": "Every statement must cite its source"
+          },
+          {
+            "mode": "Broad",
+            "trigger": "Topic without naming a candidate",
+            "example": "\"What do candidates propose on education?\"",
+            "safeguard": "Results balanced so no candidate dominates"
+          },
+          {
+            "mode": "Bio",
+            "trigger": "User asks who someone is",
+            "example": "\"Who is Claudia López?\"",
+            "safeguard": "Facts only — name, trajectory, party"
+          },
+          {
+            "mode": "Meta",
+            "trigger": "User asks what's available",
+            "example": "\"What candidates do you have?\"",
+            "safeguard": "Pure factual list, no retrieval needed"
+          },
+          {
+            "mode": "Vague",
+            "trigger": "Question is too general or subjective",
+            "example": "\"Tell me about the elections\"",
+            "safeguard": "Refuses to answer, redirects to specific query"
+          }
+        ]
+      },
+      "sourceBreakdown": {
+        "title": "Sources and coverage",
+        "description": "Information from 67 original sources across 24 candidates, processed into 92 documents:",
+        "columns": ["Source type", "Sources", "Candidates"],
+        "rows": [
+          { "type": "Published proposals (PDF/web)", "sources": "11", "candidates": "2" },
+          { "type": "Candidatos al Tablero (video)", "sources": "23", "candidates": "23" },
+          { "type": "El Colombiano (media)", "sources": "24", "candidates": "14" },
+          { "type": "Semana (media)", "sources": "15", "candidates": "15" },
+          { "type": "Other outlets (5 sources)", "sources": "5", "candidates": "1" },
+          { "type": "Candidate biographies", "sources": "24", "candidates": "24" }
         ]
       },
       "limitations": [
-        "Uneven coverage: only 2 of 24 candidates have structured published proposals. Others are covered through interviews and media articles, which offer less structured policy detail.",
-        "Transcription quality: automatic video transcriptions may contain errors, especially with proper names or technical terms.",
-        "Information changes over time: candidate proposals may evolve. The system reflects what was published at the time of the last data update.",
-        "Variable media coverage: the number of articles per candidate varies depending on source availability. Some candidates have coverage from 3–4 media outlets, others from only one."
+        "Uneven coverage: only 2 of 24 candidates have structured published proposals.",
+        "Transcription quality: automatic video transcriptions may contain errors.",
+        "Information changes over time: the system reflects what was published at the last data update.",
+        "Variable media coverage: some candidates have 3–4 outlets, others only one."
       ]
     },
     "roli-dashboard": {
