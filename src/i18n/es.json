@@ -180,7 +180,7 @@
         "subtitle": "Colombia 2026 — Sistema de preguntas y comparación sobre propuestas y entrevistas, con acceso trazable a fuentes originales.",
         "status": "Piloto",
         "statusKey": "pilot",
-        "liveUrl": "https://huggingface.co/spaces/pardoalejo/presidencial-chatbot"
+        "liveUrl": "https://presidencial-chatbot-278726326451.us-central1.run.app/"
       },
       "overview": [
         "Con 24 candidatos en la carrera presidencial de Colombia 2026, los votantes enfrentan un volumen abrumador de propuestas, entrevistas y cobertura mediática. Este sistema permite hacer preguntas en lenguaje natural y obtener respuestas fundamentadas exclusivamente en lo que los candidatos han dicho — con cada afirmación vinculada a su fuente original."

@@ -180,7 +180,7 @@
         "subtitle": "Colombia 2026 — A question-and-comparison system over proposals and interviews, with traceable links to original sources.",
         "status": "Pilot",
         "statusKey": "pilot",
-        "liveUrl": "https://huggingface.co/spaces/pardoalejo/presidencial-chatbot"
+        "liveUrl": "https://presidencial-chatbot-278726326451.us-central1.run.app/"
       },
       "overview": [
         "With 24 candidates in Colombia's 2026 presidential race, voters face an overwhelming volume of proposals, interviews, and media coverage. This system lets anyone ask questions in natural language and get answers grounded entirely in what the candidates have actually said — with every claim linked back to its original source."
