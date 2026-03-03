@@ -39,16 +39,6 @@ const t = useTranslations(lang);
         <input type="email" id="email" name="email" required />
       </div>
 
-      <div class="contact__field">
-        <label for="project-type">{t.contact.form.projectType}</label>
-        <select id="project-type" name="project-type" required>
-          <option value="" disabled selected>—</option>
-          {t.contact.form.options.map((option) => (
-            <option value={option}>{option}</option>
-          ))}
-        </select>
-      </div>
-
       <div class="contact__field contact__field--full">
         <label for="message">{t.contact.form.message}</label>
         <textarea id="message" name="message" rows={5} required></textarea>
@@ -102,7 +92,6 @@ const t = useTranslations(lang);
   }
 
   .contact__field input,
-  .contact__field select,
   .contact__field textarea {
     width: 100%;
     padding: 0.625rem 0.875rem;
@@ -114,7 +103,6 @@ const t = useTranslations(lang);
   }
 
   .contact__field input:focus,
-  .contact__field select:focus,
   .contact__field textarea:focus {
     outline: none;
     border-color: var(--color-accent);
