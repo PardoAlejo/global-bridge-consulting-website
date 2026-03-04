@@ -18,31 +18,6 @@ const t = useTranslations(lang);
 
   <div class="who-we-are">
     <p class="who-we-are__body">{t.whoWeAre.body}</p>
-
-    <div class="who-we-are__team">
-      {t.whoWeAre.team.map((member) => (
-        <div class="who-we-are__member">
-          {member.image && (
-            <div class="who-we-are__member-photo">
-              <img
-                src={member.image}
-                alt={member.name}
-                loading="lazy"
-                style={`object-position: ${member.imagePosition || 'center center'}; transform: scale(${member.imageScale || 1}); transform-origin: ${member.imagePosition || 'center center'}`}
-              />
-            </div>
-          )}
-          <span class="who-we-are__member-name">{member.name}</span>
-          <span class="who-we-are__member-role">{member.role}</span>
-          <p class="who-we-are__member-bio">{member.bio}</p>
-          {member.email && (
-            <a href={`mailto:${member.email}`} class="who-we-are__member-email">{member.email}</a>
-          )}
-        </div>
-      ))}
-    </div>
-
-    <p class="who-we-are__closing">{t.whoWeAre.closing}</p>
   </div>
 </SectionContainer>
 
@@ -53,77 +28,4 @@ const t = useTranslations(lang);
     margin-bottom: var(--space-2xl);
   }
 
-  .who-we-are__team {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
-    margin-bottom: var(--space-2xl);
-  }
-
-  .who-we-are__member {
-    padding: var(--space-xl);
-    border: 1px solid var(--color-border);
-    border-radius: var(--border-radius-lg);
-    display: flex;
-    flex-direction: column;
-    gap: 0.125rem;
-  }
-
-  .who-we-are__member-photo {
-    width: 140px;
-    height: 180px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin-bottom: var(--space-sm);
-  }
-
-  .who-we-are__member-photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .who-we-are__member-name {
-    font-size: var(--fs-md);
-    font-weight: var(--fw-semibold);
-    color: var(--color-text);
-  }
-
-  .who-we-are__member-role {
-    font-size: var(--fs-sm);
-    font-weight: var(--fw-medium);
-    color: var(--color-accent);
-    margin-bottom: var(--space-sm);
-  }
-
-  .who-we-are__member-bio {
-    font-size: var(--fs-sm);
-    color: var(--color-text-secondary);
-    line-height: var(--lh-normal);
-  }
-
-  .who-we-are__member-email {
-    font-size: var(--fs-sm);
-    color: var(--color-accent);
-    margin-top: var(--space-sm);
-    transition: color var(--transition-fast);
-  }
-
-  .who-we-are__member-email:hover {
-    color: var(--color-accent-dark);
-  }
-
-  .who-we-are__closing {
-    max-width: 720px;
-    font-size: var(--fs-md);
-    font-weight: var(--fw-medium);
-    color: var(--color-text);
-    line-height: var(--lh-snug);
-  }
-
-  @media (min-width: 768px) {
-    .who-we-are__team {
-      grid-template-columns: 1fr 1fr;
-    }
-  }
 </style>
