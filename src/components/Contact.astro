@@ -19,6 +19,7 @@ const t = useTranslations(lang);
   <div class="contact">
     <div class="contact__info">
       <p class="contact__body">{t.contact.body}</p>
+      <p class="contact__credentials">{t.contact.credentials}</p>
       <a href={`mailto:${t.contact.email}`} class="contact__email">{t.contact.email}</a>
     </div>
 
@@ -61,6 +62,14 @@ const t = useTranslations(lang);
   .contact__body {
     font-size: var(--fs-md);
     color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+    max-width: 480px;
+  }
+
+  .contact__credentials {
+    font-size: var(--fs-sm);
+    color: var(--color-text-secondary);
+    font-style: italic;
     margin-bottom: var(--space-lg);
     max-width: 480px;
   }

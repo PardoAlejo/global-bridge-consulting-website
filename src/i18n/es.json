@@ -17,9 +17,8 @@
     "ctaPrimary": "Explorar proyectos",
     "ctaSecondary": "Contactar"
   },
-  "whoWeAre": {
-    "title": "Quiénes somos",
-    "body": "Somos una consultoría dedicada a estructurar evidencia en entornos donde la información abunda pero la comprensión escasea. Combinamos experiencia en sistemas de datos y arquitectura de información con trayectoria en gobernanza, análisis económico y documentación histórica. Nuestro trabajo transforma fuentes fragmentadas en sistemas coherentes y trazables — priorizando neutralidad, rigor y claridad por encima del ruido y la narrativa."
+  "philosophy": {
+    "text": "En un mundo donde la información abunda, pero la comprensión es escasa, en Global Bridge estructuramos y convertimos lo disperso en claridad."
   },
   "whatWeDo": {
     "title": "Qué hacemos",
@@ -105,6 +104,7 @@
   "contact": {
     "title": "Contacto",
     "body": "Si trabajas con información compleja y necesitas estructurarla para facilitar análisis o toma de decisiones, podemos ayudarte.",
+    "credentials": "Fundada por expertos en sistemas de datos, inteligencia artificial, aprendizaje automático, gobernanza y análisis institucional.",
     "email": "contact@globalbridge.consulting",
     "cta": "Agendar llamada",
     "form": {

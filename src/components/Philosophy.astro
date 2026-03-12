@@ -1,0 +1,44 @@
+---
+import type { Lang } from '../i18n/utils';
+import { useTranslations } from '../i18n/utils';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = useTranslations(lang);
+---
+
+<section class="philosophy">
+  <div class="container">
+    <p class="philosophy__text">{t.philosophy.text}</p>
+  </div>
+</section>
+
+<style>
+  .philosophy {
+    background-color: #4FB7C5;
+    padding: var(--space-3xl) 0;
+  }
+
+  .philosophy__text {
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-semibold);
+    line-height: var(--lh-normal);
+    color: #fff;
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  @media (min-width: 768px) {
+    .philosophy {
+      padding: var(--space-4xl) 0;
+    }
+
+    .philosophy__text {
+      font-size: var(--fs-2xl);
+    }
+  }
+</style>

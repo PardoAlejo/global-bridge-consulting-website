@@ -1,7 +1,6 @@
 ---
 import type { Lang } from '../i18n/utils';
 import { useTranslations } from '../i18n/utils';
-import SectionContainer from './SectionContainer.astro';
 
 interface Props {
   lang: Lang;
@@ -11,21 +10,40 @@ const { lang } = Astro.props;
 const t = useTranslations(lang);
 ---
 
-<SectionContainer id="who-we-are">
-  <div class="section-header">
-    <h2 class="section-title">{t.whoWeAre.title}</h2>
-  </div>
-
-  <div class="who-we-are">
+<section id="who-we-are" class="who-we-are">
+  <div class="container">
+    <h2 class="who-we-are__title">{t.whoWeAre.title}</h2>
     <p class="who-we-are__body">{t.whoWeAre.body}</p>
   </div>
-</SectionContainer>
+</section>
 
 <style>
-  .who-we-are__body {
-    max-width: 720px;
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-2xl);
+  .who-we-are {
+    background-color: var(--color-accent);
+    padding: var(--space-3xl) 0;
   }
 
+  .who-we-are__title {
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
+    color: #fff;
+    margin-bottom: var(--space-lg);
+  }
+
+  .who-we-are__body {
+    max-width: 720px;
+    font-size: var(--fs-md);
+    line-height: var(--lh-normal);
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  @media (min-width: 768px) {
+    .who-we-are {
+      padding: var(--space-4xl) 0;
+    }
+
+    .who-we-are__title {
+      font-size: var(--fs-3xl);
+    }
+  }
 </style>
