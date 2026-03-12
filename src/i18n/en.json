@@ -83,8 +83,8 @@
           "Links responses to original sources"
         ],
         "outcome": "Structured and verifiable access to public statements.",
-        "status": "Pilot",
-        "statusKey": "pilot"
+        "status": "Elections",
+        "statusKey": "elections"
       },
       {
         "title": "ROLI Dashboard (Rule of Law Index)",
@@ -97,8 +97,8 @@
           "Exportable visualizations"
         ],
         "outcome": "Facilitates structured analysis and reporting.",
-        "status": "Completed",
-        "statusKey": "completed"
+        "status": "Rule of Law",
+        "statusKey": "rule-of-law"
       }
     ]
   },
@@ -142,8 +142,8 @@
       "header": {
         "title": "Presidential Evidence Assistant",
         "subtitle": "Colombia 2026 — A question-and-comparison system over proposals and interviews, with traceable links to original sources.",
-        "status": "Pilot",
-        "statusKey": "pilot",
+        "status": "Elections",
+        "statusKey": "elections",
         "liveUrl": "https://votoinformado.co"
       },
       "overview": [
@@ -264,8 +264,8 @@
       "header": {
         "title": "ROLI Dashboard",
         "subtitle": "Rule of Law Index — An interactive analytical tool for exploring indicators, comparing countries, and analyzing trends.",
-        "status": "Completed",
-        "statusKey": "completed",
+        "status": "Rule of Law",
+        "statusKey": "rule-of-law",
         "liveUrl": "https://roli-dashboard.vercel.app/"
       },
       "overview": [

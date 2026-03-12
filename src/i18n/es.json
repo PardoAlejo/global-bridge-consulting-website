@@ -83,8 +83,8 @@
           "Vincula respuestas a fuentes originales"
         ],
         "outcome": "Acceso estructurado y verificable a declaraciones públicas.",
-        "status": "Piloto",
-        "statusKey": "pilot"
+        "status": "Elecciones",
+        "statusKey": "elections"
       },
       {
         "title": "Dashboard ROLI (Rule of Law Index)",
@@ -97,8 +97,8 @@
           "Exportación de visualizaciones"
         ],
         "outcome": "Facilita análisis comparativo y comunicación de resultados.",
-        "status": "Desarrollado",
-        "statusKey": "completed"
+        "status": "Estado de derecho",
+        "statusKey": "rule-of-law"
       }
     ]
   },
@@ -142,8 +142,8 @@
       "header": {
         "title": "Asistente Presidencial",
         "subtitle": "Colombia 2026 — Sistema de preguntas y comparación sobre propuestas y entrevistas, con acceso trazable a fuentes originales.",
-        "status": "Piloto",
-        "statusKey": "pilot",
+        "status": "Elecciones",
+        "statusKey": "elections",
         "liveUrl": "https://votoinformado.co"
       },
       "overview": [
@@ -264,8 +264,8 @@
       "header": {
         "title": "Dashboard ROLI",
         "subtitle": "Rule of Law Index — Herramienta analítica interactiva para explorar indicadores, comparar países y analizar tendencias.",
-        "status": "Desarrollado",
-        "statusKey": "completed",
+        "status": "Estado de derecho",
+        "statusKey": "rule-of-law",
         "liveUrl": "https://roli-dashboard.vercel.app/"
       },
       "overview": [
