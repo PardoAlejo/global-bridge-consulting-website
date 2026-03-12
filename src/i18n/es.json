@@ -99,20 +99,6 @@
         "outcome": "Facilita análisis comparativo y comunicación de resultados.",
         "status": "Desarrollado",
         "statusKey": "completed"
-      },
-      {
-        "title": "Motor de Consistencia de Declaraciones",
-        "slug": "statement-engine",
-        "description": "Sistema para analizar la consistencia de declaraciones públicas a través del tiempo.",
-        "features": [
-          "Agrupa declaraciones por tema",
-          "Permite comparación temporal",
-          "Enlaza citas con contexto original",
-          "Resalta posibles divergencias sin interpretación"
-        ],
-        "outcome": "Mayor transparencia en entornos de información compleja.",
-        "status": "Prototipo",
-        "statusKey": "prototype"
       }
     ]
   },

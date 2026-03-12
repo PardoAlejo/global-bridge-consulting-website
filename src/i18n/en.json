@@ -99,20 +99,6 @@
         "outcome": "Facilitates structured analysis and reporting.",
         "status": "Completed",
         "statusKey": "completed"
-      },
-      {
-        "title": "Statement Consistency Engine",
-        "slug": "statement-engine",
-        "description": "A system designed to analyze the temporal consistency of public statements.",
-        "features": [
-          "Groups statements by theme",
-          "Enables time-based comparison",
-          "Links quotes to original context",
-          "Highlights potential divergences without interpretation"
-        ],
-        "outcome": "Greater transparency in complex information environments.",
-        "status": "Prototype",
-        "statusKey": "prototype"
       }
     ]
   },
