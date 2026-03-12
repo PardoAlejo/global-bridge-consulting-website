@@ -8,22 +8,36 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = useTranslations(lang);
+const hero = t.hero;
 ---
 
 <section class="hero">
   <div class="container hero__inner">
     <div class="hero__content">
-      <h1 class="hero__headline">{t.hero.headline}</h1>
-      <p class="hero__subheadline">{t.hero.subheadline}</p>
+      <p class="hero__tagline">{hero.tagline}</p>
+      <h1 class="hero__headline">
+        {hero.prefix}{' '}
+        <span class="hero__rotator">
+          {hero.words.map((word: string, i: number) => (
+            <span
+              class={`hero__word ${i === 0 ? 'hero__word--active' : ''}`}
+              data-index={i}
+            >{word}</span>
+          ))}
+        </span>
+        <br />
+        {hero.suffix}
+      </h1>
       <div class="hero__ctas">
         <a href={getLocalizedPath(lang, 'projects')} class="hero__btn hero__btn--primary">
-          {t.hero.ctaPrimary}
+          {hero.ctaPrimary}
         </a>
         <a href={getLocalizedPath(lang, 'contact')} class="hero__btn hero__btn--secondary">
-          {t.hero.ctaSecondary}
+          {hero.ctaSecondary}
         </a>
       </div>
     </div>
+
     <div class="hero__illustration">
       <img
         src="/assets/hero-illustration.svg"
@@ -35,6 +49,49 @@ const t = useTranslations(lang);
     </div>
   </div>
 </section>
+
+<script>
+  function initWordRotation() {
+    const words = document.querySelectorAll<HTMLElement>('.hero__word');
+    if (words.length < 2) return;
+
+    const INTERVAL = 2000;
+    let timer: ReturnType<typeof setInterval> | null = null;
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    function advance() {
+      const current = document.querySelector('.hero__word--active') as HTMLElement;
+      if (!current) return;
+      const idx = Number(current.dataset.index);
+      const next = (idx + 1) % words.length;
+      current.classList.remove('hero__word--active');
+      words[next].classList.add('hero__word--active');
+    }
+
+    function start() {
+      if (prefersReducedMotion.matches) return;
+      stop();
+      timer = setInterval(advance, INTERVAL);
+    }
+
+    function stop() {
+      if (timer !== null) { clearInterval(timer); timer = null; }
+    }
+
+    prefersReducedMotion.addEventListener('change', () => {
+      prefersReducedMotion.matches ? stop() : start();
+    });
+
+    start();
+  }
+
+  document.addEventListener('astro:page-load', initWordRotation);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initWordRotation);
+  } else {
+    initWordRotation();
+  }
+</script>
 
 <style>
   .hero {
@@ -53,19 +110,41 @@ const t = useTranslations(lang);
     max-width: 600px;
   }
 
+  .hero__tagline {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-md);
+  }
+
   .hero__headline {
-    font-size: var(--fs-3xl);
+    font-size: var(--fs-2xl);
+    font-weight: var(--fw-bold);
     line-height: var(--lh-tight);
-    margin-bottom: var(--space-lg);
+    color: var(--color-text);
+    margin: 0 0 var(--space-xl);
   }
 
-  .hero__subheadline {
-    font-size: var(--fs-md);
-    color: var(--color-text-secondary);
-    line-height: var(--lh-normal);
-    margin-bottom: var(--space-xl);
+  /* Rotating word */
+  .hero__rotator {
+    display: inline-grid;
+    vertical-align: baseline;
   }
 
+  .hero__word {
+    grid-area: 1 / 1;
+    color: var(--color-accent);
+    opacity: 0;
+    transition: opacity 400ms ease;
+  }
+
+  .hero__word--active {
+    opacity: 1;
+  }
+
+  /* CTAs */
   .hero__ctas {
     display: flex;
     flex-wrap: wrap;
@@ -102,6 +181,7 @@ const t = useTranslations(lang);
     color: var(--color-accent);
   }
 
+  /* Illustration */
   .hero__illustration {
     display: flex;
     justify-content: center;
@@ -110,6 +190,12 @@ const t = useTranslations(lang);
   .hero__illustration img {
     max-width: 360px;
     width: 100%;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero__word {
+      transition: none;
+    }
   }
 
   @media (min-width: 768px) {

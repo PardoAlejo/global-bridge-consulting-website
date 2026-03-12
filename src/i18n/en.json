@@ -10,8 +10,10 @@
     "contact": "Contact"
   },
   "hero": {
-    "headline": "We bridge the gap between information and informed decisions.",
-    "subheadline": "We build intelligent systems that transform fragmented documents, data, interviews, and archives into structured, traceable knowledge — enabling institutions and organizations to make transparent, evidence-based decisions.",
+    "tagline": "Evidence structuring consultancy",
+    "prefix": "We transform",
+    "words": ["Reports", "Data", "Videos", "Interviews", "Audio", "PDFs", "Archives", "Surveys"],
+    "suffix": "into structured knowledge.",
     "ctaPrimary": "Explore projects",
     "ctaSecondary": "Contact us"
   },

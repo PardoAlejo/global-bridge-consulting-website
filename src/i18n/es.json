@@ -10,8 +10,10 @@
     "contact": "Contacto"
   },
   "hero": {
-    "headline": "Conectamos la información con decisiones informadas.",
-    "subheadline": "Construimos sistemas inteligentes que transforman documentos, datos, entrevistas y archivos fragmentados en conocimiento estructurado y trazable — permitiendo a instituciones y organizaciones tomar decisiones transparentes y basadas en evidencia.",
+    "tagline": "Consultoría en estructuración de evidencia",
+    "prefix": "Transformamos",
+    "words": ["Reportes", "Datos", "Videos", "Entrevistas", "Audios", "PDFs", "Archivos", "Encuestas"],
+    "suffix": "en conocimiento estructurado.",
     "ctaPrimary": "Explorar proyectos",
     "ctaSecondary": "Contactar"
   },
