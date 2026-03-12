@@ -34,7 +34,7 @@ const canonicalUrl = new URL(pathname, Astro.site);
     <link rel="canonical" href={canonicalUrl.href} />
     <link rel="alternate" hreflang="en" href={new URL(enPathname, Astro.site).href} />
     <link rel="alternate" hreflang="es" href={new URL(esPathname, Astro.site).href} />
-    <link rel="alternate" hreflang="x-default" href={new URL(enPathname, Astro.site).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL(esPathname, Astro.site).href} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
