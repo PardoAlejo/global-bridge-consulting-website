@@ -26,39 +26,43 @@
     "subtitle": "Tailored solutions to structure evidence in complex environments.",
     "capabilities": [
       {
-        "title": "Evidence organization",
+        "title": "We collect information",
+        "description": "We identify, gather, and process data from multiple sources. Structured or not, we can process all types of information so it can be used coherently and in an orderly manner.",
         "items": [
-          "Ingestion of documents, web sources, reports, and datasets",
-          "Metadata normalization and taxonomy design",
-          "Linking across sources and versions",
-          "Building navigable evidence bases"
+          "Structured and unstructured sources",
+          "Diverse formats (documents, multimedia, web)",
+          "Data integration and normalization"
         ]
       },
       {
-        "title": "Comparison and analysis",
+        "title": "We develop analysis methods",
+        "description": "To understand information systematically and reach evidence-based conclusions. Available methods include:",
         "items": [
-          "Cross-actor, thematic, temporal, or regional comparisons",
-          "Side-by-side views and time-based analysis",
-          "Analytical dashboards and structured interfaces",
-          "Tools for research and decision support"
+          "Comparative analysis between actors or positions",
+          "Detailed description of problems or findings",
+          "Pattern identification",
+          "Information evolution tracking",
+          "Statistical inference methods"
         ]
       },
       {
-        "title": "Access tools",
+        "title": "We design visualization and presentation tools",
+        "description": "To understand, navigate, and explore information more clearly and communicate it effectively.",
         "items": [
-          "Advanced search with filters",
-          "Structured retrieval systems",
-          "Source-referenced responses (when applicable)",
-          "Clear and user-focused interfaces"
+          "Exploration interfaces",
+          "Specialized search engines",
+          "Structured comparisons",
+          "Visualizers or dashboards"
         ]
       },
       {
-        "title": "Integrity and consistency",
+        "title": "We handle data appropriately",
+        "description": "Our goal is to build systems that are reliable, transparent, and objective.",
         "items": [
-          "Analysis of statements over time",
-          "Identification of divergences and changes",
-          "Signaling of coverage and uncertainty",
-          "Transparency without editorial interpretation"
+          "Proper handling of information privacy",
+          "Transparency in sources",
+          "AI usage and handling policies",
+          "Process replicability"
         ]
       }
     ]

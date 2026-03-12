@@ -26,39 +26,43 @@
     "subtitle": "Soluciones a medida para estructurar evidencia en entornos complejos.",
     "capabilities": [
       {
-        "title": "Organización de evidencia",
+        "title": "Recolectamos información",
+        "description": "Identificamos, reunimos y procesamos datos de múltiples fuentes. Estructurada o no, nosotros podemos procesar todo tipo de información para que se use de forma coherente y ordenada.",
         "items": [
-          "Ingesta de documentos, web, reportes y datasets",
-          "Normalización, metadatos y taxonomías",
-          "Conexión entre fuentes y versiones",
-          "Construcción de bases de evidencia navegables"
+          "Fuentes estructuradas y no estructuradas",
+          "Formatos diversos (documentos, multimedia, web)",
+          "Integración y normalización de datos"
         ]
       },
       {
-        "title": "Comparación y análisis",
+        "title": "Desarrollamos métodos de análisis",
+        "description": "Para entender la información de forma sistemática y llegar a conclusiones con evidencia. Los métodos disponibles son:",
         "items": [
-          "Comparación por actor, tema, tiempo o región",
-          "Vistas lado a lado y análisis temporal",
-          "Paneles e interfaces analíticas",
-          "Herramientas para investigación y toma de decisiones"
+          "Análisis comparado entre actores o posiciones",
+          "Descripción detallada de problemas o hallazgos",
+          "Identificación de patrones",
+          "Evolución de la información",
+          "Métodos de inferencia estadísticos"
         ]
       },
       {
-        "title": "Herramientas de acceso",
+        "title": "Diseñamos herramientas de visualización y presentación",
+        "description": "Para comprender, navegar y explorar la información de forma más clara y comunicarla de forma efectiva.",
         "items": [
-          "Búsqueda avanzada con filtros",
-          "Sistemas de recuperación estructurada",
-          "Respuestas con referencia a fuentes (cuando aplica)",
-          "Interfaces claras y enfocadas en el usuario"
+          "Interfaces de exploración",
+          "Buscadores especializados",
+          "Comparaciones estructuradas",
+          "Visualizadores o dashboards"
         ]
       },
       {
-        "title": "Integridad y consistencia",
+        "title": "Manejamos adecuadamente los datos",
+        "description": "Nuestro objetivo es construir sistemas que sean confiables, transparentes y objetivos.",
         "items": [
-          "Análisis de declaraciones a través del tiempo",
-          "Identificación de divergencias y cambios",
-          "Señalización de cobertura e incertidumbre",
-          "Transparencia sin interpretación editorial"
+          "Manejo adecuado de la privacidad de la información",
+          "Transparencia en las fuentes",
+          "Políticas de manejo y utilización de IA",
+          "Replicabilidad de los procesos"
         ]
       }
     ]

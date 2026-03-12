@@ -1,19 +1,23 @@
 ---
 interface Props {
   title: string;
-  items: string[];
+  description?: string;
+  items?: string[];
 }
 
-const { title, items } = Astro.props;
+const { title, description, items } = Astro.props;
 ---
 
 <div class="capability-card">
   <h3 class="capability-card__title">{title}</h3>
-  <ul class="capability-card__list">
-    {items.map((item) => (
-      <li>{item}</li>
-    ))}
-  </ul>
+  {description && <p class="capability-card__description">{description}</p>}
+  {items && items.length > 0 && (
+    <ul class="capability-card__list">
+      {items.map((item) => (
+        <li>{item}</li>
+      ))}
+    </ul>
+  )}
 </div>
 
 <style>
@@ -27,7 +31,14 @@ const { title, items } = Astro.props;
   .capability-card__title {
     font-size: var(--fs-lg);
     color: var(--color-accent);
-    margin-bottom: var(--space-lg);
+    margin-bottom: var(--space-md);
+  }
+
+  .capability-card__description {
+    font-size: var(--fs-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--lh-relaxed);
+    margin-bottom: var(--space-md);
   }
 
   .capability-card__list {

@@ -20,7 +20,7 @@ const t = useTranslations(lang);
 
   <div class="capabilities-grid">
     {t.whatWeDo.capabilities.map((cap) => (
-      <CapabilityCard title={cap.title} items={cap.items} />
+      <CapabilityCard title={cap.title} description={cap.description} items={cap.items} />
     ))}
   </div>
 </SectionContainer>
