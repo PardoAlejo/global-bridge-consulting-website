@@ -40,26 +40,30 @@ const hasScreenshotCaptions = project.screenshotCaptions && project.screenshots 
       />
     </div>
 
-    <!-- Overview + inline first screenshot -->
-    <ProjectSection title={labels.overviewTitle}>
-      <div class="prose">
-        {project.overview.map((p: string) => <p>{p}</p>)}
-      </div>
-      {hasScreenshotCaptions && (
-        <figure class="inline-screenshot">
-          <img src={project.screenshots[0]} alt={project.screenshotCaptions[0]} class="screenshot-img" loading="lazy" />
-          <figcaption>{project.screenshotCaptions[0]}</figcaption>
-        </figure>
-      )}
-      {project.header.liveUrl && (
+    <!-- Overview (skip section if overview is empty) -->
+    {project.overview.length > 0 && (
+      <ProjectSection title={labels.overviewTitle}>
+        <div class="prose">
+          {project.overview.map((p: string) => <p>{p}</p>)}
+        </div>
+        {project.header.liveUrl && (
+          <a href={project.header.liveUrl} target="_blank" rel="noopener noreferrer" class="live-link">
+            {labels.liveLabel} &rarr;
+          </a>
+        )}
+      </ProjectSection>
+    )}
+
+    {project.overview.length === 0 && project.header.liveUrl && (
+      <div class="container live-link-standalone">
         <a href={project.header.liveUrl} target="_blank" rel="noopener noreferrer" class="live-link">
           {labels.liveLabel} &rarr;
         </a>
-      )}
-    </ProjectSection>
+      </div>
+    )}
 
-    <!-- Key figures -->
-    <ProjectSection title={labels.highlightsTitle} alt>
+    <!-- Key figures (no heading) -->
+    <ProjectSection alt>
       <ProjectHighlights items={project.highlights} />
     </ProjectSection>
 
@@ -67,90 +71,73 @@ const hasScreenshotCaptions = project.screenshotCaptions && project.screenshots 
     {project.trustPrinciples && (
       <ProjectSection title={project.trustPrinciples.title}>
         <div class="trust-grid">
-          {project.trustPrinciples.items.map((item: { title: string; body: string }) => (
+          {project.trustPrinciples.items.map((item: { title: string; icon?: string; body: string }) => (
             <div class="trust-card">
+              {item.icon === 'link' && (
+                <svg class="trust-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              )}
+              {item.icon === 'scale' && (
+                <svg class="trust-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18"/><path d="M3 7l3-4 3 4"/><path d="M15 7l3-4 3 4"/><path d="M3 7h6"/><path d="M15 7h6"/><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/></svg>
+              )}
+              {item.icon === 'balance' && (
+                <svg class="trust-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="6" width="6" height="12" rx="1"/><rect x="9" y="6" width="6" height="12" rx="1"/><rect x="17" y="6" width="6" height="12" rx="1"/></svg>
+              )}
+              {item.icon === 'eye' && (
+                <svg class="trust-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              )}
               <h3 class="trust-card__title">{item.title}</h3>
-              <p class="trust-card__body">{item.body}</p>
+              <p class="trust-card__body" set:html={item.body} />
             </div>
           ))}
         </div>
       </ProjectSection>
     )}
 
-    <!-- How it works -->
+    <!-- How it works (merged with screenshots when summary exists) -->
     <ProjectSection title={labels.howItWorksTitle} alt={!!project.trustPrinciples}>
-      <div class="how-it-works">
-        {project.howItWorks.map((section: { title: string; body: string }) => (
-          <div class="how-it-works__item">
-            <h3>{section.title}</h3>
-            <p>{section.body}</p>
+      {project.howItWorksSummary ? (
+        <div class="how-it-works-merged">
+          <div class="prose">
+            <p set:html={project.howItWorksSummary} />
           </div>
-        ))}
-      </div>
+          {hasScreenshotCaptions && (
+            <div class="screenshots-captioned">
+              {project.screenshots.map((src: string, i: number) => (
+                <figure class="inline-screenshot inline-screenshot--small">
+                  <img src={src} alt={project.screenshotCaptions[i]} class="screenshot-img" loading="lazy" />
+                  <figcaption>{project.screenshotCaptions[i]}</figcaption>
+                </figure>
+              ))}
+            </div>
+          )}
+        </div>
+      ) : (
+        <div class="how-it-works">
+          {project.howItWorks.map((section: { title: string; body: string }) => (
+            <div class="how-it-works__item">
+              <h3>{section.title}</h3>
+              <p>{section.body}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </ProjectSection>
 
-    <!-- Operation modes table (conditional) -->
-    {project.operationModes && (
-      <ProjectSection title={project.operationModes.title}>
-        <p class="section-desc">{project.operationModes.description}</p>
-        <div class="table-wrapper">
-          <table class="data-table">
-            <thead>
-              <tr>
-                {project.operationModes.columns.map((col: string) => <th>{col}</th>)}
-              </tr>
-            </thead>
-            <tbody>
-              {project.operationModes.modes.map((m: { mode: string; trigger: string; example: string; safeguard: string }) => (
-                <tr>
-                  <td><strong>{m.mode}</strong></td>
-                  <td>{m.trigger}</td>
-                  <td class="example-cell">{m.example}</td>
-                  <td>{m.safeguard}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+    <!-- Screenshots (only for projects without howItWorksSummary) -->
+    {!project.howItWorksSummary && hasScreenshotCaptions && (
+      <ProjectSection title={labels.screenshotsTitle}>
+        <div class="screenshots-captioned">
+          {project.screenshots.map((src: string, i: number) => (
+            <figure class="inline-screenshot inline-screenshot--small">
+              <img src={src} alt={project.screenshotCaptions[i]} class="screenshot-img" loading="lazy" />
+              <figcaption>{project.screenshotCaptions[i]}</figcaption>
+            </figure>
+          ))}
         </div>
       </ProjectSection>
     )}
 
-    <!-- In action: second screenshot with caption (conditional) -->
-    {hasScreenshotCaptions && project.screenshots[1] && (
-      <ProjectSection title={labels.inActionTitle} alt>
-        <figure class="inline-screenshot inline-screenshot--full">
-          <img src={project.screenshots[1]} alt={project.screenshotCaptions[1]} class="screenshot-img" loading="lazy" />
-          <figcaption>{project.screenshotCaptions[1]}</figcaption>
-        </figure>
-      </ProjectSection>
-    )}
-
-    <!-- Source breakdown table (conditional) -->
-    {project.sourceBreakdown && (
-      <ProjectSection title={project.sourceBreakdown.title}>
-        <p class="section-desc">{project.sourceBreakdown.description}</p>
-        <div class="table-wrapper">
-          <table class="data-table">
-            <thead>
-              <tr>
-                {project.sourceBreakdown.columns.map((col: string) => <th>{col}</th>)}
-              </tr>
-            </thead>
-            <tbody>
-              {project.sourceBreakdown.rows.map((row: { type: string; sources: string; candidates: string }) => (
-                <tr>
-                  <td>{row.type}</td>
-                  <td class="num-cell">{row.sources}</td>
-                  <td class="num-cell">{row.candidates}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      </ProjectSection>
-    )}
-
-    <!-- Fallback: screenshots section for projects WITHOUT captions -->
+    <!-- Fallback: screenshots for projects WITHOUT captions -->
     {!hasScreenshotCaptions && (
       <ProjectSection title={labels.screenshotsTitle}>
         <div class="screenshots-grid">
@@ -168,14 +155,16 @@ const hasScreenshotCaptions = project.screenshotCaptions && project.screenshots 
       </ProjectSection>
     )}
 
-    <!-- Limitations -->
-    <ProjectSection title={labels.limitationsTitle} alt>
-      <ul class="limitations-list">
-        {project.limitations.map((item: string) => (
-          <li>{item}</li>
-        ))}
-      </ul>
-    </ProjectSection>
+    <!-- Limitations (disclaimer style) -->
+    <div class="disclaimer">
+      <div class="container">
+        <ul class="disclaimer__list">
+          {project.limitations.map((item: string) => (
+            <li set:html={item} />
+          ))}
+        </ul>
+      </div>
+    </div>
 
     <section class="project-cta">
       <div class="container project-cta__inner">
@@ -210,8 +199,8 @@ const hasScreenshotCaptions = project.screenshotCaptions && project.screenshots 
     max-width: 900px;
   }
 
-  .inline-screenshot--full {
-    max-width: 100%;
+  .inline-screenshot--small {
+    max-width: 450px;
   }
 
   .inline-screenshot figcaption {
@@ -220,6 +209,24 @@ const hasScreenshotCaptions = project.screenshotCaptions && project.screenshots 
     color: var(--color-text-secondary);
     text-align: center;
     font-style: italic;
+  }
+
+  .screenshots-captioned {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
+  @media (min-width: 768px) {
+    .screenshots-captioned {
+      flex-direction: row;
+      gap: var(--space-lg);
+    }
+
+    .inline-screenshot--small {
+      flex: 1;
+      max-width: 50%;
+    }
   }
 
   /* Trust principles grid */
@@ -242,6 +249,13 @@ const hasScreenshotCaptions = project.screenshotCaptions && project.screenshots 
     padding: var(--space-lg);
   }
 
+  .trust-card__icon {
+    width: 24px;
+    height: 24px;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+  }
+
   .trust-card__title {
     font-size: var(--fs-md);
     font-weight: var(--fw-semibold);
@@ -255,6 +269,12 @@ const hasScreenshotCaptions = project.screenshotCaptions && project.screenshots 
   }
 
   /* How it works */
+  .how-it-works-merged {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xl);
+  }
+
   .how-it-works {
     display: flex;
     flex-direction: column;
@@ -271,63 +291,6 @@ const hasScreenshotCaptions = project.screenshotCaptions && project.screenshots 
     max-width: 720px;
   }
 
-  /* Section description text */
-  .section-desc {
-    color: var(--color-text-secondary);
-    line-height: var(--lh-normal);
-    margin-bottom: var(--space-lg);
-    max-width: 720px;
-  }
-
-  /* Data tables */
-  .table-wrapper {
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .data-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: var(--fs-sm);
-    min-width: 600px;
-  }
-
-  .data-table th {
-    text-align: left;
-    font-weight: var(--fw-semibold);
-    padding: var(--space-sm) var(--space-md);
-    border-bottom: 2px solid var(--color-border);
-    white-space: nowrap;
-    color: var(--color-text);
-  }
-
-  .data-table td {
-    padding: var(--space-sm) var(--space-md);
-    border-bottom: 1px solid var(--color-border);
-    color: var(--color-text-secondary);
-    line-height: var(--lh-snug);
-    vertical-align: top;
-  }
-
-  .data-table tbody tr:last-child td {
-    border-bottom: none;
-  }
-
-  .data-table tbody tr:hover {
-    background-color: var(--color-section-alt);
-  }
-
-  .example-cell {
-    font-style: italic;
-    font-size: var(--fs-xs);
-  }
-
-  .num-cell {
-    text-align: center;
-    font-weight: var(--fw-semibold);
-    color: var(--color-accent);
-  }
-
   /* Live link button */
   .live-link {
     display: inline-flex;
@@ -342,6 +305,10 @@ const hasScreenshotCaptions = project.screenshotCaptions && project.screenshots 
     transition: background-color var(--transition-fast);
     width: fit-content;
     margin-top: var(--space-lg);
+  }
+
+  .live-link-standalone {
+    padding-bottom: var(--space-lg);
   }
 
   .live-link:hover {
@@ -368,31 +335,36 @@ const hasScreenshotCaptions = project.screenshotCaptions && project.screenshots 
     }
   }
 
-  /* Limitations list */
-  .limitations-list {
+  /* Disclaimer (limitations) */
+  .disclaimer {
+    border-top: 1px solid var(--color-border);
+    padding: var(--space-lg) 0;
+  }
+
+  .disclaimer__list {
     display: flex;
     flex-direction: column;
-    gap: var(--space-md);
+    gap: var(--space-sm);
     max-width: 720px;
   }
 
-  .limitations-list li {
+  .disclaimer__list li {
     position: relative;
-    padding-left: var(--space-lg);
-    font-size: var(--fs-sm);
+    padding-left: var(--space-md);
+    font-size: var(--fs-xs);
     color: var(--color-text-secondary);
     line-height: var(--lh-normal);
   }
 
-  .limitations-list li::before {
+  .disclaimer__list li::before {
     content: '';
     position: absolute;
     left: 0;
     top: 0.6em;
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
-    background-color: var(--color-accent);
+    background-color: var(--color-border);
   }
 
   /* CTA section */

@@ -1,6 +1,6 @@
 ---
 interface Props {
-  title: string;
+  title?: string;
   alt?: boolean;
 }
 
@@ -9,7 +9,7 @@ const { title, alt = false } = Astro.props;
 
 <section class:list={['project-section', { 'project-section--alt': alt }]}>
   <div class="container">
-    <h2 class="project-section__title">{title}</h2>
+    {title && <h2 class="project-section__title">{title}</h2>}
     <slot />
   </div>
 </section>

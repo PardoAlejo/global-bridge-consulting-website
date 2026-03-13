@@ -141,14 +141,12 @@
       },
       "header": {
         "title": "Asistente Presidencial",
-        "subtitle": "Colombia 2026 — Sistema de preguntas y comparación sobre propuestas y entrevistas, con acceso trazable a fuentes originales.",
+        "subtitle": "Sistema inteligente que permite hacer preguntas y comparar entre las propuestas de más de 24 candidatos presidenciales. El sistema ofrece respuestas basadas en los programas de gobierno y entrevistas de cada candidato, <strong>vinculando a la fuente original</strong> de las declaraciones.",
         "status": "Elecciones",
         "statusKey": "elections",
         "liveUrl": "https://votoinformado.co"
       },
-      "overview": [
-        "Con 24 candidatos en la carrera presidencial de Colombia 2026, los votantes enfrentan un volumen abrumador de propuestas, entrevistas y cobertura mediática. Este sistema permite hacer preguntas en lenguaje natural y obtener respuestas fundamentadas exclusivamente en lo que los candidatos han dicho — con cada afirmación vinculada a su fuente original."
-      ],
+      "overview": [],
       "screenshots": [
         "/assets/screenshots/presidential-assistant-1.png",
         "/assets/screenshots/presidential-assistant-2.png"
@@ -159,8 +157,8 @@
       ],
       "highlights": [
         { "value": "24", "label": "Candidatos cubiertos" },
-        { "value": "92", "label": "Documentos procesados" },
-        { "value": "67", "label": "Fuentes originales" },
+        { "value": "100+", "label": "Documentos procesados" },
+        { "value": "70+", "label": "Fuentes originales" },
         { "value": "16", "label": "Categorías temáticas" },
         { "value": "8", "label": "Medios de comunicación" }
       ],
@@ -169,19 +167,23 @@
         "items": [
           {
             "title": "Citaciones trazables",
-            "body": "Cada afirmación lleva una referencia [N] que enlaza a un video de YouTube en el segundo exacto, un PDF en la página específica, o la página web original."
+            "icon": "link",
+            "body": "Cada afirmación lleva una referencia [N] que enlaza a un video de YouTube en el <strong>segundo exacto</strong>, un PDF en la <strong>página específica</strong>, o la <strong>página web original</strong>."
           },
           {
             "title": "Sin opiniones ni rankings",
-            "body": "El sistema nunca clasifica candidatos ni dice que una propuesta es mejor. Presenta lo que cada candidato dijo y deja que el usuario decida."
+            "icon": "scale",
+            "body": "El sistema <strong>nunca clasifica candidatos</strong> ni dice que una propuesta es mejor. Presenta lo que cada candidato dijo y <strong>deja que el usuario decida</strong>."
           },
           {
             "title": "Recuperación equilibrada",
-            "body": "Las comparaciones garantizan representación justa — candidatos con más material publicado no dominan los resultados."
+            "icon": "balance",
+            "body": "Las comparaciones garantizan <strong>representación justa</strong> — candidatos con más material publicado <strong>no dominan los resultados</strong>."
           },
           {
             "title": "Vacíos transparentes",
-            "body": "Cuando falta información, el sistema lo indica explícitamente en lugar de fabricar o llenar vacíos."
+            "icon": "eye",
+            "body": "<strong>Cuando falta información, el sistema lo indica explícitamente</strong> en lugar de fabricar o llenar vacíos."
           }
         ]
       },
@@ -199,61 +201,12 @@
           "body": "Un modelo de lenguaje genera una respuesta donde cada afirmación debe llevar una citación numerada. Sin opiniones, sin rankings, y divulgación explícita cuando falta información."
         }
       ],
-      "operationModes": {
-        "title": "Cinco modos de consulta",
-        "description": "Cada pregunta se clasifica antes de cualquier recuperación. Cada modo activa una estrategia diferente con salvaguardas de confianza específicas.",
-        "columns": ["Modo", "Se activa cuando", "Ejemplo", "Salvaguarda"],
-        "modes": [
-          {
-            "mode": "Específico",
-            "trigger": "El usuario nombra un candidato",
-            "example": "\"¿Qué propone Fajardo sobre salud?\"",
-            "safeguard": "Cada afirmación debe citar su fuente"
-          },
-          {
-            "mode": "Amplio",
-            "trigger": "Tema sin nombrar candidato",
-            "example": "\"¿Qué proponen los candidatos sobre educación?\"",
-            "safeguard": "Resultados equilibrados para que ningún candidato domine"
-          },
-          {
-            "mode": "Biografía",
-            "trigger": "El usuario pregunta quién es alguien",
-            "example": "\"¿Quién es Claudia López?\"",
-            "safeguard": "Solo hechos — nombre, trayectoria, partido"
-          },
-          {
-            "mode": "Meta",
-            "trigger": "El usuario pregunta qué hay disponible",
-            "example": "\"¿Qué candidatos tienen?\"",
-            "safeguard": "Lista factual pura, sin recuperación"
-          },
-          {
-            "mode": "Vago",
-            "trigger": "Pregunta demasiado general o subjetiva",
-            "example": "\"Cuéntame sobre las elecciones\"",
-            "safeguard": "Se niega a responder, redirige a consulta específica"
-          }
-        ]
-      },
-      "sourceBreakdown": {
-        "title": "Fuentes y cobertura",
-        "description": "Información de 67 fuentes originales a través de 24 candidatos, procesada en 92 documentos:",
-        "columns": ["Tipo de fuente", "Fuentes", "Candidatos"],
-        "rows": [
-          { "type": "Propuestas publicadas (PDF/web)", "sources": "11", "candidates": "2" },
-          { "type": "Candidatos al Tablero (video)", "sources": "23", "candidates": "23" },
-          { "type": "El Colombiano (medios)", "sources": "24", "candidates": "14" },
-          { "type": "Semana (medios)", "sources": "15", "candidates": "15" },
-          { "type": "Otros medios (5 fuentes)", "sources": "5", "candidates": "1" },
-          { "type": "Biografías de candidatos", "sources": "24", "candidates": "24" }
-        ]
-      },
+      "howItWorksSummary": "Recopilamos <strong>propuestas, entrevistas y artículos</strong> de medios de comunicación relacionados con cada candidato. La herramienta clasifica la consulta, busca en las fuentes y <strong>genera una respuesta con citaciones verificables</strong>.",
       "limitations": [
-        "Cobertura desigual: solo 2 de los 24 candidatos tienen propuestas estructuradas publicadas.",
-        "Calidad de transcripciones: las transcripciones automáticas de video pueden tener errores.",
-        "Información cambiante: el sistema refleja lo publicado al momento de la última actualización.",
-        "Cobertura de medios variable: algunos candidatos tienen 3–4 medios, otros solo uno."
+        "<strong>Cobertura desigual</strong>: solo 2 de los 24 candidatos tienen propuestas estructuradas publicadas.",
+        "<strong>Calidad de transcripciones</strong>: las transcripciones automáticas de video pueden tener errores.",
+        "<strong>Información cambiante</strong>: el sistema refleja lo publicado al momento de la última actualización.",
+        "<strong>Cobertura de medios variable</strong>: algunos candidatos tienen 3–4 medios, otros solo uno."
       ]
     },
     "roli-dashboard": {

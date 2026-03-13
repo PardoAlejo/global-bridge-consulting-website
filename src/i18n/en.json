@@ -141,14 +141,12 @@
       },
       "header": {
         "title": "Presidential Evidence Assistant",
-        "subtitle": "Colombia 2026 — A question-and-comparison system over proposals and interviews, with traceable links to original sources.",
+        "subtitle": "An intelligent system that lets users ask questions and compare proposals from more than 24 presidential candidates. It provides answers based on each candidate's government proposals and interviews, <strong>linking to the original source</strong> of each statement.",
         "status": "Elections",
         "statusKey": "elections",
         "liveUrl": "https://votoinformado.co"
       },
-      "overview": [
-        "With 24 candidates in Colombia's 2026 presidential race, voters face an overwhelming volume of proposals, interviews, and media coverage. This system lets anyone ask questions in natural language and get answers grounded entirely in what the candidates have actually said — with every claim linked back to its original source."
-      ],
+      "overview": [],
       "screenshots": [
         "/assets/screenshots/presidential-assistant-1.png",
         "/assets/screenshots/presidential-assistant-2.png"
@@ -159,8 +157,8 @@
       ],
       "highlights": [
         { "value": "24", "label": "Candidates covered" },
-        { "value": "92", "label": "Documents processed" },
-        { "value": "67", "label": "Original sources" },
+        { "value": "100+", "label": "Documents processed" },
+        { "value": "70+", "label": "Original sources" },
         { "value": "16", "label": "Topic categories" },
         { "value": "8", "label": "Media outlets" }
       ],
@@ -169,19 +167,23 @@
         "items": [
           {
             "title": "Traceable citations",
-            "body": "Every claim carries a [N] reference linking to a YouTube video at the exact second, a PDF at the page number, or the original web page."
+            "icon": "link",
+            "body": "Every claim carries a [N] reference linking to a YouTube video at the <strong>exact second</strong>, a PDF at the <strong>page number</strong>, or the <strong>original web page</strong>."
           },
           {
             "title": "No opinions or rankings",
-            "body": "The system never ranks candidates or says one proposal is better. It presents what each candidate said and lets the user decide."
+            "icon": "scale",
+            "body": "The system <strong>never ranks candidates</strong> or says one proposal is better. It presents what each candidate said and <strong>lets the user decide</strong>."
           },
           {
             "title": "Balanced retrieval",
-            "body": "Comparisons guarantee fair representation — candidates with more published material don't dominate the results."
+            "icon": "balance",
+            "body": "Comparisons guarantee <strong>fair representation</strong> — candidates with more published material <strong>don't dominate the results</strong>."
           },
           {
             "title": "Transparent gaps",
-            "body": "When information is missing, the system says so explicitly rather than fabricating or filling in gaps."
+            "icon": "eye",
+            "body": "<strong>When information is missing, the system says so explicitly</strong> rather than fabricating or filling in gaps."
           }
         ]
       },
@@ -199,61 +201,12 @@
           "body": "A language model generates a response where every claim must carry a numbered citation. No opinions, no rankings, and explicit disclosure when information is missing."
         }
       ],
-      "operationModes": {
-        "title": "Five query modes",
-        "description": "Every question is classified before any retrieval. Each mode triggers a different strategy with specific trust safeguards.",
-        "columns": ["Mode", "Activates when", "Example", "Trust safeguard"],
-        "modes": [
-          {
-            "mode": "Specific",
-            "trigger": "User names a candidate",
-            "example": "\"What does Fajardo say about health?\"",
-            "safeguard": "Every statement must cite its source"
-          },
-          {
-            "mode": "Broad",
-            "trigger": "Topic without naming a candidate",
-            "example": "\"What do candidates propose on education?\"",
-            "safeguard": "Results balanced so no candidate dominates"
-          },
-          {
-            "mode": "Bio",
-            "trigger": "User asks who someone is",
-            "example": "\"Who is Claudia López?\"",
-            "safeguard": "Facts only — name, trajectory, party"
-          },
-          {
-            "mode": "Meta",
-            "trigger": "User asks what's available",
-            "example": "\"What candidates do you have?\"",
-            "safeguard": "Pure factual list, no retrieval needed"
-          },
-          {
-            "mode": "Vague",
-            "trigger": "Question is too general or subjective",
-            "example": "\"Tell me about the elections\"",
-            "safeguard": "Refuses to answer, redirects to specific query"
-          }
-        ]
-      },
-      "sourceBreakdown": {
-        "title": "Sources and coverage",
-        "description": "Information from 67 original sources across 24 candidates, processed into 92 documents:",
-        "columns": ["Source type", "Sources", "Candidates"],
-        "rows": [
-          { "type": "Published proposals (PDF/web)", "sources": "11", "candidates": "2" },
-          { "type": "Candidatos al Tablero (video)", "sources": "23", "candidates": "23" },
-          { "type": "El Colombiano (media)", "sources": "24", "candidates": "14" },
-          { "type": "Semana (media)", "sources": "15", "candidates": "15" },
-          { "type": "Other outlets (5 sources)", "sources": "5", "candidates": "1" },
-          { "type": "Candidate biographies", "sources": "24", "candidates": "24" }
-        ]
-      },
+      "howItWorksSummary": "We collect <strong>proposals, interviews, and media articles</strong> related to each candidate. The tool classifies the query, searches across sources, and <strong>generates a response with verifiable citations</strong>.",
       "limitations": [
-        "Uneven coverage: only 2 of 24 candidates have structured published proposals.",
-        "Transcription quality: automatic video transcriptions may contain errors.",
-        "Information changes over time: the system reflects what was published at the last data update.",
-        "Variable media coverage: some candidates have 3–4 outlets, others only one."
+        "<strong>Uneven coverage</strong>: only 2 of 24 candidates have structured published proposals.",
+        "<strong>Transcription quality</strong>: automatic video transcriptions may contain errors.",
+        "<strong>Information changes over time</strong>: the system reflects what was published at the last data update.",
+        "<strong>Variable media coverage</strong>: some candidates have 3–4 outlets, others only one."
       ]
     },
     "roli-dashboard": {

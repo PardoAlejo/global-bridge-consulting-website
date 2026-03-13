@@ -24,7 +24,7 @@ const t = useTranslations(lang);
     </span>
   </div>
   <h1 class="project-header__title">{title}</h1>
-  <p class="project-header__subtitle">{subtitle}</p>
+  <p class="project-header__subtitle" set:html={subtitle} />
 </div>
 
 <style>
