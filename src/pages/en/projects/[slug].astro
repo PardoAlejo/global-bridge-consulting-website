@@ -44,7 +44,7 @@ const hasScreenshotCaptions = project.screenshotCaptions && project.screenshots 
     {project.overview.length > 0 && (
       <ProjectSection title={labels.overviewTitle}>
         <div class="prose">
-          {project.overview.map((p: string) => <p>{p}</p>)}
+          {project.overview.map((p: string) => <p set:html={p} />)}
         </div>
         {project.header.liveUrl && (
           <a href={project.header.liveUrl} target="_blank" rel="noopener noreferrer" class="live-link">
@@ -278,17 +278,59 @@ const hasScreenshotCaptions = project.screenshotCaptions && project.screenshots 
   .how-it-works {
     display: flex;
     flex-direction: column;
-    gap: var(--space-xl);
+    gap: var(--space-lg);
+  }
+
+  @media (min-width: 900px) {
+    .how-it-works {
+      flex-direction: row;
+      align-items: stretch;
+      gap: 0;
+    }
+  }
+
+  .how-it-works__item {
+    position: relative;
+    flex: 1;
+    background: var(--color-section-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-lg);
+  }
+
+  @media (min-width: 900px) {
+    .how-it-works__item {
+      margin-right: var(--space-xl);
+    }
+
+    .how-it-works__item:last-child {
+      margin-right: 0;
+    }
+
+    .how-it-works__item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: calc(-1 * var(--space-lg) - 6px);
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 12px solid var(--color-accent);
+    }
   }
 
   .how-it-works__item h3 {
     margin-bottom: var(--space-sm);
+    font-size: var(--fs-md);
+    color: var(--color-accent);
   }
 
   .how-it-works__item p {
     line-height: var(--lh-normal);
     color: var(--color-text-secondary);
-    max-width: 720px;
+    font-size: var(--fs-sm);
   }
 
   /* Live link button */

@@ -131,7 +131,7 @@
     "screenshotPlaceholder": "Screenshot coming soon",
     "ctaText": "Interested in a similar system?",
     "ctaButton": "Get in touch",
-    "liveLabel": "Try it live"
+    "liveLabel": "Try the tool"
   },
   "projectDetails": {
     "presidential-assistant": {
@@ -222,31 +222,30 @@
         "liveUrl": "https://roli-dashboard.vercel.app/"
       },
       "overview": [
-        "The ROLI Dashboard is an interactive analytical tool built to make the World Justice Project's Rule of Law Index data accessible and explorable. It enables researchers, analysts, and policymakers to examine governance indicators across countries and over time.",
-        "Rather than static tables or reports, the dashboard provides dynamic visualizations that allow users to compare countries, identify trends, and export findings for further analysis or reporting."
+        "Interactive analytical tool for exploring indicators, identifying trends, and comparing <strong>data spanning 10+ years across 140 countries</strong>. Developed for the World Justice Project.",
+        "Enables <strong>comparative analysis and effective communication</strong> for researchers, analysts, and policymakers examining governance indicators with evidence. Export findings for additional reports."
       ],
       "screenshots": [
         "/assets/screenshots/roli-dashboard-1.jpeg",
         "/assets/screenshots/roli-dashboard-2.jpeg"
       ],
       "highlights": [
-        { "value": "140+", "label": "Countries indexed" },
-        { "value": "8", "label": "Primary factors" },
-        { "value": "44", "label": "Sub-factors tracked" },
-        { "value": "10+", "label": "Years of data" }
+        { "value": "+140", "label": "countries indexed" },
+        { "value": "+10", "label": "years of data" },
+        { "value": "8", "label": "primary factors" }
       ],
       "howItWorks": [
         {
-          "title": "Data ingestion and normalization",
-          "body": "Index scores are ingested from the World Justice Project's published datasets, normalized across years and editions, and structured for efficient querying. Each data point is linked to its country, region, factor, and time period."
+          "title": "1. Ingestion & normalization",
+          "body": "We take the databases and normalize them (years and editions) for efficient querying. Each data point is linked to: country, region, factor, and time period."
         },
         {
-          "title": "Interactive visualization",
-          "body": "The dashboard provides multiple views: top and bottom performers by factor, time series analysis by region, and multi-country comparison panels. Users can filter by region, income group, or specific factors to focus their analysis."
+          "title": "2. Interactive visualization",
+          "body": "We developed the dashboard where users can filter and analyze factors by time, region, and country in panels."
         },
         {
-          "title": "Export and reporting",
-          "body": "All visualizations can be exported for use in reports, presentations, or further analysis. The system is designed to support both quick exploratory queries and structured comparative research."
+          "title": "3. Export",
+          "body": "Visualizations can be exported for later use. Designed for both quick queries and comprehensive comparative analysis."
         }
       ],
       "sources": {

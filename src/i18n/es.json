@@ -131,7 +131,7 @@
     "screenshotPlaceholder": "Captura próximamente",
     "ctaText": "¿Interesado en un sistema similar?",
     "ctaButton": "Contáctenos",
-    "liveLabel": "Probar en vivo"
+    "liveLabel": "Prueba la herramienta"
   },
   "projectDetails": {
     "presidential-assistant": {
@@ -222,31 +222,30 @@
         "liveUrl": "https://roli-dashboard.vercel.app/"
       },
       "overview": [
-        "El Dashboard ROLI es una herramienta analítica interactiva construida para hacer accesibles y explorables los datos del Rule of Law Index del World Justice Project. Permite a investigadores, analistas y responsables de políticas examinar indicadores de gobernanza entre países y a lo largo del tiempo.",
-        "En lugar de tablas o informes estáticos, el dashboard provee visualizaciones dinámicas que permiten comparar países, identificar tendencias y exportar hallazgos para análisis o reportes adicionales."
+        "Herramienta analítica interactiva para explorar indicadores, identificar tendencias y comparar <strong>datos de más de 10 años, de 140 países</strong>. Desarrollado para World Justice Project.",
+        "Facilita el <strong>análisis comparativo y comunicación efectiva</strong> de investigadores, analistas y responsables de políticas, permitiendo examinar indicadores de gobernanza con evidencia. Además, permite exportar los hallazgos para reportes adicionales."
       ],
       "screenshots": [
         "/assets/screenshots/roli-dashboard-1.jpeg",
         "/assets/screenshots/roli-dashboard-2.jpeg"
       ],
       "highlights": [
-        { "value": "140+", "label": "Países indexados" },
-        { "value": "8", "label": "Factores primarios" },
-        { "value": "44", "label": "Sub-factores rastreados" },
-        { "value": "10+", "label": "Años de datos" }
+        { "value": "+140", "label": "países indexados" },
+        { "value": "+10", "label": "años de datos" },
+        { "value": "8", "label": "factores primarios" }
       ],
       "howItWorks": [
         {
-          "title": "Ingesta y normalización de datos",
-          "body": "Los puntajes del índice se ingestan de los datasets publicados del World Justice Project, se normalizan entre años y ediciones, y se estructuran para consultas eficientes. Cada dato se vincula a su país, región, factor y período de tiempo."
+          "title": "1. Ingesta y normalización",
+          "body": "Tomamos las bases de datos y las normalizamos (años y ediciones) para una consulta más eficiente. Vinculamos cada dato a: país, región, factor y periodo."
         },
         {
-          "title": "Visualización interactiva",
-          "body": "El dashboard provee múltiples vistas: mejores y peores desempeños por factor, análisis de series de tiempo por región, y paneles de comparación multi-país. Los usuarios pueden filtrar por región, nivel de ingreso o factores específicos."
+          "title": "2. Visualización interactiva",
+          "body": "Desarrollamos el dashboard donde los usuarios pueden filtrar y analizar los factores por tiempo, región y país en paneles."
         },
         {
-          "title": "Exportación y reportes",
-          "body": "Todas las visualizaciones pueden exportarse para uso en informes, presentaciones o análisis posteriores. El sistema está diseñado para soportar tanto consultas exploratorias rápidas como investigación comparativa estructurada."
+          "title": "3. Exportación",
+          "body": "Permitimos que las visualizaciones puedan exportarse para ser usadas posteriormente. Diseñado tanto para consultas rápidas como para análisis comparativos exhaustivos."
         }
       ],
       "sources": {
