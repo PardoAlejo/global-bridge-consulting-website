@@ -18,7 +18,7 @@ const t = useTranslations(lang);
     <p class="section-subtitle">{t.projects.subtitle}</p>
   </div>
 
-  <div class="projects-grid">
+  <div class:list={['projects-grid', { 'projects-grid--single': t.projects.items.length === 1 }]}>
     {t.projects.items.map((project) => (
       <ProjectCard
         title={project.title}
@@ -52,6 +52,25 @@ const t = useTranslations(lang);
       grid-template-columns: 1fr 1fr;
       max-width: 900px;
       margin-inline: auto;
+    }
+  }
+
+  .projects-grid--single {
+    grid-template-columns: 1fr;
+    max-width: 600px;
+    margin-inline: auto;
+  }
+
+  @media (min-width: 768px) {
+    .projects-grid--single {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .projects-grid--single {
+      grid-template-columns: 1fr;
+      max-width: 600px;
     }
   }
 </style>
