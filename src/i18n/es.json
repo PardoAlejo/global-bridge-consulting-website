@@ -84,20 +84,6 @@
         "outcome": "Acceso estructurado y verificable a declaraciones públicas.",
         "status": "Elecciones",
         "statusKey": "elections"
-      },
-      {
-        "title": "Dashboard ROLI (Rule of Law Index)",
-        "slug": "roli-dashboard",
-        "description": "Herramienta interactiva para explorar indicadores, comparar países y analizar tendencias.",
-        "features": [
-          "Visualización de top/bottom performers",
-          "Series de tiempo por región y factor",
-          "Comparación multi-país",
-          "Exportación de visualizaciones"
-        ],
-        "outcome": "Facilita análisis comparativo y comunicación de resultados.",
-        "status": "Estado de derecho",
-        "statusKey": "rule-of-law"
       }
     ]
   },

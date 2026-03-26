@@ -84,20 +84,6 @@
         "outcome": "Structured and verifiable access to public statements.",
         "status": "Elections",
         "statusKey": "elections"
-      },
-      {
-        "title": "ROLI Dashboard (Rule of Law Index)",
-        "slug": "roli-dashboard",
-        "description": "An interactive analytical tool for exploring indicators, comparing countries, and analyzing trends.",
-        "features": [
-          "Top/bottom performers visualization",
-          "Time series by region and factor",
-          "Multi-country comparison",
-          "Exportable visualizations"
-        ],
-        "outcome": "Facilitates structured analysis and reporting.",
-        "status": "Rule of Law",
-        "statusKey": "rule-of-law"
       }
     ]
   },
