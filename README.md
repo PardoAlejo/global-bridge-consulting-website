@@ -34,7 +34,7 @@ The site presents the consultancy's services, principles, and project portfolio 
 
 Current projects include:
 - **Presidential Evidence Assistant** — Q&A system over 24+ Colombian presidential candidates with traceable citations
-- **Youth Electoral Monitor** — Interactive platform presenting survey findings from 3,221 young Colombians on political participation
+- **Youth Electoral Monitor** — Interactive platform presenting survey data collected by Cifras & Conceptos from 3,221 young Colombians on political participation and democratic culture
 - **ROLI Dashboard** — Analytical tool for exploring Rule of Law Index data across 140+ countries (hidden from public listing)
 - **Statement Consistency Engine** — Prototype for tracking temporal consistency in public statements
 
