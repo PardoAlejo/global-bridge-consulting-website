@@ -4,84 +4,151 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Global Bridge Consultancy — a single-page, bilingual (English primary, Spanish secondary) website for an evidence-structuring consultancy. The site must feel **institutional, calm, and neutral** — not a startup landing page or AI marketing site.
+Global Bridge Consultancy website — a static, bilingual (Spanish primary, English secondary) institutional site built with Astro. The site must feel **calm, neutral, and institutional** — not a startup landing page or AI marketing site.
 
-All specifications live in `website-spec/`:
-- `README.md` — build instructions, design guidelines, technical requirements
-- `content_spanish.md` — primary Spanish content for all sections
-- `content_ensligh.md` — English translation of all content
-- `sample.png` — visual design reference
-- `assets/` — placeholder directory for logo, hero background, illustrations
+**Live domain:** globalbridge.consulting
+**Contact:** contacto@globalbridge.co
 
-## Site Structure
+## Commands
 
-Single page with smooth-scroll anchor navigation. Sections in order:
-1. Navbar (white, minimal, persistent "Contact" button)
-2. Hero (full-width, headline left, abstract illustration right)
-3. Who We Are — merged about + mission + neutrality principles
-4. What We Do — 4 capability cards
-5. Projects — 3 project cards with status badges
-6. Contact — form with name, organization, email, project type dropdown, message
-7. Footer
+```bash
+npm install              # Install dependencies
+npm run dev             # Start dev server at http://localhost:4321 (redirects to /es/)
+npm run build           # Build static site to dist/
+npm run preview         # Preview production build locally
+```
 
-## Design System
+## Architecture
 
-### Colors
-| Token | Value |
-|-------|-------|
-| Background | `#FFFFFF` |
-| Primary text | `#111111` |
-| Secondary text | `#444444` |
-| Accent (teal) | `#4FB7C5` |
-| Light section bg | `#F6F6F6` |
-| Borders | `#EAEAEA` |
+### Tech Stack
+- **Astro 5.17+** — static site generator, outputs pure HTML/CSS with minimal JS
+- **Node.js 18+** required
+- **No CSS framework** — custom properties + plain CSS in `src/styles/`
+- **Minimal JavaScript** — ~10 lines for mobile menu toggle only
 
-### Typography
-- Sans-serif: Inter, Sora, or similar
-- Large hero headlines, clear section headers, comfortable body line-height
+### i18n Architecture
 
-### Design Constraints
-- Generous whitespace, no flashy gradients, no stock photos of people
-- Subtle transitions only (optional fade/slide), no heavy animations
-- No blog, testimonials, pricing tables, animated counters, AI-themed visuals, or excessive icons
+**Critical:** Spanish (`es`) is the **default locale**, configured in `astro.config.mjs`:
+```js
+i18n: {
+  defaultLocale: 'es',
+  locales: ['es', 'en'],
+  routing: { prefixDefaultLocale: true }
+}
+```
 
-## Technical Requirements
+All content lives in **JSON files**:
+- `src/i18n/es.json` — primary Spanish content
+- `src/i18n/en.json` — English translation (same structure)
 
-- **Responsive**: mobile-first approach
-- **Semantic HTML**, lightweight CSS, minimal JavaScript
-- **Performance**: fast loading, accessible contrast
-- **SEO**: title tags and meta descriptions
-- **i18n**: English primary, Spanish secondary; directory-based routing (`/en/`, `/es/`)
-- **Content editability**: all content should be easy to update from a single file or clearly structured components
+**Helper functions** in `src/i18n/utils.ts`:
+- `getLangFromUrl(url)` — extracts `'es'` or `'en'` from URL path
+- `useTranslations(lang)` — returns the full translation object for a language
+- `getAlternateLang(lang)` — toggles between languages
+- `getLocalizedPath(lang, hash?)` — builds `/{lang}/` or `/{lang}/#section` URLs
+- `getProjectPath(lang, slug)` — builds `/{lang}/projects/{slug}/` URLs
+
+**Routing:**
+- `/` → redirects to `/es/`
+- `/es/` → Spanish homepage
+- `/en/` → English homepage
+- `/es/projects/{slug}/` → Spanish project detail page
+- `/en/projects/{slug}/` → English project detail page
+
+### Page Structure
+
+**Single-page layout** with smooth-scroll anchor navigation. Sections rendered in this order:
+
+1. `<Navbar>` — language switcher + nav links + hamburger menu (mobile)
+2. `<Hero>` — headline + subheadline + 2 CTAs
+3. `<WhatWeDo>` — 4 capability cards
+4. `<Philosophy>` — neutrality principles + "Who We Are" content
+5. `<Projects>` — 3 project cards (each links to detail page)
+6. `<Contact>` — contact info + form with project-type dropdown
+7. `<Footer>` — copyright + email
+
+**Project detail pages** (`/[lang]/projects/[slug]/`):
+- `<ProjectHeader>` — title, status badge, metadata
+- `<ProjectSection>` — repeatable section with title + content + optional screenshot
+- `<ProjectHighlights>` — key outcome cards
+
+### Component Conventions
+
+- **All components accept `lang` prop** to load translations via `useTranslations(lang)`
+- **Scoped styles** — each `.astro` component has its own `<style>` block
+- **No client-side JS** except mobile menu toggle in `Navbar.astro`
+- **Reusable containers:** `SectionContainer.astro` wraps sections with consistent spacing
+
+### Styling System
+
+**Global styles** in `src/styles/global.css`:
+- CSS custom properties for colors, spacing, typography
+- Base reset + typography defaults
+
+**Layout utilities** in `src/styles/layout.css`:
+- `.section-container`, `.content-wrapper`, `.grid-*` classes
+
+**Design tokens:**
+```css
+--color-bg: #FFFFFF;
+--color-text: #111111;
+--color-text-secondary: #444444;
+--color-accent: #4FB7C5;
+--color-section-bg: #F6F6F6;
+--color-border: #EAEAEA;
+```
+
+**Typography:**
+- Inter font (Google Fonts)
+- Large hero headlines, clear section headers, comfortable line-height
+
+### Assets
+
+All static assets live in `public/assets/`:
+- `logo.svg` — site logo
+- `hero-illustration.svg` — abstract hero visual
+- `screenshots/` — project screenshots (PNG/JPEG)
+- `{name}.png` / `.jpeg` — team photos, brand images
+
+Reference in templates: `/assets/logo.svg` (Astro serves `public/` at root)
+
+### Deployment
+
+**Netlify redirects** configured in `public/_redirects`:
+```
+/  /es/  301
+```
+
+**SEO & Meta Tags:**
+- `BaseLayout.astro` handles `<title>`, `<meta>` tags, Open Graph, Twitter Cards
+- Canonical URLs + hreflang tags for bilingual SEO
+- `astro.config.mjs` sets `site: 'https://globalbridge.consulting'`
+
+## Content Editing
+
+To update website copy:
+1. Edit `src/i18n/es.json` (Spanish) or `src/i18n/en.json` (English)
+2. Both files share identical structure — organized by section: `hero`, `whoWeAre`, `whatWeDo`, `projects`, `contact`, `footer`, `meta`
+3. Site auto-updates on rebuild
+
+**Projects** are defined in the `projects` array within each JSON file. Each project has:
+- `slug` — used in URL (`/projects/{slug}/`)
+- `title`, `status`, `statusColor`
+- `description` (for card) and `fullDescription` (for detail page)
+- `sections[]` array with title, content, and optional `screenshot`
+- `highlights[]` array with title + description
+
+## Design Constraints
+
+- Generous whitespace, no flashy gradients
+- No stock photos of people, no excessive icons
+- Subtle transitions only (fade/slide), no heavy animations
+- No blog, testimonials, pricing tables, animated counters, AI-themed visuals
 
 ## Tone Rules
 
-When writing or editing any user-facing copy:
+When writing or editing copy:
 - Formal but accessible
 - No marketing hype, buzzwords, or exaggerated claims
 - No "disrupting," "revolutionary," or AI-heavy messaging
 - Focus on evidence, structure, neutrality, methodology
-
-## Required Components
-
-- Navbar
-- Hero section
-- Reusable section container
-- Card component (capabilities + projects)
-- Contact form (with project-type dropdown)
-- Footer
-
-## Asset Placeholders
-
-- `/assets/logo.svg`
-- `/assets/hero-bg.jpg`
-- `/assets/hero-illustration.png`
-
-## Contact
-
-- Email: contact@globalbridge.consulting
-
-
-## Purchased domain
-
-globalbridge.consulting

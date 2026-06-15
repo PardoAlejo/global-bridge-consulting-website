@@ -84,6 +84,20 @@
         "outcome": "Structured and verifiable access to public statements.",
         "status": "Elections",
         "statusKey": "elections"
+      },
+      {
+        "title": "Youth Electoral Monitor (Colombia 2026)",
+        "slug": "youth-electoral-monitor",
+        "description": "Interactive platform presenting findings from a national survey of 3,221 young people on political participation, electoral decisions, and democratic attitudes.",
+        "features": [
+          "Visualizes electoral participation and preference patterns",
+          "Presents youth democratic culture statistics",
+          "Shows ideological distribution and government evaluations",
+          "Enables exploration of key paradoxes and trends"
+        ],
+        "outcome": "Structured access to youth political participation data.",
+        "status": "Elections",
+        "statusKey": "elections"
       }
     ]
   },
@@ -295,6 +309,86 @@
         "Statement detection relies on accurate source attribution and dating, which may not always be available.",
         "Divergence detection is pattern-based and does not assess intent or context beyond what is explicitly stated.",
         "Coverage depends on the availability and accessibility of public records for the actors being tracked."
+      ]
+    },
+    "youth-electoral-monitor": {
+      "meta": {
+        "title": "Youth Electoral Monitor — Global Bridge Consultancy",
+        "description": "National survey examining political participation, electoral decisions, and democratic attitudes among 3,221 young Colombians aged 18-32."
+      },
+      "header": {
+        "title": "Youth Electoral Monitor",
+        "subtitle": "A national study examining political participation, electoral decisions, and democratic attitudes among <strong>3,221 young Colombians aged 18-32</strong>. Interactive platform presenting survey findings through visualizations and comparative analysis.",
+        "status": "Elections",
+        "statusKey": "elections",
+        "liveUrl": "https://voto-joven-colombia.vercel.app/"
+      },
+      "overview": [
+        "The Youth Electoral Monitor presents findings from a national survey conducted by <strong>Cifras & Conceptos</strong>, examining political participation, electoral decisions, and democratic culture among 3,221 young Colombians aged 18-32.",
+        "The platform transforms survey data into <strong>interactive visualizations</strong>, enabling exploration of electoral participation patterns, ideological distribution, democratic satisfaction, and government evaluation. Designed for researchers, journalists, and civic organizations."
+      ],
+      "screenshots": [
+        "/assets/screenshots/youth-electoral-monitor-1.jpeg",
+        "/assets/screenshots/youth-electoral-monitor-2.jpeg"
+      ],
+      "screenshotCaptions": [
+        "Landing page with highlighted statistic showing 81% turnout intention for 2026 presidential elections",
+        "Interactive visualization of key findings on youth democratic attitudes"
+      ],
+      "highlights": [
+        { "value": "3,221", "label": "Young people surveyed" },
+        { "value": "46", "label": "Municipalities covered" },
+        { "value": "81%", "label": "Voting intention" },
+        { "value": "±3%", "label": "Margin of error" }
+      ],
+      "howItWorks": [
+        {
+          "title": "1. Survey collection & validation",
+          "body": "Cifras & Conceptos administered 3,847 surveys between November-December 2025, yielding 3,221 valid responses with ±3% margin of error at 95% confidence. The sample covers 46 municipalities nationally."
+        },
+        {
+          "title": "2. Data structuring & analysis",
+          "body": "Survey responses on electoral participation, ideology, democratic satisfaction, and government evaluation are organized into thematic categories. Statistical distributions are calculated to identify patterns and paradoxes."
+        },
+        {
+          "title": "3. Interactive visualization",
+          "body": "The platform presents findings through interactive charts and highlighted statistics. Users explore key paradoxes: high electoral mobilization alongside democratic disenchantment, or presidential popularity without policy approval."
+        }
+      ],
+      "sources": {
+        "description": "Data from the national survey conducted by Cifras & Conceptos:",
+        "items": [
+          { "type": "Electoral participation", "candidates": "3,221 young people", "detail": "Voting intention, electoral decision clarity, and political preferences" },
+          { "type": "Democratic culture", "candidates": "3,221 young people", "detail": "Democratic satisfaction and openness to non-democratic governance" },
+          { "type": "Government evaluation", "candidates": "3,221 young people", "detail": "Presidential image, policy approval, and ideological self-identification" }
+        ]
+      },
+      "keyFindings": {
+        "title": "Key findings",
+        "items": [
+          {
+            "title": "High turnout intent, low decision clarity",
+            "body": "<strong>81% plan to vote</strong> in the 2026 presidential elections, yet only <strong>25% have decided their vote</strong>. High mobilization coexists with electoral uncertainty."
+          },
+          {
+            "title": "Centrist ideological lean",
+            "body": "<strong>58% identify as centrist</strong>, while left and right each represent 21%, revealing an ideologically moderate youth cohort."
+          },
+          {
+            "title": "Democratic disenchantment",
+            "body": "Only <strong>19% express satisfaction with democracy</strong>, <strong>30% are open to non-democratic governments</strong>, and <strong>28% believe democracy primarily benefits politicians</strong>, signaling a legitimacy crisis."
+          },
+          {
+            "title": "Image-approval gap",
+            "body": "President Petro has a <strong>53% favorable image</strong> but only <strong>29% approve his performance</strong>. The 24-point gap indicates personal popularity without substantive policy support."
+          }
+        ]
+      },
+      "limitations": [
+        "<strong>Point-in-time snapshot</strong>: data reflects attitudes between November-December 2025. Opinions may shift before the 2026 elections.",
+        "<strong>Geographic coverage</strong>: the survey covers 46 municipalities, not the entire national territory.",
+        "<strong>Stated vs. actual behavior</strong>: declared voting intention may differ from actual electoral behavior.",
+        "<strong>Self-reported ideology</strong>: left-center-right identification relies on respondents' self-perception, not objective criteria."
       ]
     }
   },

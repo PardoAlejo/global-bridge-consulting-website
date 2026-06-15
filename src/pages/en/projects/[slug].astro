@@ -13,6 +13,7 @@ export function getStaticPaths() {
   return [
     { params: { slug: 'presidential-assistant' } },
     { params: { slug: 'statement-engine' } },
+    { params: { slug: 'youth-electoral-monitor' } },
   ];
 }
 
@@ -150,6 +151,20 @@ const hasScreenshotCaptions = project.screenshotCaptions && project.screenshots 
               <ScreenshotPlaceholder label={labels.screenshotPlaceholder} />
             </>
           )}
+        </div>
+      </ProjectSection>
+    )}
+
+    <!-- Key findings (conditional) -->
+    {project.keyFindings && (
+      <ProjectSection title={project.keyFindings.title} alt={!project.trustPrinciples}>
+        <div class="key-findings">
+          {project.keyFindings.items.map((item: { title: string; body: string }) => (
+            <div class="key-finding-card">
+              <h3 class="key-finding-card__title">{item.title}</h3>
+              <p class="key-finding-card__body" set:html={item.body} />
+            </div>
+          ))}
         </div>
       </ProjectSection>
     )}
@@ -374,6 +389,40 @@ const hasScreenshotCaptions = project.screenshotCaptions && project.screenshots 
     .screenshots-grid {
       grid-template-columns: 1fr 1fr;
     }
+  }
+
+  /* Key findings */
+  .key-findings {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  @media (min-width: 768px) {
+    .key-findings {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .key-finding-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-left: 4px solid var(--color-accent);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-lg);
+  }
+
+  .key-finding-card__title {
+    font-size: var(--fs-md);
+    font-weight: var(--fw-semibold);
+    margin-bottom: var(--space-sm);
+    color: var(--color-text);
+  }
+
+  .key-finding-card__body {
+    font-size: var(--fs-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--lh-normal);
   }
 
   /* Disclaimer (limitations) */

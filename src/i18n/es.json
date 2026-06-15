@@ -84,6 +84,20 @@
         "outcome": "Acceso estructurado y verificable a declaraciones públicas.",
         "status": "Elecciones",
         "statusKey": "elections"
+      },
+      {
+        "title": "Monitor Electoral Juvenil (Colombia 2026)",
+        "slug": "youth-electoral-monitor",
+        "description": "Plataforma interactiva que presenta hallazgos de una encuesta nacional a 3,221 jóvenes sobre participación política, decisiones electorales y cultura democrática.",
+        "features": [
+          "Visualiza datos de participación y preferencias electorales",
+          "Presenta estadísticas sobre cultura democrática juvenil",
+          "Muestra distribución ideológica y evaluación gubernamental",
+          "Permite exploración interactiva de hallazgos clave"
+        ],
+        "outcome": "Acceso comprensible a datos sobre participación política juvenil.",
+        "status": "Elecciones",
+        "statusKey": "elections"
       }
     ]
   },
@@ -295,6 +309,86 @@
         "La detección de declaraciones depende de una atribución y fechado precisos de las fuentes, lo cual no siempre está disponible.",
         "La detección de divergencias es basada en patrones y no evalúa intención o contexto más allá de lo explícitamente declarado.",
         "La cobertura depende de la disponibilidad y accesibilidad de registros públicos de los actores rastreados."
+      ]
+    },
+    "youth-electoral-monitor": {
+      "meta": {
+        "title": "Monitor Electoral Juvenil — Global Bridge Consultancy",
+        "description": "Plataforma interactiva que presenta hallazgos de una encuesta nacional a 3,221 jóvenes colombianos sobre participación política, decisiones electorales y cultura democrática."
+      },
+      "header": {
+        "title": "Monitor Electoral Juvenil",
+        "subtitle": "Estudio sobre participación política, decisiones electorales y evaluaciones políticas de <strong>3,221 jóvenes colombianos de 18 a 32 años</strong>. Plataforma interactiva que facilita la comprensión de actitudes políticas juveniles mediante visualizaciones y análisis comparativos.",
+        "status": "Elecciones",
+        "statusKey": "elections",
+        "liveUrl": "https://voto-joven-colombia.vercel.app/"
+      },
+      "overview": [
+        "El Monitor Electoral Juvenil presenta los hallazgos de una encuesta nacional realizada por <strong>Cifras & Conceptos</strong> a 3,221 jóvenes colombianos entre 18 y 32 años, enfocándose en participación política, decisiones electorales y cultura democrática.",
+        "La plataforma transforma datos de encuestas en <strong>visualizaciones interactivas comprensibles</strong>, permitiendo explorar patrones de participación electoral, distribución ideológica, satisfacción democrática y evaluación gubernamental. Diseñada para investigadores, periodistas y organizaciones que trabajan con juventud y democracia."
+      ],
+      "screenshots": [
+        "/assets/screenshots/youth-electoral-monitor-1.jpeg",
+        "/assets/screenshots/youth-electoral-monitor-2.jpeg"
+      ],
+      "screenshotCaptions": [
+        "Página principal — estadística destacada del 81% de intención de voto en las presidenciales de 2026",
+        "Visualización de hallazgos clave sobre participación y cultura democrática juvenil"
+      ],
+      "highlights": [
+        { "value": "3,221", "label": "Jóvenes encuestados" },
+        { "value": "46", "label": "Municipios cubiertos" },
+        { "value": "81%", "label": "Intención de voto" },
+        { "value": "±3%", "label": "Margen de error" }
+      ],
+      "howItWorks": [
+        {
+          "title": "1. Recopilación y validación de datos",
+          "body": "Cifras & Conceptos administró 3,847 encuestas entre el 15 de noviembre y el 22 de diciembre de 2025, obteniendo 3,221 respuestas válidas con un margen de error de ±3% al 95% de confianza. La muestra cubre 46 municipios a nivel nacional."
+        },
+        {
+          "title": "2. Estructuración y análisis",
+          "body": "Los datos de participación electoral, posiciones ideológicas, satisfacción democrática y evaluación gubernamental se organizan para permitir análisis comparativos. Las respuestas se clasifican por temas (intención de voto, cultura democrática, evaluación del gobierno) y se calculan distribuciones estadísticas."
+        },
+        {
+          "title": "3. Visualización interactiva",
+          "body": "La plataforma presenta hallazgos mediante gráficas interactivas y estadísticas destacadas. Los usuarios pueden explorar paradojas clave — como alta movilización electoral coexistiendo con desencanto democrático, o popularidad personal del presidente sin respaldo a su gestión."
+        }
+      ],
+      "sources": {
+        "description": "Datos provenientes de la encuesta nacional realizada por Cifras & Conceptos:",
+        "items": [
+          { "type": "Encuesta de participación electoral", "candidates": "3,221 jóvenes", "detail": "Intención de voto, decisión electoral y preferencias políticas" },
+          { "type": "Encuesta de cultura democrática", "candidates": "3,221 jóvenes", "detail": "Satisfacción con la democracia, apertura a gobiernos no democráticos" },
+          { "type": "Encuesta de evaluación gubernamental", "candidates": "3,221 jóvenes", "detail": "Imagen y aprobación del presidente Petro, distribución ideológica" }
+        ]
+      },
+      "keyFindings": {
+        "title": "Hallazgos clave",
+        "items": [
+          {
+            "title": "Movilización electoral alta, decisión pendiente",
+            "body": "El <strong>81% declara que votará</strong> en las elecciones presidenciales de 2026, pero solo el <strong>25% ha decidido su voto</strong> — evidenciando alta intención de participación sin claridad sobre preferencias."
+          },
+          {
+            "title": "Tendencia al centro político",
+            "body": "El <strong>58% se identifica como centrista</strong>, mientras que izquierda y derecha representan cada una el 21% — mostrando una juventud ideológicamente moderada."
+          },
+          {
+            "title": "Desencanto democrático profundo",
+            "body": "Solo el <strong>19% expresa satisfacción con la democracia</strong>, el <strong>30% muestra apertura a gobiernos no democráticos</strong>, y el <strong>28% cree que la democracia beneficia principalmente a políticos</strong> — señalando una crisis de legitimidad democrática."
+          },
+          {
+            "title": "Brecha entre imagen y aprobación presidencial",
+            "body": "El presidente Petro tiene una <strong>imagen favorable del 53%</strong> pero solo el <strong>29% aprueba su gestión</strong> — una diferencia de 24 puntos que indica popularidad personal sin respaldo de políticas."
+          }
+        ]
+      },
+      "limitations": [
+        "<strong>Momento específico</strong>: los datos reflejan actitudes políticas entre noviembre y diciembre de 2025 — las opiniones pueden cambiar antes de las elecciones de 2026.",
+        "<strong>Cobertura geográfica limitada</strong>: la encuesta cubre 46 municipios, no todos los rincones del país.",
+        "<strong>Autoselección declarativa</strong>: la intención de voto declarada puede diferir del comportamiento electoral real.",
+        "<strong>Definiciones ideológicas subjetivas</strong>: la identificación izquierda-centro-derecha depende de la autopercepción de los encuestados, no de criterios objetivos."
       ]
     }
   },
