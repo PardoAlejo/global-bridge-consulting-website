@@ -88,14 +88,14 @@
       {
         "title": "Youth Electoral Monitor (Colombia 2026)",
         "slug": "youth-electoral-monitor",
-        "description": "Interactive platform presenting findings from a national survey of 3,221 young people on political participation, electoral decisions, and democratic attitudes.",
+        "description": "Interactive platform presenting findings from a national survey conducted by Cifras & Conceptos of 3,221 young people on political participation, electoral decisions, and democratic attitudes.",
         "features": [
           "Visualizes electoral participation and preference patterns",
           "Presents youth democratic culture statistics",
           "Shows ideological distribution and government evaluations",
           "Enables exploration of key paradoxes and trends"
         ],
-        "outcome": "Structured access to youth political participation data.",
+        "outcome": "Structured access to Cifras & Conceptos survey data.",
         "status": "Elections",
         "statusKey": "elections"
       }
@@ -314,18 +314,18 @@
     "youth-electoral-monitor": {
       "meta": {
         "title": "Youth Electoral Monitor — Global Bridge Consultancy",
-        "description": "National survey examining political participation, electoral decisions, and democratic attitudes among 3,221 young Colombians aged 18-32."
+        "description": "Visualization of Cifras & Conceptos survey data from 3,221 young Colombians on political participation, electoral decisions, and democratic attitudes."
       },
       "header": {
         "title": "Youth Electoral Monitor",
-        "subtitle": "A national study examining political participation, electoral decisions, and democratic attitudes among <strong>3,221 young Colombians aged 18-32</strong>. Interactive platform presenting survey findings through visualizations and comparative analysis.",
+        "subtitle": "Visualization of national survey data collected by <strong>Cifras & Conceptos</strong> from <strong>3,221 young Colombians aged 18-32</strong> on political participation, electoral decisions, and democratic culture.",
         "status": "Elections",
         "statusKey": "elections",
         "liveUrl": "https://voto-joven-colombia.vercel.app/"
       },
       "overview": [
-        "The Youth Electoral Monitor presents findings from a national survey conducted by <strong>Cifras & Conceptos</strong>, examining political participation, electoral decisions, and democratic culture among 3,221 young Colombians aged 18-32.",
-        "The platform transforms survey data into <strong>interactive visualizations</strong>, enabling exploration of electoral participation patterns, ideological distribution, democratic satisfaction, and government evaluation. Designed for researchers, journalists, and civic organizations."
+        "The Youth Electoral Monitor presents findings from a <strong>national survey conducted by Cifras & Conceptos</strong>, examining political participation, electoral decisions, and democratic culture among 3,221 young Colombians aged 18-32. Cifras & Conceptos is a leading public opinion research and political analysis firm in Colombia.",
+        "The platform transforms data collected by Cifras & Conceptos into <strong>interactive visualizations</strong>, enabling exploration of electoral participation patterns, ideological distribution, democratic satisfaction, and government evaluation. Designed for researchers, journalists, and civic organizations."
       ],
       "screenshots": [
         "/assets/screenshots/youth-electoral-monitor-1.jpeg",
@@ -356,11 +356,11 @@
         }
       ],
       "sources": {
-        "description": "Data from the national survey conducted by Cifras & Conceptos:",
+        "description": "All data presented on this platform was collected by Cifras & Conceptos through a national survey:",
         "items": [
-          { "type": "Electoral participation", "candidates": "3,221 young people", "detail": "Voting intention, electoral decision clarity, and political preferences" },
-          { "type": "Democratic culture", "candidates": "3,221 young people", "detail": "Democratic satisfaction and openness to non-democratic governance" },
-          { "type": "Government evaluation", "candidates": "3,221 young people", "detail": "Presidential image, policy approval, and ideological self-identification" }
+          { "type": "Electoral participation", "candidates": "3,221 young people", "detail": "Data collected by Cifras & Conceptos: voting intention, electoral decision clarity, and political preferences" },
+          { "type": "Democratic culture", "candidates": "3,221 young people", "detail": "Data collected by Cifras & Conceptos: democratic satisfaction and openness to non-democratic governance" },
+          { "type": "Government evaluation", "candidates": "3,221 young people", "detail": "Data collected by Cifras & Conceptos: presidential image, policy approval, and ideological self-identification" }
         ]
       },
       "keyFindings": {

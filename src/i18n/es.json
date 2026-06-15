@@ -88,14 +88,14 @@
       {
         "title": "Monitor Electoral Juvenil (Colombia 2026)",
         "slug": "youth-electoral-monitor",
-        "description": "Plataforma interactiva que presenta hallazgos de una encuesta nacional a 3,221 jóvenes sobre participación política, decisiones electorales y cultura democrática.",
+        "description": "Plataforma interactiva que presenta hallazgos de una encuesta nacional realizada por Cifras & Conceptos a 3,221 jóvenes sobre participación política, decisiones electorales y cultura democrática.",
         "features": [
           "Visualiza datos de participación y preferencias electorales",
           "Presenta estadísticas sobre cultura democrática juvenil",
           "Muestra distribución ideológica y evaluación gubernamental",
           "Permite exploración interactiva de hallazgos clave"
         ],
-        "outcome": "Acceso comprensible a datos sobre participación política juvenil.",
+        "outcome": "Acceso comprensible a datos de encuesta de Cifras & Conceptos.",
         "status": "Elecciones",
         "statusKey": "elections"
       }
@@ -314,18 +314,18 @@
     "youth-electoral-monitor": {
       "meta": {
         "title": "Monitor Electoral Juvenil — Global Bridge Consultancy",
-        "description": "Plataforma interactiva que presenta hallazgos de una encuesta nacional a 3,221 jóvenes colombianos sobre participación política, decisiones electorales y cultura democrática."
+        "description": "Visualización de encuesta de Cifras & Conceptos a 3,221 jóvenes colombianos sobre participación política, decisiones electorales y cultura democrática."
       },
       "header": {
         "title": "Monitor Electoral Juvenil",
-        "subtitle": "Estudio sobre participación política, decisiones electorales y evaluaciones políticas de <strong>3,221 jóvenes colombianos de 18 a 32 años</strong>. Plataforma interactiva que facilita la comprensión de actitudes políticas juveniles mediante visualizaciones y análisis comparativos.",
+        "subtitle": "Visualización de datos de encuesta nacional realizada por <strong>Cifras & Conceptos</strong> a <strong>3,221 jóvenes colombianos de 18 a 32 años</strong> sobre participación política, decisiones electorales y cultura democrática.",
         "status": "Elecciones",
         "statusKey": "elections",
         "liveUrl": "https://voto-joven-colombia.vercel.app/"
       },
       "overview": [
-        "El Monitor Electoral Juvenil presenta los hallazgos de una encuesta nacional realizada por <strong>Cifras & Conceptos</strong> a 3,221 jóvenes colombianos entre 18 y 32 años, enfocándose en participación política, decisiones electorales y cultura democrática.",
-        "La plataforma transforma datos de encuestas en <strong>visualizaciones interactivas comprensibles</strong>, permitiendo explorar patrones de participación electoral, distribución ideológica, satisfacción democrática y evaluación gubernamental. Diseñada para investigadores, periodistas y organizaciones que trabajan con juventud y democracia."
+        "El Monitor Electoral Juvenil presenta los hallazgos de una <strong>encuesta nacional realizada por Cifras & Conceptos</strong> a 3,221 jóvenes colombianos entre 18 y 32 años, enfocándose en participación política, decisiones electorales y cultura democrática. Cifras & Conceptos es una firma líder en investigación de opinión y análisis político en Colombia.",
+        "La plataforma transforma los datos recolectados por Cifras & Conceptos en <strong>visualizaciones interactivas comprensibles</strong>, permitiendo explorar patrones de participación electoral, distribución ideológica, satisfacción democrática y evaluación gubernamental. Diseñada para investigadores, periodistas y organizaciones que trabajan con juventud y democracia."
       ],
       "screenshots": [
         "/assets/screenshots/youth-electoral-monitor-1.jpeg",
@@ -356,11 +356,11 @@
         }
       ],
       "sources": {
-        "description": "Datos provenientes de la encuesta nacional realizada por Cifras & Conceptos:",
+        "description": "Todos los datos presentados en esta plataforma fueron recolectados por Cifras & Conceptos mediante encuesta nacional:",
         "items": [
-          { "type": "Encuesta de participación electoral", "candidates": "3,221 jóvenes", "detail": "Intención de voto, decisión electoral y preferencias políticas" },
-          { "type": "Encuesta de cultura democrática", "candidates": "3,221 jóvenes", "detail": "Satisfacción con la democracia, apertura a gobiernos no democráticos" },
-          { "type": "Encuesta de evaluación gubernamental", "candidates": "3,221 jóvenes", "detail": "Imagen y aprobación del presidente Petro, distribución ideológica" }
+          { "type": "Participación electoral", "candidates": "3,221 jóvenes", "detail": "Datos recolectados por Cifras & Conceptos: intención de voto, decisión electoral y preferencias políticas" },
+          { "type": "Cultura democrática", "candidates": "3,221 jóvenes", "detail": "Datos recolectados por Cifras & Conceptos: satisfacción con la democracia, apertura a gobiernos no democráticos" },
+          { "type": "Evaluación gubernamental", "candidates": "3,221 jóvenes", "detail": "Datos recolectados por Cifras & Conceptos: imagen y aprobación del presidente Petro, distribución ideológica" }
         ]
       },
       "keyFindings": {
