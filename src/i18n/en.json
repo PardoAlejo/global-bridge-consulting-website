@@ -421,8 +421,14 @@
         "The Electoral Results Dashboard presents a <strong>comprehensive interactive visualization</strong> of Colombia's 2026 presidential election results. It enables analysis of vote distribution at national, departmental, and municipal levels, identifying geographic patterns and key territories.",
         "The platform facilitates <strong>comparative analysis between candidates</strong>, showing electoral strongholds (areas of strength), most competitive departments (closest margins), and geographic concentration of electoral advantages. Designed for researchers, journalists, and citizens interested in understanding electoral outcomes."
       ],
-      "screenshots": [],
-      "screenshotCaptions": [],
+      "screenshots": [
+        "/assets/screenshots/electoral-results-1.jpeg",
+        "/assets/screenshots/electoral-results-2.jpeg"
+      ],
+      "screenshotCaptions": [
+        "National view — results map by department showing winner, runner-up, and vote distribution",
+        "Departmental view — municipal breakdown with detailed results by territory"
+      ],
       "highlights": [
         { "value": "23M+", "label": "Votes processed" },
         { "value": "33", "label": "Departments" },

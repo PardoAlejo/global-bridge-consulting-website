@@ -421,8 +421,14 @@
         "El Dashboard de Resultados Electorales presenta una <strong>visualización interactiva completa</strong> de los resultados de las elecciones presidenciales de Colombia 2026. Permite analizar la distribución de votos a nivel nacional, departamental y municipal, identificando patrones geográficos y territorios clave.",
         "La plataforma facilita el <strong>análisis comparativo entre candidatos</strong>, mostrando bastiones electorales (zonas de fortaleza), departamentos más competitivos (márgenes más cerrados) y la concentración geográfica de las ventajas electorales. Diseñada para investigadores, periodistas y ciudadanos interesados en comprender los resultados electorales."
       ],
-      "screenshots": [],
-      "screenshotCaptions": [],
+      "screenshots": [
+        "/assets/screenshots/electoral-results-1.jpeg",
+        "/assets/screenshots/electoral-results-2.jpeg"
+      ],
+      "screenshotCaptions": [
+        "Vista nacional — mapa de resultados por departamento con ganador, segundo lugar y distribución de votos",
+        "Vista departamental — desagregación municipal con resultados detallados por territorio"
+      ],
       "highlights": [
         { "value": "23M+", "label": "Votos procesados" },
         { "value": "33", "label": "Departamentos" },
