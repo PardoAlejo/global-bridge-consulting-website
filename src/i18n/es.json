@@ -98,6 +98,20 @@
         "outcome": "Acceso comprensible a datos de encuesta de Cifras & Conceptos.",
         "status": "Elecciones",
         "statusKey": "elections"
+      },
+      {
+        "title": "Resultados Electorales (Colombia 2026)",
+        "slug": "electoral-results",
+        "description": "Dashboard interactivo para explorar los resultados de las elecciones presidenciales a nivel nacional, departamental y municipal, con análisis de bastiones y territorios competitivos.",
+        "features": [
+          "Visualiza resultados por candidato a nivel nacional y territorial",
+          "Identifica bastiones electorales por región",
+          "Muestra departamentos más competitivos y márgenes de diferencia",
+          "Permite comparación entre candidatos por territorio"
+        ],
+        "outcome": "Acceso transparente a resultados electorales oficiales.",
+        "status": "Elecciones",
+        "statusKey": "elections"
       }
     ]
   },
@@ -389,6 +403,58 @@
         "<strong>Cobertura geográfica limitada</strong>: la encuesta cubre 46 municipios, no todos los rincones del país.",
         "<strong>Autoselección declarativa</strong>: la intención de voto declarada puede diferir del comportamiento electoral real.",
         "<strong>Definiciones ideológicas subjetivas</strong>: la identificación izquierda-centro-derecha depende de la autopercepción de los encuestados, no de criterios objetivos."
+      ]
+    },
+    "electoral-results": {
+      "meta": {
+        "title": "Resultados Electorales Colombia 2026 — Global Bridge Consultancy",
+        "description": "Dashboard interactivo para explorar resultados de las elecciones presidenciales de Colombia 2026 a nivel nacional, departamental y municipal."
+      },
+      "header": {
+        "title": "Resultados Electorales Colombia 2026",
+        "subtitle": "Dashboard interactivo para explorar los <strong>resultados de las elecciones presidenciales</strong> a nivel nacional, departamental y municipal. Visualiza bastiones electorales, territorios competitivos y distribución de votos por candidato.",
+        "status": "Elecciones",
+        "statusKey": "elections",
+        "liveUrl": "https://voto-colombia-2026.vercel.app/"
+      },
+      "overview": [
+        "El Dashboard de Resultados Electorales presenta una <strong>visualización interactiva completa</strong> de los resultados de las elecciones presidenciales de Colombia 2026. Permite analizar la distribución de votos a nivel nacional, departamental y municipal, identificando patrones geográficos y territorios clave.",
+        "La plataforma facilita el <strong>análisis comparativo entre candidatos</strong>, mostrando bastiones electorales (zonas de fortaleza), departamentos más competitivos (márgenes más cerrados) y la concentración geográfica de las ventajas electorales. Diseñada para investigadores, periodistas y ciudadanos interesados en comprender los resultados electorales."
+      ],
+      "screenshots": [],
+      "screenshotCaptions": [],
+      "highlights": [
+        { "value": "23M+", "label": "Votos procesados" },
+        { "value": "33", "label": "Departamentos" },
+        { "value": "1,122", "label": "Municipios" },
+        { "value": "118K+", "label": "Mesas electorales" },
+        { "value": "11", "label": "Candidatos" }
+      ],
+      "howItWorks": [
+        {
+          "title": "1. Ingesta y limpieza de datos",
+          "body": "Los datos oficiales de la Registraduría Nacional se procesan mediante una arquitectura Medallion (Bronze → Silver → Gold), limpiando y normalizando los registros de cada mesa electoral a nivel nacional."
+        },
+        {
+          "title": "2. Agregación territorial",
+          "body": "Los resultados se agregan a nivel nacional, departamental y municipal, calculando totales de votos, porcentajes y ganadores por territorio. Se identifican bastiones y zonas competitivas."
+        },
+        {
+          "title": "3. Visualización interactiva",
+          "body": "El dashboard presenta los datos mediante gráficos y mapas interactivos, permitiendo explorar resultados por candidato, comparar territorios y analizar patrones geográficos de votación."
+        }
+      ],
+      "sources": {
+        "description": "Datos oficiales de resultados electorales procesados de fuentes públicas:",
+        "items": [
+          { "type": "Resultados por mesa", "candidates": "118,313 mesas", "detail": "Datos de la Registraduría Nacional del Estado Civil de Colombia" },
+          { "type": "Geometrías territoriales", "candidates": "33 departamentos, 1,122 municipios", "detail": "Marco Geoestadístico Nacional (MGN) 2025 del DANE" }
+        ]
+      },
+      "limitations": [
+        "<strong>Datos de primera vuelta</strong>: el dashboard refleja los resultados de la primera vuelta electoral.",
+        "<strong>Actualizaciones manuales</strong>: los datos se actualizan manualmente cuando la Registraduría publica nuevos resultados oficiales.",
+        "<strong>Precisión de fuentes</strong>: la exactitud depende de los datos publicados por las fuentes oficiales."
       ]
     }
   },

@@ -98,6 +98,20 @@
         "outcome": "Structured access to Cifras & Conceptos survey data.",
         "status": "Elections",
         "statusKey": "elections"
+      },
+      {
+        "title": "Electoral Results (Colombia 2026)",
+        "slug": "electoral-results",
+        "description": "Interactive dashboard to explore presidential election results at national, departmental, and municipal levels, with analysis of strongholds and competitive territories.",
+        "features": [
+          "Visualizes results by candidate at national and territorial levels",
+          "Identifies electoral strongholds by region",
+          "Shows most competitive departments and margin differences",
+          "Enables candidate comparison by territory"
+        ],
+        "outcome": "Transparent access to official electoral results.",
+        "status": "Elections",
+        "statusKey": "elections"
       }
     ]
   },
@@ -389,6 +403,58 @@
         "<strong>Geographic coverage</strong>: the survey covers 46 municipalities, not the entire national territory.",
         "<strong>Stated vs. actual behavior</strong>: declared voting intention may differ from actual electoral behavior.",
         "<strong>Self-reported ideology</strong>: left-center-right identification relies on respondents' self-perception, not objective criteria."
+      ]
+    },
+    "electoral-results": {
+      "meta": {
+        "title": "Electoral Results Colombia 2026 — Global Bridge Consultancy",
+        "description": "Interactive dashboard to explore Colombia's 2026 presidential election results at national, departmental, and municipal levels."
+      },
+      "header": {
+        "title": "Electoral Results Colombia 2026",
+        "subtitle": "Interactive dashboard to explore <strong>presidential election results</strong> at national, departmental, and municipal levels. Visualize electoral strongholds, competitive territories, and vote distribution by candidate.",
+        "status": "Elections",
+        "statusKey": "elections",
+        "liveUrl": "https://voto-colombia-2026.vercel.app/"
+      },
+      "overview": [
+        "The Electoral Results Dashboard presents a <strong>comprehensive interactive visualization</strong> of Colombia's 2026 presidential election results. It enables analysis of vote distribution at national, departmental, and municipal levels, identifying geographic patterns and key territories.",
+        "The platform facilitates <strong>comparative analysis between candidates</strong>, showing electoral strongholds (areas of strength), most competitive departments (closest margins), and geographic concentration of electoral advantages. Designed for researchers, journalists, and citizens interested in understanding electoral outcomes."
+      ],
+      "screenshots": [],
+      "screenshotCaptions": [],
+      "highlights": [
+        { "value": "23M+", "label": "Votes processed" },
+        { "value": "33", "label": "Departments" },
+        { "value": "1,122", "label": "Municipalities" },
+        { "value": "118K+", "label": "Polling stations" },
+        { "value": "11", "label": "Candidates" }
+      ],
+      "howItWorks": [
+        {
+          "title": "1. Data ingestion & cleaning",
+          "body": "Official data from the National Civil Registry is processed through a Medallion architecture (Bronze → Silver → Gold), cleaning and normalizing records from each polling station nationwide."
+        },
+        {
+          "title": "2. Territorial aggregation",
+          "body": "Results are aggregated at national, departmental, and municipal levels, calculating vote totals, percentages, and winners by territory. Strongholds and competitive zones are identified."
+        },
+        {
+          "title": "3. Interactive visualization",
+          "body": "The dashboard presents data through interactive charts and maps, enabling exploration of results by candidate, territory comparison, and analysis of geographic voting patterns."
+        }
+      ],
+      "sources": {
+        "description": "Official electoral results data processed from public sources:",
+        "items": [
+          { "type": "Polling station results", "candidates": "118,313 stations", "detail": "Data from Colombia's National Civil Registry (Registraduría Nacional)" },
+          { "type": "Territorial geometries", "candidates": "33 departments, 1,122 municipalities", "detail": "National Geostatistical Framework (MGN) 2025 from DANE" }
+        ]
+      },
+      "limitations": [
+        "<strong>First round data</strong>: the dashboard reflects first-round electoral results.",
+        "<strong>Manual updates</strong>: data is updated manually when the Civil Registry publishes new official results.",
+        "<strong>Source accuracy</strong>: precision depends on data published by official sources."
       ]
     }
   },
