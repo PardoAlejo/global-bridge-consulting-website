@@ -140,22 +140,29 @@ To update website copy:
 
 ### Current Projects
 
-1. **Presidential Evidence Assistant** (`presidential-assistant`)
-   - Q&A system over 24+ Colombian presidential candidates
-   - Traceable citations to original sources
-
-2. **Youth Electoral Monitor** (`youth-electoral-monitor`)
+1. **Youth Electoral Monitor** (`youth-electoral-monitor`)
    - Interactive platform presenting survey data collected by **Cifras & Conceptos**
    - National survey of 3,221 young Colombians (18-32 years)
    - Data on political participation, electoral decisions, and democratic culture
    - **Important:** Always credit Cifras & Conceptos when referencing this project's data
 
-3. **ROLI Dashboard** (`roli-dashboard`)
+2. **Presidential Evidence Assistant** (`presidential-assistant`)
+   - Q&A system over 24+ Colombian presidential candidates
+   - Traceable citations to original sources
+
+3. **Electoral Results Dashboard** (`electoral-results`)
+   - Interactive visualization of Colombia 2026 presidential election results
+   - National, departmental, and municipal level analysis
+   - 23M+ votes, 33 departments, 1,122 municipalities, 118K+ polling stations
+   - Identifies electoral strongholds and competitive territories
+   - Data sourced from Registraduría Nacional
+
+4. **ROLI Dashboard** (`roli-dashboard`)
    - Analytical tool for Rule of Law Index data
    - 140+ countries, 10+ years of data
    - Hidden from public project listing
 
-4. **Statement Consistency Engine** (`statement-engine`)
+5. **Statement Consistency Engine** (`statement-engine`)
    - Prototype for tracking temporal consistency in public statements
 
 ## Design Constraints
