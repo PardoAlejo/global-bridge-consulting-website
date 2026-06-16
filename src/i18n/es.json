@@ -72,20 +72,6 @@
     "viewProject": "Ver proyecto",
     "items": [
       {
-        "title": "Asistente Presidencial (Colombia 2026)",
-        "slug": "presidential-assistant",
-        "description": "Sistema de preguntas y comparación sobre propuestas y entrevistas, con acceso trazable a fuentes originales.",
-        "features": [
-          "Organiza propuestas publicadas (web y PDF)",
-          "Estructura entrevistas en video con referencia temporal",
-          "Permite comparación entre candidatos",
-          "Vincula respuestas a fuentes originales"
-        ],
-        "outcome": "Acceso estructurado y verificable a declaraciones públicas.",
-        "status": "Elecciones",
-        "statusKey": "elections"
-      },
-      {
         "title": "Monitor Electoral Juvenil (Colombia 2026)",
         "slug": "youth-electoral-monitor",
         "description": "Plataforma interactiva que presenta hallazgos de una encuesta nacional realizada por Cifras & Conceptos a 3,221 jóvenes sobre participación política, decisiones electorales y cultura democrática.",
@@ -96,6 +82,20 @@
           "Permite exploración interactiva de hallazgos clave"
         ],
         "outcome": "Acceso comprensible a datos de encuesta de Cifras & Conceptos.",
+        "status": "Elecciones",
+        "statusKey": "elections"
+      },
+      {
+        "title": "Asistente Presidencial (Colombia 2026)",
+        "slug": "presidential-assistant",
+        "description": "Sistema de preguntas y comparación sobre propuestas y entrevistas, con acceso trazable a fuentes originales.",
+        "features": [
+          "Organiza propuestas publicadas (web y PDF)",
+          "Estructura entrevistas en video con referencia temporal",
+          "Permite comparación entre candidatos",
+          "Vincula respuestas a fuentes originales"
+        ],
+        "outcome": "Acceso estructurado y verificable a declaraciones públicas.",
         "status": "Elecciones",
         "statusKey": "elections"
       },

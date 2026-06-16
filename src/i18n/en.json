@@ -72,20 +72,6 @@
     "viewProject": "View project",
     "items": [
       {
-        "title": "Presidential Evidence Assistant (Colombia 2026)",
-        "slug": "presidential-assistant",
-        "description": "A question-and-comparison system over proposals and interviews, with traceable links to original sources.",
-        "features": [
-          "Organizes published proposals (web and PDF)",
-          "Structures video interviews with timestamp references",
-          "Enables structured comparison between candidates",
-          "Links responses to original sources"
-        ],
-        "outcome": "Structured and verifiable access to public statements.",
-        "status": "Elections",
-        "statusKey": "elections"
-      },
-      {
         "title": "Youth Electoral Monitor (Colombia 2026)",
         "slug": "youth-electoral-monitor",
         "description": "Interactive platform presenting findings from a national survey conducted by Cifras & Conceptos of 3,221 young people on political participation, electoral decisions, and democratic attitudes.",
@@ -96,6 +82,20 @@
           "Enables exploration of key paradoxes and trends"
         ],
         "outcome": "Structured access to Cifras & Conceptos survey data.",
+        "status": "Elections",
+        "statusKey": "elections"
+      },
+      {
+        "title": "Presidential Evidence Assistant (Colombia 2026)",
+        "slug": "presidential-assistant",
+        "description": "A question-and-comparison system over proposals and interviews, with traceable links to original sources.",
+        "features": [
+          "Organizes published proposals (web and PDF)",
+          "Structures video interviews with timestamp references",
+          "Enables structured comparison between candidates",
+          "Links responses to original sources"
+        ],
+        "outcome": "Structured and verifiable access to public statements.",
         "status": "Elections",
         "statusKey": "elections"
       },
