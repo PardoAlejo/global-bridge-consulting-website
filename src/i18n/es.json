@@ -481,9 +481,9 @@
         "summary": "Una mirada a los resultados electorales presidenciales de Colombia 2026, más allá del ruido. Tres hallazgos sobre regiones, preferencias y movilización.",
         "heroQuote": "El problema es que ese retrato llega en forma de cifras, y las cifras se leen a la carrera, en medio del ruido, cuando todavía nadie tiene la calma para mirarlas de verdad.",
         "pullQuotes": [
-          "Colombia no obedece a una realidad sino a varias que conviven al mismo tiempo y la elección de cuál mirar rara vez es inocente. No existe un candidato de las regiones; existen los dos.",
-          "El nuevo gobierno no recibe un país que cambió de opinión, sino uno que se ordenó en dos columnas más firmes que antes.",
-          "Una elección se gana sumando a los que ya están de acuerdo; pero un país se gobierna convenciendo a los que no."
+          "Cepeda ganó en 19 departamentos y De la Espriella en 14. Pero a nivel municipal el resultado se invierte: De la Espriella ganó en 723 municipios (64%) y Cepeda en 399.",
+          "El 97,9% de los municipios conservó al mismo candidato con ventaja. La diferencia promedio entre bandos creció un 40%.",
+          "6 de cada 10 votos de los candidatos eliminados fueron para De la Espriella. 3 de cada 4 votos nuevos fueron para Cepeda."
         ],
         "sections": [
           {
@@ -520,7 +520,7 @@
           },
           {
             "type": "pullquote",
-            "content": "Colombia no obedece a una realidad sino a varias que conviven al mismo tiempo y la elección de cuál mirar rara vez es inocente. No existe un candidato de las regiones; existen los dos."
+            "content": "Cepeda ganó en 19 departamentos y De la Espriella en 14. Pero a nivel municipal el resultado se invierte: De la Espriella ganó en 723 municipios (64%) y Cepeda en 399."
           },
           {
             "type": "body",
@@ -533,7 +533,7 @@
             "type": "body",
             "content": [
               "Ahora bien, todo dato tiene un matiz y este tiene uno importante. Cepeda ganó en el 75% de los municipios PDET (Programa de Desarrollo con Enfoque Territorial); 170 territorios que el Estado identifica como los más afectados por el conflicto armado. Del mismo modo, en los municipios con mayores niveles de pobreza del país, de acuerdo al Índice de Pobreza Multidimensional (IPM), el candidato del Pacto obtuvo el 57% de los votos. Esto significa que, <strong>en la Colombia del conflicto y de la pobreza, el candidato de las regiones sería Iván Cepeda.</strong>",
-              "La conclusión no es que una lectura derrote a la otra, sino algo bastante más incómodo: \"las regiones\" no son una sola cosa. Dependiendo de si definimos región por tamaño de municipio, por ruralidad, por afectación del conflicto o por pobreza, el mismo conjunto de datos produce dos países distintos, y los dos son verdaderos. Colombia no obedece a una realidad sino a varias que conviven al mismo tiempo y la elección de cuál mirar rara vez es inocente. No existe un candidato de las regiones; existen los dos."
+              "La conclusión no es que una lectura derrote a la otra, sino algo bastante más incómodo: \"las regiones\" no son una sola cosa. Dependiendo de si definimos región por tamaño de municipio, por ruralidad, por afectación del conflicto o por pobreza, el mismo conjunto de datos produce dos países distintos, y los dos son verdaderos. <strong>Colombia no obedece a una realidad sino a varias que conviven al mismo tiempo y la elección de cuál mirar rara vez es inocente. No existe un candidato de las regiones; existen los dos.</strong>"
             ]
           },
           {
@@ -549,7 +549,7 @@
           },
           {
             "type": "pullquote",
-            "content": "El nuevo gobierno no recibe un país que cambió de opinión, sino uno que se ordenó en dos columnas más firmes que antes."
+            "content": "El 97,9% de los municipios conservó al mismo candidato con ventaja. La diferencia promedio entre bandos creció un 40%."
           },
           {
             "type": "body",
@@ -564,7 +564,16 @@
           {
             "type": "body",
             "content": [
-              "Entre una vuelta y otra había en juego dos bolsas de votos muy distintas: por un lado, los 3,1 millones de votos que sacaron los nueve candidatos eliminados. Por otro, los 2,4 millones de votos válidos adicionales que aparecieron por el aumento de la participación, es decir, ciudadanos que no habían votado en la primera vuelta.",
+              "Entre una vuelta y otra había en juego dos bolsas de votos muy distintas: por un lado, los 3,1 millones de votos que sacaron los nueve candidatos eliminados. Por otro, los 2,4 millones de votos válidos adicionales que aparecieron por el aumento de la participación, es decir, ciudadanos que no habían votado en la primera vuelta."
+            ]
+          },
+          {
+            "type": "pullquote",
+            "content": "6 de cada 10 votos de los candidatos eliminados fueron para De la Espriella. 3 de cada 4 votos nuevos fueron para Cepeda."
+          },
+          {
+            "type": "body",
+            "content": [
               "Para estimar hacia dónde fue cada bolsa, comparamos las más de 118 mil mesas de las dos vueltas. El resultado es que cada candidato se alimentó de una bolsa diferente: 6 de cada 10 votos (1,9 millones) de los candidatos eliminados, terminaron en la bolsa de De la Espriella. Mientras que 3 de cada 4 votos (1,8 millones) nuevos se fueron para la de Cepeda.",
               "Ahí está la explicación de la remontada, porque aunque Cepeda creció más que su rival (2,96 millones de votos frente a 2,52 millones de Abelardo), movilizó a quienes no habían votado, pero no recicló el voto de los eliminados, que era la bolsa más grande. Cepeda ganó la elección de los que no habían votado y De la Espriella ganó la elección de los que habían votado por otro."
             ]
@@ -576,17 +585,8 @@
           {
             "type": "body",
             "content": [
-              "Los tres hallazgos revelan algo que Colombia ya sabía, pero que aquí se ve con cifras: somos un país polarizado. Pero decir que estamos polarizados, a estas alturas, es apenas ponerle un nombre al problema. Lo que estos datos revelan es su mecánica, y ahí aparece lo verdaderamente incómodo: esta elección no se batalló convenciendo a nadie; se disputó sumando a quienes ya pensaban parecido y llevándolos a los extremos, representados en la segunda vuelta. Eso es legítimo y ha sido una tendencia en las elecciones modernas en el mundo. Pero deja una verdad difícil de digerir: el nuevo gobierno no recibe un país que cambió de opinión, sino uno que se ordenó en dos columnas más firmes que antes."
-            ]
-          },
-          {
-            "type": "pullquote",
-            "content": "Una elección se gana sumando a los que ya están de acuerdo; pero un país se gobierna convenciendo a los que no."
-          },
-          {
-            "type": "body",
-            "content": [
-              "Y ahí está el problema, porque gobernar es exactamente lo contrario a lo que premió la campaña. Una elección se gana sumando a los que ya están de acuerdo; pero un país se gobierna convenciendo a los que no. En este eterno mes y medio hemos visto lo difícil que se ha vuelto eso: porque cuando cada columna se reafirma en su propio relato, el que piensa distinto deja de ser alguien con quien se negocia y pasa a ser alguien a quien se derrota."
+              "Los tres hallazgos revelan algo que Colombia ya sabía, pero que aquí se ve con cifras: somos un país polarizado. Pero decir que estamos polarizados, a estas alturas, es apenas ponerle un nombre al problema. Lo que estos datos revelan es su mecánica, y ahí aparece lo verdaderamente incómodo: esta elección no se batalló convenciendo a nadie; se disputó sumando a quienes ya pensaban parecido y llevándolos a los extremos, representados en la segunda vuelta. Eso es legítimo y ha sido una tendencia en las elecciones modernas en el mundo. Pero deja una verdad difícil de digerir: <strong>el nuevo gobierno no recibe un país que cambió de opinión, sino uno que se ordenó en dos columnas más firmes que antes.</strong>",
+              "Y ahí está el problema, porque gobernar es exactamente lo contrario a lo que premió la campaña. <strong>Una elección se gana sumando a los que ya están de acuerdo; pero un país se gobierna convenciendo a los que no.</strong> En este eterno mes y medio hemos visto lo difícil que se ha vuelto eso: porque cuando cada columna se reafirma en su propio relato, el que piensa distinto deja de ser alguien con quien se negocia y pasa a ser alguien a quien se derrota."
             ]
           },
           {

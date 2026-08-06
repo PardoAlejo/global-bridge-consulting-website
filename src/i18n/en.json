@@ -481,9 +481,9 @@
         "summary": "A look at Colombia's 2026 presidential election results, beyond the noise. Three findings about regions, preferences, and mobilization.",
         "heroQuote": "The problem is that this portrait arrives as numbers, and numbers are read in a rush, amid the noise, when nobody yet has the calm to truly look at them.",
         "pullQuotes": [
-          "Colombia does not obey a single reality but several that coexist at the same time, and the choice of which to look at is rarely innocent. There is no single candidate of the regions; there are two.",
-          "The new government does not inherit a country that changed its mind, but one that arranged itself into two firmer columns than before.",
-          "An election is won by rallying those who already agree; but a country is governed by convincing those who don't."
+          "Cepeda won 19 departments and De la Espriella won 14. But at the municipal level, the result inverts: De la Espriella won 723 municipalities (64%) and Cepeda won 399.",
+          "97.9% of municipalities kept the same leading candidate. The average margin between sides grew by 40%.",
+          "6 out of every 10 votes from eliminated candidates went to De la Espriella. 3 out of every 4 new votes went to Cepeda."
         ],
         "sections": [
           {
@@ -520,7 +520,7 @@
           },
           {
             "type": "pullquote",
-            "content": "Colombia does not obey a single reality but several that coexist at the same time, and the choice of which to look at is rarely innocent. There is no single candidate of the regions; there are two."
+            "content": "Cepeda won 19 departments and De la Espriella won 14. But at the municipal level, the result inverts: De la Espriella won 723 municipalities (64%) and Cepeda won 399."
           },
           {
             "type": "body",
@@ -533,7 +533,7 @@
             "type": "body",
             "content": [
               "Now, every data point has a nuance, and this one has an important one. Cepeda won 75% of PDET municipalities (Development Programs with Territorial Focus) — 170 territories that the State identifies as most affected by the armed conflict. Similarly, in the country's poorest municipalities, according to the Multidimensional Poverty Index (MPI), the Pacto candidate obtained 57% of votes. <strong>This means that, in the Colombia of conflict and poverty, the candidate of the regions would be Iván Cepeda.</strong>",
-              "The conclusion is not that one reading defeats the other, but something considerably more uncomfortable: \"the regions\" are not one thing. Depending on whether we define region by municipality size, rurality, conflict impact, or poverty, the same dataset produces two different countries — and both are real. Colombia does not obey a single reality but several that coexist at the same time, and the choice of which to look at is rarely innocent. There is no single candidate of the regions; there are two."
+              "The conclusion is not that one reading defeats the other, but something considerably more uncomfortable: \"the regions\" are not one thing. Depending on whether we define region by municipality size, rurality, conflict impact, or poverty, the same dataset produces two different countries — and both are real. <strong>Colombia does not obey a single reality but several that coexist at the same time, and the choice of which to look at is rarely innocent. There is no single candidate of the regions; there are two.</strong>"
             ]
           },
           {
@@ -549,7 +549,7 @@
           },
           {
             "type": "pullquote",
-            "content": "The new government does not inherit a country that changed its mind, but one that arranged itself into two firmer columns than before."
+            "content": "97.9% of municipalities kept the same leading candidate. The average margin between sides grew by 40%."
           },
           {
             "type": "body",
@@ -564,7 +564,16 @@
           {
             "type": "body",
             "content": [
-              "Between rounds, two very different pools of votes were in play: on one hand, the 3.1 million votes cast for the nine eliminated candidates. On the other, the 2.4 million additional valid votes that appeared due to increased turnout — citizens who hadn't voted in the first round.",
+              "Between rounds, two very different pools of votes were in play: on one hand, the 3.1 million votes cast for the nine eliminated candidates. On the other, the 2.4 million additional valid votes that appeared due to increased turnout — citizens who hadn't voted in the first round."
+            ]
+          },
+          {
+            "type": "pullquote",
+            "content": "6 out of every 10 votes from eliminated candidates went to De la Espriella. 3 out of every 4 new votes went to Cepeda."
+          },
+          {
+            "type": "body",
+            "content": [
               "To estimate where each pool went, we compared the more than 118,000 polling stations across both rounds. The result is that each candidate drew from a different pool: 6 out of every 10 votes (1.9 million) from eliminated candidates ended up in De la Espriella's column. Meanwhile, 3 out of every 4 new votes (1.8 million) went to Cepeda's.",
               "Therein lies the explanation for the comeback: although Cepeda grew more than his rival (2.96 million votes versus Abelardo's 2.52 million), he mobilized those who hadn't voted but didn't recycle the votes of eliminated candidates — which was the larger pool. Cepeda won the election of those who hadn't voted, and De la Espriella won the election of those who had voted for someone else."
             ]
@@ -576,17 +585,8 @@
           {
             "type": "body",
             "content": [
-              "The three findings reveal something Colombia already knew, but which is now visible in numbers: we are a polarized country. But saying we are polarized, at this point, is merely naming the problem. What these data reveal is the mechanics, and there the truly uncomfortable truth emerges: this election was not fought by convincing anyone; it was contested by rallying those who already thought alike and pushing them to the extremes, represented in the runoff. That is legitimate and has been a trend in modern elections worldwide. But it leaves a hard truth to digest: the new government does not inherit a country that changed its mind, but one that arranged itself into two firmer columns than before."
-            ]
-          },
-          {
-            "type": "pullquote",
-            "content": "An election is won by rallying those who already agree; but a country is governed by convincing those who don't."
-          },
-          {
-            "type": "body",
-            "content": [
-              "And therein lies the problem, because governing is exactly the opposite of what the campaign rewarded. An election is won by rallying those who already agree; but a country is governed by convincing those who don't. In this endless month and a half, we've seen how difficult that has become: because when each column reaffirms its own narrative, the one who thinks differently stops being someone to negotiate with and becomes someone to defeat."
+              "The three findings reveal something Colombia already knew, but which is now visible in numbers: we are a polarized country. But saying we are polarized, at this point, is merely naming the problem. What these data reveal is the mechanics, and there the truly uncomfortable truth emerges: this election was not fought by convincing anyone; it was contested by rallying those who already thought alike and pushing them to the extremes, represented in the runoff. That is legitimate and has been a trend in modern elections worldwide. But it leaves a hard truth to digest: <strong>the new government does not inherit a country that changed its mind, but one that arranged itself into two firmer columns than before.</strong>",
+              "And therein lies the problem, because governing is exactly the opposite of what the campaign rewarded. <strong>An election is won by rallying those who already agree; but a country is governed by convincing those who don't.</strong> In this endless month and a half, we've seen how difficult that has become: because when each column reaffirms its own narrative, the one who thinks differently stops being someone to negotiate with and becomes someone to defeat."
             ]
           },
           {
