@@ -7,6 +7,7 @@
     "whoWeAre": "Quiénes somos",
     "whatWeDo": "Qué hacemos",
     "projects": "Proyectos",
+    "blog": "Blog",
     "contact": "Contacto"
   },
   "hero": {
@@ -463,6 +464,162 @@
         "<strong>Precisión de fuentes</strong>: la exactitud depende de los datos publicados por las fuentes oficiales."
       ]
     }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Análisis y reflexiones sobre datos, evidencia y decisiones.",
+    "readMore": "Leer artículo",
+    "backToBlog": "Volver al blog",
+    "dataNote": "Nota sobre los datos",
+    "posts": [
+      {
+        "slug": "reflexiones-elecciones-colombia-2026",
+        "title": "¿Qué reflexiones nos dejan las elecciones en Colombia?",
+        "category": "Análisis de datos electorales · Colombia 2026",
+        "date": "3 de agosto de 2026",
+        "isoDate": "2026-08-03",
+        "summary": "Una mirada a los resultados electorales presidenciales de Colombia 2026, más allá del ruido. Tres hallazgos sobre regiones, preferencias y movilización.",
+        "heroQuote": "El problema es que ese retrato llega en forma de cifras, y las cifras se leen a la carrera, en medio del ruido, cuando todavía nadie tiene la calma para mirarlas de verdad.",
+        "pullQuotes": [
+          "Colombia no obedece a una realidad sino a varias que conviven al mismo tiempo y la elección de cuál mirar rara vez es inocente. No existe un candidato de las regiones; existen los dos.",
+          "El nuevo gobierno no recibe un país que cambió de opinión, sino uno que se ordenó en dos columnas más firmes que antes.",
+          "Una elección se gana sumando a los que ya están de acuerdo; pero un país se gobierna convenciendo a los que no."
+        ],
+        "sections": [
+          {
+            "type": "intro",
+            "content": [
+              "Una elección, entre muchas otras cosas, es el retrato más completo que un país hace de sí mismo. Cada cuatro años, más de veinte millones de colombianos responden en privado una pregunta que en público casi nunca contestan sin rodeos: qué clase de país quisieran habitar. El problema es que ese retrato llega en forma de cifras, y las cifras se leen a la carrera, en medio del ruido, cuando todavía nadie tiene la calma para mirarlas de verdad.",
+              "A un día de la posesión de Abelardo de la Espriella, mes y medio después de las elecciones y tras un año entero de noticias relacionadas con ellas, quisimos volver sobre los resultados para entender qué fue exactamente lo que pasó.",
+              "Pudimos hacerlo gracias al trabajo de la Registraduría Nacional del Estado Civil que a menos de una semana ya tenía publicados los resultados desagregados por: mesa, puesto, municipio, departamento y total nacional. Y esto no es un detalle menor: pocos países de la región publican información electoral con tal detalle y rapidez. Eso nos permite pasar de la conversación sobre quién ganó a la de cómo la ganó."
+            ]
+          },
+          {
+            "type": "intro",
+            "content": [
+              "Conviene decir desde el principio qué puede y qué no puede hacer un ejercicio como este. <strong>Los datos no resuelven las discusiones políticas, entre otras cosas porque se acomodan con incómoda facilidad a la narrativa de quien los invoca.</strong> Lo que sí hacen es profundizar las afirmaciones fáciles: obligan a decir a qué escala se está mirando, con qué recorte y contra qué comparación. Eso ya es bastante.",
+              "A continuación, los tres hallazgos que nos parecieron más importantes:"
+            ]
+          },
+          {
+            "type": "heading",
+            "title": "1. ¿Quién es el verdadero candidato de las regiones?"
+          },
+          {
+            "type": "body",
+            "content": [
+              "Durante la campaña, y con más fuerza después de ella, se consolidó la narrativa de que Iván Cepeda, el candidato del Pacto Histórico, era el candidato de las regiones, mientras que su contrincante, Abelardo de la Espriella, era el de las ciudades. Pero al mirar los datos, esa narrativa resulta frágil.",
+              "Iván Cepeda ganó en 19 departamentos y Abelardo de la Espriella en 14, incluyendo a Bogotá como Distrito Capital. Pero al decantar a nivel municipal, el resultado se invierte así: De la Espriella ganó en 723 municipios y Cepeda en 399. Es decir, Abelardo ganó en el 64% de los municipios."
+            ]
+          },
+          {
+            "type": "body",
+            "content": [
+              "Esto tiene una explicación aritmética evidente, y vale la pena ponerla sobre la mesa antes de que alguien la use como objeción: en los departamentos donde ganó De la Espriella hay más municipios que en aquellos donde ganó Cepeda. Por ejemplo, Boyacá tiene 123 municipios, y De la Espriella ganó en 119 de ellos; Amazonas tiene 11, y Cepeda ganó en todos."
+            ]
+          },
+          {
+            "type": "pullquote",
+            "content": "Colombia no obedece a una realidad sino a varias que conviven al mismo tiempo y la elección de cuál mirar rara vez es inocente. No existe un candidato de las regiones; existen los dos."
+          },
+          {
+            "type": "body",
+            "content": [
+              "Claramente, contar municipios no es lo mismo que contar votos. Sin embargo, este matiz nos obliga a examinar eso que en el imaginario llamamos \"las regiones\" y ahí aparecen resultados más interesantes. Si sacamos de la ecuación a las ciudades capitales, el margen a favor de Abelardo se amplía a 1,65 puntos, muy por encima de los 0,3 puntos con los que ganó a nivel nacional. Visto al revés, si solamente hubieran votado las capitales, hoy el presidente sería Cepeda, quién habría ganado por 1,24 puntos.",
+              "El mismo patrón se mantiene desde otra perspectiva: según la clasificación de ruralidad del Departamento Nacional de Planeación, en los municipios rurales De la Espriella obtuvo el 52,8% de los votos, un margen superior a 5 puntos sobre Iván Cepeda. <strong>Bajo este análisis, el candidato de las regiones sería Abelardo de la Espriella.</strong>"
+            ]
+          },
+          {
+            "type": "body",
+            "content": [
+              "Ahora bien, todo dato tiene un matiz y este tiene uno importante. Cepeda ganó en el 75% de los municipios PDET (Programa de Desarrollo con Enfoque Territorial); 170 territorios que el Estado identifica como los más afectados por el conflicto armado. Del mismo modo, en los municipios con mayores niveles de pobreza del país, de acuerdo al Índice de Pobreza Multidimensional (IPM), el candidato del Pacto obtuvo el 57% de los votos. Esto significa que, <strong>en la Colombia del conflicto y de la pobreza, el candidato de las regiones sería Iván Cepeda.</strong>",
+              "La conclusión no es que una lectura derrote a la otra, sino algo bastante más incómodo: \"las regiones\" no son una sola cosa. Dependiendo de si definimos región por tamaño de municipio, por ruralidad, por afectación del conflicto o por pobreza, el mismo conjunto de datos produce dos países distintos, y los dos son verdaderos. Colombia no obedece a una realidad sino a varias que conviven al mismo tiempo y la elección de cuál mirar rara vez es inocente. No existe un candidato de las regiones; existen los dos."
+            ]
+          },
+          {
+            "type": "heading",
+            "title": "2. ¿Hubo un cambio en las preferencias regionales?"
+          },
+          {
+            "type": "body",
+            "content": [
+              "Quisimos ver si las campañas de segunda vuelta lograron revertir la preferencia de algún territorio. La respuesta corta es que no. Solo un departamento, Caquetá, pasó de De la Espriella a Cepeda.",
+              "La respuesta larga también es no. La geografía electoral mostró una fuerte persistencia: el 97,9% de los municipios conservó al mismo candidato con ventaja; y el promedio municipal de la diferencia entre los dos bandos creció en un 40%. Traducido: entre la primera y la segunda vuelta, la distancia creció más entre unos municipios y otros, que hacia adentro de cada uno. Los territorios no cambiaron de bando, sino que se reafirmaron en el que ya tenían, y al hacerlo quedaron más homogéneos por dentro y más distantes entre sí."
+            ]
+          },
+          {
+            "type": "pullquote",
+            "content": "El nuevo gobierno no recibe un país que cambió de opinión, sino uno que se ordenó en dos columnas más firmes que antes."
+          },
+          {
+            "type": "body",
+            "content": [
+              "Queda entonces la pregunta: si ningún territorio relevante cambió de opinión y los márgenes internos se ampliaron, <strong>¿cómo hizo Iván Cepeda para recortar una diferencia de casi 3 puntos porcentuales? La respuesta está en el tercer hallazgo.</strong>"
+            ]
+          },
+          {
+            "type": "heading",
+            "title": "3. ¿Quién recicló más votos entre la primera y la segunda vuelta?"
+          },
+          {
+            "type": "body",
+            "content": [
+              "Entre una vuelta y otra había en juego dos bolsas de votos muy distintas: por un lado, los 3,1 millones de votos que sacaron los nueve candidatos eliminados. Por otro, los 2,4 millones de votos válidos adicionales que aparecieron por el aumento de la participación, es decir, ciudadanos que no habían votado en la primera vuelta.",
+              "Para estimar hacia dónde fue cada bolsa, comparamos las más de 118 mil mesas de las dos vueltas. El resultado es que cada candidato se alimentó de una bolsa diferente: 6 de cada 10 votos (1,9 millones) de los candidatos eliminados, terminaron en la bolsa de De la Espriella. Mientras que 3 de cada 4 votos (1,8 millones) nuevos se fueron para la de Cepeda.",
+              "Ahí está la explicación de la remontada, porque aunque Cepeda creció más que su rival (2,96 millones de votos frente a 2,52 millones de Abelardo), movilizó a quienes no habían votado, pero no recicló el voto de los eliminados, que era la bolsa más grande. Cepeda ganó la elección de los que no habían votado y De la Espriella ganó la elección de los que habían votado por otro."
+            ]
+          },
+          {
+            "type": "heading",
+            "title": "Entonces, ¿qué conclusiones nos dejan los datos de estas votaciones?"
+          },
+          {
+            "type": "body",
+            "content": [
+              "Los tres hallazgos revelan algo que Colombia ya sabía, pero que aquí se ve con cifras: somos un país polarizado. Pero decir que estamos polarizados, a estas alturas, es apenas ponerle un nombre al problema. Lo que estos datos revelan es su mecánica, y ahí aparece lo verdaderamente incómodo: esta elección no se batalló convenciendo a nadie; se disputó sumando a quienes ya pensaban parecido y llevándolos a los extremos, representados en la segunda vuelta. Eso es legítimo y ha sido una tendencia en las elecciones modernas en el mundo. Pero deja una verdad difícil de digerir: el nuevo gobierno no recibe un país que cambió de opinión, sino uno que se ordenó en dos columnas más firmes que antes."
+            ]
+          },
+          {
+            "type": "pullquote",
+            "content": "Una elección se gana sumando a los que ya están de acuerdo; pero un país se gobierna convenciendo a los que no."
+          },
+          {
+            "type": "body",
+            "content": [
+              "Y ahí está el problema, porque gobernar es exactamente lo contrario a lo que premió la campaña. Una elección se gana sumando a los que ya están de acuerdo; pero un país se gobierna convenciendo a los que no. En este eterno mes y medio hemos visto lo difícil que se ha vuelto eso: porque cuando cada columna se reafirma en su propio relato, el que piensa distinto deja de ser alguien con quien se negocia y pasa a ser alguien a quien se derrota."
+            ]
+          },
+          {
+            "type": "body",
+            "content": [
+              "Hay algo más que no aparece en los datos. Los mapas separan los territorios en colores, pero estos no son bloques de gente idéntica."
+            ]
+          },
+          {
+            "type": "map",
+            "caption": "Ganador por departamento y por municipio. Explora los resultados completos en el <a href='https://voto-colombia-2026.vercel.app/' target='_blank' rel='noopener noreferrer'>dashboard electoral</a>."
+          },
+          {
+            "type": "body",
+            "content": [
+              "En los municipios donde la elección estuvo más reñida vive casi un tercio del electorado, y allí la línea no pasa por ninguna frontera: pasa por barrios, por puestos de votación y, muchas veces, por mesas de comedor. <strong>Es fácil despreciar a la otra Colombia cuando cabe entera en un color dentro de un mapa; es mucho más difícil cuando la otra Colombia es un vecino, un hermano, alguien con quien se comparte el mismo andén y el mismo país.</strong> La distancia política que medimos con tanta precisión resulta ser, en la práctica, una distancia íntima. Y esas son las más difíciles de cerrar y las que más cuesta admitir.",
+              "Ojalá quienes encabezan estas dos columnas entiendan que la pregunta que quedó abierta no es cuál de las dos Colombias tiene la narrativa verdadera, sino si somos capaces de construir una lo bastante ancha para sostener a las dos, y a todas las que no caben en ninguna.",
+              "Pero sería demasiado cómodo dejarles esa tarea solo a ellos. <strong>La polarización no se decreta desde una tarima, se sostiene todos los días en la manera en que hablamos del que no piensa como nosotros.</strong> De todas las cifras que presentamos aquí, la única que cada quien puede mover es la de uno mismo, y esa, sumada millones de veces, es la que dibuja el mapa siguiente. Ojalá estos resultados no sean el reflejo de los próximos cuatro años, sino la alerta que nos evite repetirlos.",
+              "<em>\"Lo que daña a la colmena, daña a la abeja.\"</em> — Marco Aurelio, Meditaciones 6.54"
+            ]
+          }
+        ],
+        "dataNote": {
+          "items": [
+            { "label": "Fuente principal", "text": "Resultados oficiales de la Registraduría Nacional del Estado Civil, desagregados por mesa, para la primera y la segunda vuelta presidencial de 2026." },
+            { "label": "Alcance", "text": "El análisis cubre únicamente los votos depositados en territorio nacional. Los votos consulares quedan excluidos por razones de procesamiento de datos, de manera uniforme en ambas vueltas, por lo que los totales aquí reportados difieren ligeramente de los oficiales." },
+            { "label": "Clasificación territorial", "text": "Categorías de ruralidad; listado oficial de los 170 municipios PDET; Índice de Pobreza Multidimensional, tienen como fuente al Departamento Nacional de Planeación (DNP)." },
+            { "label": "Estimación del trasvase de votos", "text": "Modelo de inferencia ecológica a nivel de mesa, sobre 118.000 mesas pareadas entre las dos vueltas. Los resultados describen comportamientos agregados por territorio y no decisiones individuales." },
+            { "label": "Reproducibilidad", "text": "Los resultados se pueden explorar en voto-colombia-2026.vercel.app." }
+          ]
+        }
+      }
+    ]
   },
   "lang": {
     "switchLabel": "EN",

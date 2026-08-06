@@ -27,3 +27,8 @@ export function getLocalizedPath(lang: Lang, hash?: string): string {
 export function getProjectPath(lang: Lang, slug: string): string {
   return `/${lang}/projects/${slug}/`;
 }
+
+export function getBlogPath(lang: Lang, slug?: string): string {
+  const base = `/${lang}/blog/`;
+  return slug ? `${base}${slug}/` : base;
+}

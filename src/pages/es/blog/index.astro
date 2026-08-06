@@ -1,0 +1,132 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Navbar from '../../../components/Navbar.astro';
+import Footer from '../../../components/Footer.astro';
+import { useTranslations, getBlogPath } from '../../../i18n/utils';
+import type { Lang } from '../../../i18n/utils';
+
+const lang: Lang = 'es';
+const t = useTranslations(lang);
+const currentPath = getBlogPath(lang);
+---
+
+<BaseLayout title={`${t.blog.title} — Global Bridge Consultancy`} description={t.blog.subtitle} lang={lang}>
+  <Navbar lang={lang} currentPath={currentPath} />
+  <main class="blog-page">
+    <div class="container">
+      <div class="blog-header">
+        <h1 class="blog-header__title">{t.blog.title}</h1>
+        <p class="blog-header__subtitle">{t.blog.subtitle}</p>
+      </div>
+
+      <div class="blog-grid">
+        {t.blog.posts.map((post) => (
+          <a href={getBlogPath(lang, post.slug)} class="blog-card">
+            <span class="blog-card__category">{post.category}</span>
+            <h2 class="blog-card__title">{post.title}</h2>
+            <p class="blog-card__summary">{post.summary}</p>
+            <div class="blog-card__footer">
+              <time class="blog-card__date" datetime={post.isoDate}>{post.date}</time>
+              <span class="blog-card__link">{t.blog.readMore} &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer lang={lang} />
+</BaseLayout>
+
+<style>
+  .blog-page {
+    padding-top: 104px;
+    padding-bottom: var(--space-3xl);
+  }
+
+  .blog-header {
+    margin-bottom: var(--space-2xl);
+  }
+
+  .blog-header__title {
+    font-size: var(--fs-3xl);
+    font-weight: var(--fw-bold);
+    margin-bottom: var(--space-sm);
+  }
+
+  .blog-header__subtitle {
+    font-size: var(--fs-lg);
+    color: var(--color-text-secondary);
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+
+  @media (min-width: 768px) {
+    .blog-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .blog-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-xl);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .blog-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 2px 12px rgba(79, 183, 197, 0.1);
+  }
+
+  .blog-card__category {
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: var(--space-sm);
+  }
+
+  .blog-card__title {
+    font-size: var(--fs-xl);
+    font-weight: var(--fw-bold);
+    line-height: 1.3;
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+  }
+
+  .blog-card__summary {
+    font-size: var(--fs-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--lh-normal);
+    flex-grow: 1;
+    margin-bottom: var(--space-lg);
+  }
+
+  .blog-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .blog-card__date {
+    font-size: var(--fs-xs);
+    color: var(--color-text-secondary);
+  }
+
+  .blog-card__link {
+    font-size: var(--fs-sm);
+    font-weight: var(--fw-semibold);
+    color: var(--color-accent);
+  }
+</style>

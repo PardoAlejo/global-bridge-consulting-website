@@ -7,6 +7,7 @@
     "whoWeAre": "Who we are",
     "whatWeDo": "What we do",
     "projects": "Projects",
+    "blog": "Blog",
     "contact": "Contact"
   },
   "hero": {
@@ -463,6 +464,162 @@
         "<strong>Source accuracy</strong>: precision depends on data published by official sources."
       ]
     }
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Analysis and reflections on data, evidence, and decisions.",
+    "readMore": "Read article",
+    "backToBlog": "Back to blog",
+    "dataNote": "Note on the data",
+    "posts": [
+      {
+        "slug": "reflexiones-elecciones-colombia-2026",
+        "title": "What reflections do Colombia's elections leave us?",
+        "category": "Electoral data analysis · Colombia 2026",
+        "date": "August 3, 2026",
+        "isoDate": "2026-08-03",
+        "summary": "A look at Colombia's 2026 presidential election results, beyond the noise. Three findings about regions, preferences, and mobilization.",
+        "heroQuote": "The problem is that this portrait arrives as numbers, and numbers are read in a rush, amid the noise, when nobody yet has the calm to truly look at them.",
+        "pullQuotes": [
+          "Colombia does not obey a single reality but several that coexist at the same time, and the choice of which to look at is rarely innocent. There is no single candidate of the regions; there are two.",
+          "The new government does not inherit a country that changed its mind, but one that arranged itself into two firmer columns than before.",
+          "An election is won by rallying those who already agree; but a country is governed by convincing those who don't."
+        ],
+        "sections": [
+          {
+            "type": "intro",
+            "content": [
+              "An election, among many other things, is the most complete portrait a country makes of itself. Every four years, more than twenty million Colombians privately answer a question they almost never answer in public without hedging: what kind of country they would like to live in. The problem is that this portrait arrives as numbers, and numbers are read in a rush, amid the noise, when nobody yet has the calm to truly look at them.",
+              "One day before Abelardo de la Espriella's inauguration, a month and a half after the elections and after a full year of related news, we wanted to revisit the results to understand exactly what happened.",
+              "We were able to do so thanks to the work of the National Civil Registry, which within less than a week had published results disaggregated by: polling station, precinct, municipality, department, and national total. This is no minor detail: few countries in the region publish electoral information with such detail and speed. This allows us to move from the conversation about who won to how they won."
+            ]
+          },
+          {
+            "type": "intro",
+            "content": [
+              "It's worth stating from the start what an exercise like this can and cannot do. <strong>Data does not resolve political discussions — among other reasons, because it accommodates itself with uncomfortable ease to the narrative of whoever invokes it.</strong> What data does do is deepen easy claims: it forces you to specify at what scale you're looking, with what subset, and against what comparison. That alone is quite a lot.",
+              "Below are the three findings that seemed most important to us:"
+            ]
+          },
+          {
+            "type": "heading",
+            "title": "1. Who is the true candidate of the regions?"
+          },
+          {
+            "type": "body",
+            "content": [
+              "During the campaign, and with greater force after it, the narrative consolidated that Iván Cepeda, the Pacto Histórico candidate, was the candidate of the regions, while his opponent, Abelardo de la Espriella, was the candidate of the cities. But looking at the data, that narrative proves fragile.",
+              "Iván Cepeda won 19 departments and Abelardo de la Espriella won 14, including Bogotá as Capital District. But at the municipal level, the result inverts: De la Espriella won 723 municipalities and Cepeda won 399. That is, Abelardo won 64% of municipalities."
+            ]
+          },
+          {
+            "type": "body",
+            "content": [
+              "This has an obvious arithmetic explanation, and it's worth putting on the table before anyone uses it as an objection: the departments where De la Espriella won have more municipalities than those where Cepeda won. For example, Boyacá has 123 municipalities, and De la Espriella won 119 of them; Amazonas has 11, and Cepeda won all of them."
+            ]
+          },
+          {
+            "type": "pullquote",
+            "content": "Colombia does not obey a single reality but several that coexist at the same time, and the choice of which to look at is rarely innocent. There is no single candidate of the regions; there are two."
+          },
+          {
+            "type": "body",
+            "content": [
+              "Clearly, counting municipalities is not the same as counting votes. However, this nuance forces us to examine what we collectively call \"the regions,\" and that's where more interesting results appear. If we remove capital cities from the equation, the margin in favor of Abelardo widens to 1.65 points, well above the 0.3 points by which he won nationally. Seen in reverse, if only the capitals had voted, today's president would be Cepeda, who would have won by 1.24 points.",
+              "The same pattern holds from another perspective: according to the rurality classification of the National Planning Department, in rural municipalities De la Espriella obtained 52.8% of votes, a margin of more than 5 points over Iván Cepeda. <strong>Under this analysis, the candidate of the regions would be Abelardo de la Espriella.</strong>"
+            ]
+          },
+          {
+            "type": "body",
+            "content": [
+              "Now, every data point has a nuance, and this one has an important one. Cepeda won 75% of PDET municipalities (Development Programs with Territorial Focus) — 170 territories that the State identifies as most affected by the armed conflict. Similarly, in the country's poorest municipalities, according to the Multidimensional Poverty Index (MPI), the Pacto candidate obtained 57% of votes. <strong>This means that, in the Colombia of conflict and poverty, the candidate of the regions would be Iván Cepeda.</strong>",
+              "The conclusion is not that one reading defeats the other, but something considerably more uncomfortable: \"the regions\" are not one thing. Depending on whether we define region by municipality size, rurality, conflict impact, or poverty, the same dataset produces two different countries — and both are real. Colombia does not obey a single reality but several that coexist at the same time, and the choice of which to look at is rarely innocent. There is no single candidate of the regions; there are two."
+            ]
+          },
+          {
+            "type": "heading",
+            "title": "2. Did regional preferences change?"
+          },
+          {
+            "type": "body",
+            "content": [
+              "We wanted to see whether the runoff campaigns managed to flip any territory's preference. The short answer is no. Only one department, Caquetá, switched from De la Espriella to Cepeda.",
+              "The long answer is also no. Electoral geography showed strong persistence: 97.9% of municipalities kept the same candidate with the lead; and the municipal average of the difference between the two sides grew by 40%. Translated: between the first and second round, the distance grew more between municipalities than within each one. Territories did not switch sides — they reaffirmed the one they already had, and in doing so became more homogeneous internally and more distant from each other."
+            ]
+          },
+          {
+            "type": "pullquote",
+            "content": "The new government does not inherit a country that changed its mind, but one that arranged itself into two firmer columns than before."
+          },
+          {
+            "type": "body",
+            "content": [
+              "The question then remains: if no relevant territory changed its mind and internal margins widened, <strong>how did Iván Cepeda manage to close a gap of nearly 3 percentage points? The answer lies in the third finding.</strong>"
+            ]
+          },
+          {
+            "type": "heading",
+            "title": "3. Who recycled more votes between rounds?"
+          },
+          {
+            "type": "body",
+            "content": [
+              "Between rounds, two very different pools of votes were in play: on one hand, the 3.1 million votes cast for the nine eliminated candidates. On the other, the 2.4 million additional valid votes that appeared due to increased turnout — citizens who hadn't voted in the first round.",
+              "To estimate where each pool went, we compared the more than 118,000 polling stations across both rounds. The result is that each candidate drew from a different pool: 6 out of every 10 votes (1.9 million) from eliminated candidates ended up in De la Espriella's column. Meanwhile, 3 out of every 4 new votes (1.8 million) went to Cepeda's.",
+              "Therein lies the explanation for the comeback: although Cepeda grew more than his rival (2.96 million votes versus Abelardo's 2.52 million), he mobilized those who hadn't voted but didn't recycle the votes of eliminated candidates — which was the larger pool. Cepeda won the election of those who hadn't voted, and De la Espriella won the election of those who had voted for someone else."
+            ]
+          },
+          {
+            "type": "heading",
+            "title": "So, what conclusions do these voting data leave us?"
+          },
+          {
+            "type": "body",
+            "content": [
+              "The three findings reveal something Colombia already knew, but which is now visible in numbers: we are a polarized country. But saying we are polarized, at this point, is merely naming the problem. What these data reveal is the mechanics, and there the truly uncomfortable truth emerges: this election was not fought by convincing anyone; it was contested by rallying those who already thought alike and pushing them to the extremes, represented in the runoff. That is legitimate and has been a trend in modern elections worldwide. But it leaves a hard truth to digest: the new government does not inherit a country that changed its mind, but one that arranged itself into two firmer columns than before."
+            ]
+          },
+          {
+            "type": "pullquote",
+            "content": "An election is won by rallying those who already agree; but a country is governed by convincing those who don't."
+          },
+          {
+            "type": "body",
+            "content": [
+              "And therein lies the problem, because governing is exactly the opposite of what the campaign rewarded. An election is won by rallying those who already agree; but a country is governed by convincing those who don't. In this endless month and a half, we've seen how difficult that has become: because when each column reaffirms its own narrative, the one who thinks differently stops being someone to negotiate with and becomes someone to defeat."
+            ]
+          },
+          {
+            "type": "body",
+            "content": [
+              "There is something more that doesn't appear in the data. Maps separate territories into colors, but these are not blocks of identical people."
+            ]
+          },
+          {
+            "type": "map",
+            "caption": "Winner by department and municipality. Explore full results on the <a href='https://voto-colombia-2026.vercel.app/' target='_blank' rel='noopener noreferrer'>electoral dashboard</a>."
+          },
+          {
+            "type": "body",
+            "content": [
+              "In the municipalities where the election was closest, nearly a third of the electorate lives, and there the line doesn't run along any border: it runs through neighborhoods, polling stations, and often through dining tables. <strong>It's easy to dismiss the other Colombia when it fits entirely within one color on a map; it's much harder when the other Colombia is a neighbor, a sibling, someone who shares the same sidewalk and the same country.</strong> The political distance we measure with such precision turns out to be, in practice, an intimate distance. And those are the hardest to close and the most difficult to admit.",
+              "Hopefully those who lead these two columns will understand that the question left open is not which of the two Colombias has the true narrative, but whether we are capable of building one broad enough to sustain both, and all those that fit in neither.",
+              "But it would be too comfortable to leave that task to them alone. <strong>Polarization is not decreed from a podium — it is sustained every day in the way we talk about those who don't think like us.</strong> Of all the figures we present here, the only one each person can move is their own, and that one, added millions of times, is what draws the next map. Hopefully these results won't be the reflection of the next four years, but the warning that helps us avoid repeating them.",
+              "<em>\"What injures the hive injures the bee.\"</em> — Marcus Aurelius, Meditations 6.54"
+            ]
+          }
+        ],
+        "dataNote": {
+          "items": [
+            { "label": "Primary source", "text": "Official results from the National Civil Registry, disaggregated by polling station, for both rounds of the 2026 presidential election." },
+            { "label": "Scope", "text": "The analysis covers only votes cast on national territory. Consular votes are excluded for data processing reasons, uniformly in both rounds, so the totals reported here differ slightly from official figures." },
+            { "label": "Territorial classification", "text": "Rurality categories; official list of 170 PDET municipalities; Multidimensional Poverty Index, sourced from the National Planning Department (DNP)." },
+            { "label": "Vote transfer estimation", "text": "Ecological inference model at the polling station level, across 118,000 paired stations between both rounds. Results describe aggregate territorial behavior, not individual decisions." },
+            { "label": "Reproducibility", "text": "Results can be explored at voto-colombia-2026.vercel.app." }
+          ]
+        }
+      }
+    ]
   },
   "lang": {
     "switchLabel": "ES",

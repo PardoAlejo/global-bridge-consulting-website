@@ -1,6 +1,6 @@
 ---
 import type { Lang } from '../i18n/utils';
-import { useTranslations, getLocalizedPath } from '../i18n/utils';
+import { useTranslations, getLocalizedPath, getBlogPath } from '../i18n/utils';
 import LanguageSwitcher from './LanguageSwitcher.astro';
 
 interface Props {
@@ -22,6 +22,7 @@ const t = useTranslations(lang);
       <nav class="navbar__nav" aria-label="Main navigation">
         <a href={getLocalizedPath(lang, 'what-we-do')} class="navbar__link">{t.nav.whatWeDo}</a>
         <a href={getLocalizedPath(lang, 'projects')} class="navbar__link">{t.nav.projects}</a>
+        <a href={getBlogPath(lang)} class="navbar__link">{t.nav.blog}</a>
       </nav>
       <div class="navbar__actions">
         <LanguageSwitcher lang={lang} currentPath={currentPath} />

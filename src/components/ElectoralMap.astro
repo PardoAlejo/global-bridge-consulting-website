@@ -1,0 +1,245 @@
+---
+interface Props {
+  caption?: string;
+}
+
+const { caption } = Astro.props;
+---
+
+<figure class="electoral-map-figure">
+  <div class="electoral-map" id="electoral-map">
+    <div class="electoral-map__controls">
+      <button class="electoral-map__btn electoral-map__btn--active" data-view="departamentos">Deptos</button>
+      <button class="electoral-map__btn" data-view="municipios">Municipios</button>
+    </div>
+    <div class="electoral-map__canvas">
+      <svg id="electoral-map-svg" viewBox="-82.24 -13.89 15.89 18.62" preserveAspectRatio="xMidYMid meet"></svg>
+    </div>
+    <div class="electoral-map__legend">
+      <span class="electoral-map__legend-title">Ganador</span>
+      <span class="electoral-map__legend-item">
+        <span class="electoral-map__swatch" style="background:#5B8BD4"></span>
+        De La Espriella
+      </span>
+      <span class="electoral-map__legend-item">
+        <span class="electoral-map__swatch" style="background:#C47A5A"></span>
+        Cepeda
+      </span>
+    </div>
+  </div>
+  {caption && (
+    <figcaption class="electoral-map__caption" set:html={caption} />
+  )}
+</figure>
+
+<script>
+  const ESPRIELLA = '#5B8BD4';
+  const CEPEDA = '#C47A5A';
+  const NEUTRAL = '#C4B8AE';
+  const STROKE_DEPT = '#FFFFFF';
+  const STROKE_MUNI = 'rgba(255,255,255,0.3)';
+
+  function getColor(ganador: string | null): string {
+    if (!ganador) return NEUTRAL;
+    if (ganador.includes('ESPRIELLA')) return ESPRIELLA;
+    if (ganador.includes('CEPEDA')) return CEPEDA;
+    return NEUTRAL;
+  }
+
+  // Simple Mercator-ish projection for Colombia
+  function projectCoord(lon: number, lat: number): [number, number] {
+    return [lon, -lat];
+  }
+
+  function coordsToPath(coords: number[][]): string {
+    return coords.map((c, i) => {
+      const [x, y] = projectCoord(c[0], c[1]);
+      return `${i === 0 ? 'M' : 'L'}${x.toFixed(3)},${y.toFixed(3)}`;
+    }).join('') + 'Z';
+  }
+
+  function geometryToPath(geometry: any): string {
+    if (geometry.type === 'Polygon') {
+      return geometry.coordinates.map((ring: number[][]) => coordsToPath(ring)).join('');
+    }
+    if (geometry.type === 'MultiPolygon') {
+      return geometry.coordinates.map((poly: number[][][]) =>
+        poly.map((ring: number[][]) => coordsToPath(ring)).join('')
+      ).join('');
+    }
+    return '';
+  }
+
+  function renderFeatures(svg: SVGElement, features: any[], strokeColor: string, strokeWidth: string) {
+    svg.innerHTML = '';
+    for (const feat of features) {
+      const d = geometryToPath(feat.geometry);
+      if (!d) continue;
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', d);
+      path.setAttribute('fill', getColor(feat.properties.ganador));
+      path.setAttribute('stroke', strokeColor);
+      path.setAttribute('stroke-width', strokeWidth);
+      path.setAttribute('vector-effect', 'non-scaling-stroke');
+      svg.appendChild(path);
+    }
+  }
+
+  // Cache loaded data
+  let deptData: any = null;
+  let muniData: any = null;
+  let currentView = 'departamentos';
+
+  const svg = document.getElementById('electoral-map-svg') as unknown as SVGElement;
+  const container = document.getElementById('electoral-map');
+  const buttons = container?.querySelectorAll<HTMLButtonElement>('.electoral-map__btn');
+
+  function renderBorders(svg: SVGElement, features: any[], strokeColor: string, strokeWidth: string) {
+    for (const feat of features) {
+      const d = geometryToPath(feat.geometry);
+      if (!d) continue;
+      const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', d);
+      path.setAttribute('fill', 'none');
+      path.setAttribute('stroke', strokeColor);
+      path.setAttribute('stroke-width', strokeWidth);
+      path.setAttribute('vector-effect', 'non-scaling-stroke');
+      svg.appendChild(path);
+    }
+  }
+
+  async function loadAndRender(view: string) {
+    if (!deptData) {
+      const res = await fetch('/assets/maps/departamentos.json');
+      deptData = await res.json();
+    }
+    if (view === 'departamentos') {
+      renderFeatures(svg, deptData.features, STROKE_DEPT, '1');
+    } else {
+      if (!muniData) {
+        svg.innerHTML = '<text x="-74" y="3" fill="#999" font-size="0.5" font-family="Inter, sans-serif">Cargando...</text>';
+        const res = await fetch('/assets/maps/municipios-nacional.json');
+        muniData = await res.json();
+      }
+      renderFeatures(svg, muniData.features, STROKE_MUNI, '0.3');
+      renderBorders(svg, deptData.features, '#000000', '1');
+    }
+    currentView = view;
+  }
+
+  // Initial load
+  loadAndRender('departamentos');
+
+  // Toggle buttons
+  buttons?.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const view = btn.dataset.view!;
+      if (view === currentView) return;
+      buttons.forEach(b => b.classList.remove('electoral-map__btn--active'));
+      btn.classList.add('electoral-map__btn--active');
+      loadAndRender(view);
+    });
+  });
+</script>
+
+<style>
+  .electoral-map-figure {
+    margin: var(--space-xl) 0;
+  }
+
+  .electoral-map {
+    position: relative;
+    background: var(--color-section-alt);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-lg);
+    padding: var(--space-md);
+    overflow: hidden;
+  }
+
+  .electoral-map__controls {
+    display: flex;
+    gap: 2px;
+    background: var(--color-border);
+    border-radius: var(--border-radius);
+    width: fit-content;
+    padding: 2px;
+    margin-bottom: var(--space-sm);
+  }
+
+  .electoral-map__btn {
+    padding: 0.375rem 1rem;
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-semibold);
+    border-radius: calc(var(--border-radius) - 2px);
+    background: transparent;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+  }
+
+  .electoral-map__btn--active {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  .electoral-map__btn:hover:not(.electoral-map__btn--active) {
+    color: var(--color-text);
+  }
+
+  .electoral-map__canvas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+  }
+
+  .electoral-map__canvas svg {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+  }
+
+  .electoral-map__legend {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding-top: var(--space-sm);
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--space-sm);
+  }
+
+  .electoral-map__legend-title {
+    font-size: var(--fs-xs);
+    font-weight: var(--fw-bold);
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .electoral-map__legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-size: var(--fs-xs);
+    color: var(--color-text-secondary);
+  }
+
+  .electoral-map__swatch {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+  }
+
+  .electoral-map__caption {
+    margin-top: var(--space-sm);
+    font-size: var(--fs-sm);
+    color: var(--color-text-secondary);
+    text-align: center;
+  }
+
+  .electoral-map__caption :global(a) {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+</style>
