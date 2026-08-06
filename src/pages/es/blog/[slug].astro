@@ -28,6 +28,7 @@ const currentPath = getBlogPath(lang, slug!);
           <a href={getBlogPath(lang)} class="article__back">&larr; {t.blog.backToBlog}</a>
           <span class="article__category">{post.category}</span>
           <h1 class="article__title">{post.title}</h1>
+          {post.subtitle && <p class="article__subtitle">{post.subtitle}</p>}
           <time class="article__date" datetime={post.isoDate}>{post.date}</time>
         </div>
       </header>
@@ -118,6 +119,14 @@ const currentPath = getBlogPath(lang, slug!);
     line-height: 1.2;
     margin-bottom: var(--space-md);
     max-width: 720px;
+  }
+
+  .article__subtitle {
+    font-size: var(--fs-xl);
+    color: var(--color-text);
+    font-weight: var(--fw-semibold);
+    line-height: 1.3;
+    margin-bottom: var(--space-md);
   }
 
   .article__date {

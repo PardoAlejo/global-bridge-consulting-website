@@ -474,10 +474,11 @@
     "posts": [
       {
         "slug": "reflexiones-elecciones-colombia-2026",
-        "title": "¿Qué reflexiones nos dejan las elecciones en Colombia?",
-        "category": "Análisis de datos electorales · Colombia 2026",
-        "date": "3 de agosto de 2026",
-        "isoDate": "2026-08-03",
+        "title": "Dos Colombias, un gobierno",
+        "subtitle": "Tres claves del mapa electoral que hereda el nuevo gobierno",
+        "category": "Datos electorales — Colombia 2026",
+        "date": "6 de agosto de 2026",
+        "isoDate": "2026-08-06",
         "summary": "Una mirada a los resultados electorales presidenciales de Colombia 2026, más allá del ruido. Tres hallazgos sobre regiones, preferencias y movilización.",
         "heroQuote": "El problema es que ese retrato llega en forma de cifras, y las cifras se leen a la carrera, en medio del ruido, cuando todavía nadie tiene la calma para mirarlas de verdad.",
         "pullQuotes": [
