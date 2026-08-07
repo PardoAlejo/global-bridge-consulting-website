@@ -471,6 +471,7 @@
     "readMore": "Leer artículo",
     "backToBlog": "Volver al blog",
     "dataNote": "Nota sobre los datos",
+    "editionLabel": "Edición",
     "posts": [
       {
         "slug": "reflexiones-elecciones-colombia-2026",
@@ -480,6 +481,8 @@
         "date": "6 de agosto de 2026",
         "isoDate": "2026-08-06",
         "summary": "Una mirada a los resultados electorales presidenciales de Colombia 2026, más allá del ruido. Tres hallazgos sobre regiones, preferencias y movilización.",
+        "author": "Santiago Pardo",
+        "editor": "Mariana Posada",
         "heroQuote": "El problema es que ese retrato llega en forma de cifras, y las cifras se leen a la carrera, en medio del ruido, cuando todavía nadie tiene la calma para mirarlas de verdad.",
         "pullQuotes": [
           "Cepeda ganó en 19 departamentos y De la Espriella en 14. Pero a nivel municipal el resultado se invierte: De la Espriella ganó en 723 municipios (64%) y Cepeda en 399.",
@@ -615,6 +618,7 @@
             { "label": "Fuente principal", "text": "Resultados oficiales de la Registraduría Nacional del Estado Civil, desagregados por mesa, para la primera y la segunda vuelta presidencial de 2026." },
             { "label": "Alcance", "text": "El análisis cubre únicamente los votos depositados en territorio nacional. Los votos consulares quedan excluidos por razones de procesamiento de datos, de manera uniforme en ambas vueltas, por lo que los totales aquí reportados difieren ligeramente de los oficiales." },
             { "label": "Clasificación territorial", "text": "Categorías de ruralidad; listado oficial de los 170 municipios PDET; Índice de Pobreza Multidimensional, tienen como fuente al Departamento Nacional de Planeación (DNP)." },
+            { "label": "Definiciones", "text": "Los 'municipios con mayores niveles de pobreza' corresponden al 25% de municipios con menor Índice de Pobreza Multidimensional (IPM) promedio." },
             { "label": "Estimación del trasvase de votos", "text": "Modelo de inferencia ecológica a nivel de mesa, sobre 118.000 mesas pareadas entre las dos vueltas. Los resultados describen comportamientos agregados por territorio y no decisiones individuales." },
             { "label": "Reproducibilidad", "text": "Los resultados se pueden explorar en voto-colombia-2026.vercel.app." }
           ]

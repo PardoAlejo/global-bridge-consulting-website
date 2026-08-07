@@ -60,6 +60,11 @@ const currentPath = getBlogPath(lang, slug!);
           ));
         })}
 
+        <aside class="article__byline">
+          <p class="article__byline-author">{post.author}</p>
+          {post.editor && <p class="article__byline-editor">{t.blog.editionLabel}: {post.editor}</p>}
+        </aside>
+
         <hr class="article__separator" />
         <aside class="article__data-note">
           <h3 class="article__data-note-title">{t.blog.dataNote}</h3>
@@ -206,6 +211,25 @@ const currentPath = getBlogPath(lang, slug!);
     line-height: 1.5;
     color: var(--color-text);
     font-weight: var(--fw-medium);
+  }
+
+  /* Byline */
+  .article__byline {
+    margin-top: var(--space-3xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .article__byline-author {
+    font-size: var(--fs-base);
+    font-weight: var(--fw-semibold);
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+  }
+
+  .article__byline-editor {
+    font-size: var(--fs-sm);
+    color: var(--color-text-secondary);
   }
 
   /* Separator */

@@ -471,6 +471,7 @@
     "readMore": "Read article",
     "backToBlog": "Back to blog",
     "dataNote": "Note on the data",
+    "editionLabel": "Edited by",
     "posts": [
       {
         "slug": "reflexiones-elecciones-colombia-2026",
@@ -480,6 +481,8 @@
         "date": "August 6, 2026",
         "isoDate": "2026-08-06",
         "summary": "A look at Colombia's 2026 presidential election results, beyond the noise. Three findings about regions, preferences, and mobilization.",
+        "author": "Santiago Pardo",
+        "editor": "Mariana Posada",
         "heroQuote": "The problem is that this portrait arrives as numbers, and numbers are read in a rush, amid the noise, when nobody yet has the calm to truly look at them.",
         "pullQuotes": [
           "Cepeda won 19 departments and De la Espriella won 14. But at the municipal level, the result inverts: De la Espriella won 723 municipalities (64%) and Cepeda won 399.",
@@ -615,6 +618,7 @@
             { "label": "Primary source", "text": "Official results from the National Civil Registry, disaggregated by polling station, for both rounds of the 2026 presidential election." },
             { "label": "Scope", "text": "The analysis covers only votes cast on national territory. Consular votes are excluded for data processing reasons, uniformly in both rounds, so the totals reported here differ slightly from official figures." },
             { "label": "Territorial classification", "text": "Rurality categories; official list of 170 PDET municipalities; Multidimensional Poverty Index, sourced from the National Planning Department (DNP)." },
+            { "label": "Definitions", "text": "The 'municipalities with highest poverty levels' correspond to the 25% of municipalities with the lowest average Multidimensional Poverty Index (MPI)." },
             { "label": "Vote transfer estimation", "text": "Ecological inference model at the polling station level, across 118,000 paired stations between both rounds. Results describe aggregate territorial behavior, not individual decisions." },
             { "label": "Reproducibility", "text": "Results can be explored at voto-colombia-2026.vercel.app." }
           ]
