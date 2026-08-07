@@ -619,7 +619,7 @@
             { "label": "Scope", "text": "The analysis covers only votes cast on national territory. Consular votes are excluded for data processing reasons, uniformly in both rounds, so the totals reported here differ slightly from official figures." },
             { "label": "Territorial classification", "text": "Rurality categories; official list of 170 PDET municipalities; Multidimensional Poverty Index, sourced from the National Planning Department (DNP)." },
             { "label": "Definitions", "text": "The 'municipalities with highest poverty levels' correspond to the 25% of municipalities with the lowest average Multidimensional Poverty Index (MPI)." },
-            { "label": "Vote transfer estimation", "text": "Ecological inference model at the polling station level, across 118,000 paired stations between both rounds. Results describe aggregate territorial behavior, not individual decisions." },
+            { "label": "Vote transfer estimation", "text": "Ecological inference model that measures toward which finalist the voters of each eliminated candidate leaned territorially. It calculates the correlation between where each candidate was strong and where the winner grew most between rounds, weighted by municipal size. It does not count individual votes; it detects geographic patterns." },
             { "label": "Reproducibility", "text": "Results can be explored at voto-colombia-2026.vercel.app." }
           ]
         }
